@@ -1,4 +1,5 @@
-
+using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
 using Core.Entities;
 
@@ -8,11 +9,11 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(StoreContext context)
         {
-            if (!context.ProductBrands.Any())
+            if (!context.ProductComposers.Any())
             {
-                var brandsData = File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
-                var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
-                context.ProductBrands.AddRange(brands);
+                var composersData = File.ReadAllText("../Infrastructure/Data/SeedData/composers.json");
+                var composers = JsonSerializer.Deserialize<List<ProductComposer>>(composersData);
+                context.ProductComposers.AddRange(composers);
             }
 
             if (!context.ProductTypes.Any())

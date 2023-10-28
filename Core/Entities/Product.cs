@@ -2,17 +2,17 @@ namespace Core.Entities
 {
     public class Product : BaseEntity
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; }
+        public string LongTitle { get; set; }
+        public string Instrumentation { get; set; }
         public decimal Price { get; set; }
-        public string PictureUrl { get; set; }
+        public string PictureUrl1 { get; set; }
+        public string PictureUrl2 { get; set; }
+        public string PictureUrl3 { get; set; }
+        public string PictureUrl4 { get; set; }
+        public string PictureUrl5 { get; set; }
+        public ICollection<ProductComposer> ProductComposers { get; set; }
+        public ICollection<ProductType> ProductTypes { get; set; }
 
-        public ProductType ProductType { get; set; }
-
-        public int ProductTypeId { get; set; }
-
-        public ProductBrand ProductBrand { get; set; }
-
-        public int ProductBrandId { get; set; }
     }
 } 

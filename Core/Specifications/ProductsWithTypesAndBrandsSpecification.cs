@@ -8,20 +8,19 @@ using Core.Entities;
 
 namespace Core.Specifications
 {
-    public class ProductsWithTypesAndBrandsSpecification : BaseSpecification<Product>
-    {
-        public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
-            : base(x => 
-                (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams.Search)) &&
-                (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId) &&
-                (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
-            )
+    public class ProductsWithTypesAndComposersSpecification : BaseSpecification<Product>
         {
-            AddInclude(x => x.ProductType);
-            AddInclude(x => x.ProductBrand);
-            AddOrderBy(x => x.Name);
-            ApplyPaging(productParams.PageSize * (productParams.PageIndex - 1), 
-            productParams.PageSize);
+            public ProductsWithTypesAndComposersSpecification(ProductSpecParams productParams)
+                : base(x => 
+                    (string.IsNullOrEmpty(productParams.Search) || x.Title.ToLower().Contains(productParams.Search)) &&
+                    (!productParams.ProductComposerId.HasValue || x.ProductComposers.Any(pc => pc.Id == productParams.ProductComposerId)) &&
+                    (!productParams.TypeId.HasValue || x.ProductTypes.Any(pt => pt.Id == productParams.TypeId))
+                )
+            {
+                AddInclude(x => x.ProductTypes);
+                AddInclude(x => x.ProductComposers);
+                AddOrderBy(x => x.Title);
+                ApplyPaging(productParams.PageSize * (productParams.PageIndex - 1), productParams.PageSize);
 
                 if(!string.IsNullOrEmpty(productParams.Sort))
                 {
@@ -34,16 +33,16 @@ namespace Core.Specifications
                             AddOrderByDescending(p => p.Price);
                             break;
                         default: 
-                            AddOrderBy(n => n.Name);
+                            AddOrderBy(n => n.Title);
                             break;
                     }
                 }
-        }
+            }
 
-        public ProductsWithTypesAndBrandsSpecification(int id) : base(x => x.Id == id)
-        {
-            AddInclude(x => x.ProductType);
-            AddInclude(x => x.ProductBrand);
+            public ProductsWithTypesAndComposersSpecification(int id) : base(x => x.Id == id)
+            {
+                AddInclude(x => x.ProductTypes);
+                AddInclude(x => x.ProductComposers);
+            }
         }
-    }
 }

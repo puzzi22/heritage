@@ -2,6 +2,7 @@
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20231028114832_InitialCreate6")]
+    partial class InitialCreate6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.12");
@@ -28,24 +31,7 @@ namespace Infrastructure.Data.Migrations
                     b.Property<string>("LongTitle")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PictureUrl1")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PictureUrl2")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PictureUrl3")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PictureUrl4")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PictureUrl5")
-                        .IsRequired()
+                    b.Property<string>("PictureUrls")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")

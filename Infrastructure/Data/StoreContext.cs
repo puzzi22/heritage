@@ -1,7 +1,9 @@
-using System.Reflection;
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Infrastructure.Data
 {
@@ -9,34 +11,43 @@ namespace Infrastructure.Data
     {
         public StoreContext(DbContextOptions options) : base(options)
         {
-            
         }
 
         public DbSet<Product> Products { get; set; }
-
-        public DbSet<ProductBrand> ProductBrands { get; set; }
-
+        public DbSet<ProductComposer> ProductComposers { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
-            {
-                foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-                {
-                    var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType 
-                    == typeof(decimal));
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.ProductComposers)
+                .WithMany(c => c.Products);
 
-                    foreach (var property in properties)
-                    {
-                        modelBuilder.Entity(entityType.Name).Property(property.Name)
-                        .HasConversion<double>();
-                    }
-                }
-            }
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.ProductTypes)
+                .WithMany(pt => pt.Products);
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.PictureUrl1)
+                .IsRequired();
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.PictureUrl2)
+                .IsRequired();
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.PictureUrl3)
+                .IsRequired();
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.PictureUrl4)
+                .IsRequired();
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.PictureUrl5)
+                .IsRequired();
         }
     }
 }

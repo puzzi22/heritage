@@ -1,0 +1,116 @@
+[
+  {
+    "Id": 1,
+    "LastName": "Blanc",
+    "FirstName": "Adolphe",
+    "Dates": "1828–1885"
+  },
+  {
+    "Id": 2,
+    "LastName": "Clapisson",
+    "FirstName": "Antoine",
+    "Dates": "1779–1857"
+  },
+  {
+    "Id": 3,
+    "LastName": "Corrette",
+    "FirstName": "Michel",
+    "Dates": "1707–1795"
+  },
+  {
+    "Id": 4,
+    "LastName": "Gluck",
+    "FirstName": "Christoph Willibald",
+    "Dates": "1714–1787"
+  },
+  {
+    "Id": 5,
+    "LastName": "Dukas",
+    "FirstName": "Paul",
+    "Dates": "1865–1935"
+  },
+  {
+    "Id": 6,
+    "LastName": "Gallay",
+    "FirstName": "Jacques-François",
+    "Dates": "1795–1864"
+  },
+  {
+    "Id": 7,
+    "LastName": "Meifred",
+    "FirstName": "Joseph",
+    "Dates": "1791–1867"
+  },
+  {
+    "Id": 8,
+    "LastName": "Chaussier",
+    "FirstName": "Henri",
+    "Dates": "1854–1914"
+  },
+  {
+    "Id": 9,
+    "LastName": "Saint-Saëns",
+    "FirstName": "Camille",
+    "Dates": "1835–1921"
+  },
+  {
+    "Id": 10,
+    "LastName": "Domnich",
+    "FirstName": "Heinrich",
+    "Dates": "1767–1844"
+  },
+  {
+    "Id": 11,
+    "LastName": "Schubert",
+    "FirstName": "Franz",
+    "Dates": "1797–1828"
+  },
+  {
+    "Id": 12,
+    "LastName": "Dauprat",
+    "FirstName": "Louis-François",
+    "Dates": "1781–1868"
+  },
+  {
+    "Id": 13,
+    "LastName": "Javault",
+    "FirstName": "Alexandre",
+    "Dates": "1785—?"
+  },
+  {
+    "Id": 14,
+    "LastName": "Gounod",
+    "FirstName": "Charles",
+    "Dates": "1818–1893"
+  },
+  {
+    "Id": 15,
+    "LastName": "Maury",
+    "FirstName": "Claude",
+    "Dates": "1956—"
+  },
+  {
+    "Id": 16,
+    "LastName": "Rossini",
+    "FirstName": "Gioachino",
+    "Dates": "1792–1868"
+  },
+  {
+    "Id": 17,
+    "LastName": "Massenet",
+    "FirstName": "Jules",
+    "Dates": "1842—1912"
+  },
+  {
+    "Id": 18,
+    "LastName": "Panseron",
+    "FirstName": "Auguste Mathieu",
+    "Dates": "1795—1859"
+  },
+  {
+    "Id": 19,
+    "LastName": "Bordogni",
+    "FirstName": "Marco",
+    "Dates": "1789—1856"
+  }
+]

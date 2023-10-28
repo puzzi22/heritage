@@ -1,18 +1,62 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Name": "Trio"
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Name": "Horn and Piano"
   },
   {
     "Id": 3,
-    "Name": "Boots"
+    "Name": "Concerto"
   },
   {
     "Id": 4,
-    "Name": "Gloves"
+    "Name": "Sonata"
+  },
+  {
+    "Id": 5,
+    "Name": "Chamber Music"
+  },
+  {
+    "Id": 6,
+    "Name": "Other"
+  },
+  {
+    "Id": 7,
+    "Name": "Horn Duet"
+  },
+  {
+    "Id": 8,
+    "Name": "Arrangement"
+  },
+  {
+    "Id": 9,
+    "Name": "Sight-reading"
+  },
+  {
+    "Id": 10,
+    "Name": "Study"
+  },
+  {
+    "Id": 11,
+    "Name": "Solo Horn"
+  },
+  {
+    "Id": 12,
+    "Name": "Horn Quartet"
+  },
+  {
+    "Id": 13,
+    "Name": "Method"
+  },
+  {
+    "Id": 14,
+    "Name": "Horn and Organ"
+  },
+  {
+    "Id": 15,
+    "Name": "Sinfonia Concertante"
   }
 ]
