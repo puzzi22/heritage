@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
@@ -9,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace API.Helpers
 {
-    public class ProductUrlResolver : IValueResolver<Product, ProductToReturnDto, string>
+    public class ProductUrlResolver : IValueResolver<Product, ProductToReturnDto, List<string>>
     {
         private readonly IConfiguration _config;
         public ProductUrlResolver(IConfiguration config)
@@ -17,14 +14,14 @@ namespace API.Helpers
             _config = config;
         }
 
-        public string Resolve(Product source, ProductToReturnDto destination, string destMember, ResolutionContext context)
+        public List<string> Resolve(Product source, ProductToReturnDto destination, List<string> destMember, ResolutionContext context)
         {
-            if(!string.IsNullOrEmpty(source.PictureUrl))
+            if (source.PictureUrls != null && source.PictureUrls.Count > 0)
             {
-                return _config["ApiUrl"] + source.PictureUrl;
+                return source.PictureUrls.Select(pictureUrl => _config["ApiUrl"] + pictureUrl).ToList();
             }
 
-            return null;
+            return new List<string>();
         }
     }
 }

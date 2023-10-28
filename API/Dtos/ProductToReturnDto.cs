@@ -1,18 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.Dtos
 {
     public class ProductToReturnDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; }
+        public string LongTitle { get; set; }
+        public string Instrumentation { get; set; }
         public decimal Price { get; set; }
-        public string PictureUrl { get; set; }
-        public string ProductType { get; set; }
-        public string ProductBrand { get; set; }
+        public List<string> PictureUrls { get; set; }
+        public List<string> ProductTypes { get; set; } = new List<string>();
+        public List<string> ProductComposers { get; set; } = new List<string>();
+    
     }
 }

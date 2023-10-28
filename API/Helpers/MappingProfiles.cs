@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
@@ -13,9 +9,12 @@ namespace API.Helpers
         public MappingProfiles()
         {
             CreateMap<Product, ProductToReturnDto>()
-                .ForMember(d => d.ProductBrand, o => o.MapFrom(s => s.ProductBrand.Name))
-                .ForMember(d => d.ProductType, o => o.MapFrom(s => s.ProductType.Name))
-                .ForMember(d => d.PictureUrl, o => o.MapFrom<ProductUrlResolver>());
+                .ForMember(d => d.ProductComposers, o => o.MapFrom(s => s.ProductComposers.Select(pc => $"{pc.FirstName} {pc.LastName}").ToList()))
+                .ForMember(d => d.ProductTypes, o => o.MapFrom(s => s.ProductTypes.Select(pt => pt.Name).ToList()))
+                .ForMember(d => d.PictureUrls, o => o.MapFrom<ProductUrlResolver>());
+            
+            CreateMap<ProductComposer, ProductComposerDto>();
+            CreateMap<ProductType, ProductTypeDto>();
         }
     }
 }
