@@ -1,399 +1,288 @@
 [
-  {
-    "Title": "Romance, op. 43 bis",
-    "LongTitle": "Romance pour hautbois et cor (ou cor anglais) avec accompagnement de piano, op. 43 bis",
-    "Instrumentation": "Oboe, Horn (or English Horn), Piano",
-    "Price": 10.25,
-    "ProductTypeIds": [
-      1,
-      5
-    ],
-    "ProductComposerIds": [
-      1
-    ],
-    "PictureUrl1": "20538eec-39d2-407a-8217-ab8f51ad046f-0000.webp",
-    "PictureUrl2": "20538eec-39d2-407a-8217-ab8f51ad046f-0001.webp",
-    "PictureUrl3": "",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Sonate, op. 43",
-    "LongTitle": "Sonate pour cor et piano, op. 43 (ou violon ou alto ou violoncelle)",
-    "Instrumentation": "Horn (or Violin, or Viola, or Cello), Piano",
-    "Price": 11,
-    "ProductTypeIds": [
-      2,
-      4
-    ],
-    "ProductComposerIds": [
-      1
-    ],
-    "PictureUrl1": "bbec1094-5303-4f7a-bece-7e8883a1410d-0000.webp",
-    "PictureUrl2": "bbec1094-5303-4f7a-bece-7e8883a1410d-0001.webp",
-    "PictureUrl3": "bbec1094-5303-4f7a-bece-7e8883a1410d-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Fantaisie, op. 63",
-    "LongTitle": "Fantaisie pour piano et cor (ou violon) sur des thèmes de l’opéra d’Otello de Rossini, op. 63",
-    "Instrumentation": "Horn (or Violin), Piano",
-    "Price": 12,
-    "ProductTypeIds": [
-      2
-    ],
-    "ProductComposerIds": [
-      2,
-      16
-    ],
-    "PictureUrl1": "ac855c50-d8cb-403e-8091-408a7283a6d4-0000.webp",
-    "PictureUrl2": "ac855c50-d8cb-403e-8091-408a7283a6d4-0001.webp",
-    "PictureUrl3": "",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Divertissements",
-    "LongTitle": "Divertissements pour deux cors de chasse ou trompettes, qui conviennent au flûtes traversières, hautbois, flûtes à bec, violons et tambourins, oeuvre septième",
-    "Instrumentation": "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)",
-    "Price": 13,
-    "ProductTypeIds": [
-      5,
-      7
-    ],
-    "ProductComposerIds": [
-      3
-    ],
-    "PictureUrl1": "5544291f-e572-44e6-950a-4b3010d40f9b-0000.webp",
-    "PictureUrl2": "5544291f-e572-44e6-950a-4b3010d40f9b-0001.webp",
-    "PictureUrl3": "",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Danse des esprits bienheureux",
-    "LongTitle": "Danse des esprits bienheureux, extrait d’Orphée et Eurydice, arrangée pour cor et quatuor à cordes par Claude Maury",
-    "Instrumentation": "Horn, String Quartet",
-    "Price": 14,
-    "ProductTypeIds": [
-      5,
-      8
-    ],
-    "ProductComposerIds": [
-      4,
-      15
-    ],
-    "PictureUrl1": "d23acffd-0fea-4eb9-9d21-aaf7102c72f9-0000.webp",
-    "PictureUrl2": "d23acffd-0fea-4eb9-9d21-aaf7102c72f9-0001.webp",
-    "PictureUrl3": "",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Lecture à vue de 1906 du Conservatoire",
-    "LongTitle": "Lecture à vue de 1906 du Conservatoire de Paris pour cor et piano",
-    "Instrumentation": "Horn, Piano",
-    "Price": 15,
-    "ProductTypeIds": [
-      2,
-      9
-    ],
-    "ProductComposerIds": [
-      5
-    ],
-    "PictureUrl1": "b6451bb2-da35-41ad-8ee5-5e1b691b3928-0000.webp",
-    "PictureUrl2": "b6451bb2-da35-41ad-8ee5-5e1b691b3928-0001.webp",
-    "PictureUrl3": "b6451bb2-da35-41ad-8ee5-5e1b691b3928-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "12 Études pour second cor, op. 57",
-    "LongTitle": "Douze Études pour second cor, op. 57",
-    "Instrumentation": "Horn",
-    "Price": 16,
-    "ProductTypeIds": [
-      10,
-      11
-    ],
-    "ProductComposerIds": [
-      6
-    ],
-    "PictureUrl1": "d2d90238-eb4b-4964-a17b-4dd6cfb554ed-0000.webp",
-    "PictureUrl2": "d2d90238-eb4b-4964-a17b-4dd6cfb554ed-0001.webp",
-    "PictureUrl3": "d2d90238-eb4b-4964-a17b-4dd6cfb554ed-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "12 Grands Caprices, op. 32",
-    "LongTitle": "Douze Grands Caprices pour le cor faisant suite aux Études et Préludes, op. 32",
-    "Instrumentation": "Horn",
-    "Price": 17,
-    "ProductTypeIds": [
-      11
-    ],
-    "ProductComposerIds": [
-      6
-    ],
-    "PictureUrl1": "f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0000.webp",
-    "PictureUrl2": "f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0001.webp",
-    "PictureUrl3": "f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0002.webp",
-    "PictureUrl4": "f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0003.webp",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "6 Mélodies",
-    "LongTitle": "6 Mélodies pour cor à pistons et piano",
-    "Instrumentation": "Piston Horn, Piano",
-    "Price": 18,
-    "ProductTypeIds": [
-      2
-    ],
-    "ProductComposerIds": [
-      14
-    ],
-    "PictureUrl1": "089b8409-7f68-4252-a8ee-1946f381ad2e-0000.webp",
-    "PictureUrl2": "089b8409-7f68-4252-a8ee-1946f381ad2e-0001.webp",
-    "PictureUrl3": "089b8409-7f68-4252-a8ee-1946f381ad2e-0002.webp",
-    "PictureUrl4": "089b8409-7f68-4252-a8ee-1946f381ad2e-0003.webp",
-    "PictureUrl5": "089b8409-7f68-4252-a8ee-1946f381ad2e-0004.webp"
-  },
-  {
-    "Title": "Grand Quatuor, op. 26",
-    "LongTitle": "Grand Quatuor pour quatre cors en différens tons, op. 26",
-    "Instrumentation": "4 Horns",
-    "Price": 19,
-    "ProductTypeIds": [
-      5,
-      12
-    ],
-    "ProductComposerIds": [
-      6
-    ],
-    "PictureUrl1": "0474c7ff-9eda-4770-a75d-b4f490d6c016-0000.webp",
-    "PictureUrl2": "0474c7ff-9eda-4770-a75d-b4f490d6c016-0001.webp",
-    "PictureUrl3": "0474c7ff-9eda-4770-a75d-b4f490d6c016-0002.webp",
-    "PictureUrl4": "0474c7ff-9eda-4770-a75d-b4f490d6c016-0003.webp",
-    "PictureUrl5": "0474c7ff-9eda-4770-a75d-b4f490d6c016-0004.webp"
-  },
-  {
-    "Title": "12 Grandes Études Brillantes, op. 43",
-    "LongTitle": "12 Grandes Études Brillantes pour le cor, op. 43",
-    "Instrumentation": "Horn",
-    "Price": 20,
-    "ProductTypeIds": [
-      10,
-      11
-    ],
-    "ProductComposerIds": [
-      6
-    ],
-    "PictureUrl1": "95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0000.webp",
-    "PictureUrl2": "95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0001.webp",
-    "PictureUrl3": "95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0002.webp",
-    "PictureUrl4": "95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0003.webp",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "La Choisy, XIV Concerto Comique",
-    "LongTitle": "La Choisy, XIV Concerto Comique pour le cors de chasse, musette, viele, flûte, violon avec la basse",
-    "Instrumentation": "Horn, Musette, Flute, Violin, Bass",
-    "Price": 21,
-    "ProductTypeIds": [
-      3
-    ],
-    "ProductComposerIds": [
-      3
-    ],
-    "PictureUrl1": "f0860def-70be-409c-966f-421bf4b52f07-0000.webp",
-    "PictureUrl2": "f0860def-70be-409c-966f-421bf4b52f07-0001.webp",
-    "PictureUrl3": "f0860def-70be-409c-966f-421bf4b52f07-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Étude",
-    "LongTitle": "Étude pour le cor à pistons, précédée des articles « Du Cor à Pistons » et « Des ressources du Cor à Pistons », extraits de l’Encyclopédie pittoresque de la musique",
-    "Instrumentation": "Horn, Piano",
-    "Price": 22,
-    "ProductTypeIds": [
-      2,
-      1
-    ],
-    "ProductComposerIds": [
-      7
-    ],
-    "PictureUrl1": "06a588d3-a4f1-44ca-9af8-ae40881d7f4d-0000.webp",
-    "PictureUrl2": "06a588d3-a4f1-44ca-9af8-ae40881d7f4d-0001.webp",
-    "PictureUrl3": "06a588d3-a4f1-44ca-9af8-ae40881d7f4d-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Méthode pour le cor chromatique",
-    "LongTitle": "Méthode pour le cor chromatique ou à pistons",
-    "Instrumentation": "Piston Horn",
-    "Price": 23,
-    "ProductTypeIds": [
-      13
-    ],
-    "ProductComposerIds": [
-      7
-    ],
-    "PictureUrl1": "6e6492a1-8149-4d43-a9be-ba32bdb5eb00-0000.webp",
-    "PictureUrl2": "6e6492a1-8149-4d43-a9be-ba32bdb5eb00-0001.webp",
-    "PictureUrl3": "6e6492a1-8149-4d43-a9be-ba32bdb5eb00-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Henri Chaussier : Oeuvre complète pour cor",
-    "LongTitle": "Fantaisie-Chasse pour cor d'harmonie avec accompagnement de piano (1881); Deux pièces pour cor d'harmonie avec accompagnement de piano (1882); Hérodiade, opéra de Jules Massenet - arrangement du prélude du 3ème acte pour cor et piano (1883); Andante et Rondo pour cor avec accompagnement de piano (1883); O Salutaris pour voix de contralto et cor en Fa avec accompagnement d'orgue (1885); Gavotte pour cor d'harmonie avec accompagnement de piano (1887); Élégie pour cor et harpe ou piano (1891); Le lillois à Paris (1898); Tableau synoptique des sons du cor (1884)",
-    "Instrumentation": "Horn, Piano, Harp, Organ, Contralto, 4 Horns",
-    "Price": 24,
-    "ProductTypeIds": [
-      1,
-      2,
-      5,
-      8,
-      12
-    ],
-    "ProductComposerIds": [
-      8,
-      17
-    ],
-    "PictureUrl1": "d576f2d7-5778-43f3-8081-9a44bf53b777-0000.webp",
-    "PictureUrl2": "D576f2d7-5778-43f3-8081-9a44bf53b777-0001.webp",
-    "PictureUrl3": "D576f2d7-5778-43f3-8081-9a44bf53b777-0002.webp",
-    "PictureUrl4": "D576f2d7-5778-43f3-8081-9a44bf53b777-0003.webp",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Offertoire (unfinished)",
-    "LongTitle": "Offertoire pour orgue et cor chromatique (inachevé)",
-    "Instrumentation": "Piston Horn, Organ",
-    "Price": 25,
-    "ProductTypeIds": [
-      5
-    ],
-    "ProductComposerIds": [
-      9
-    ],
-    "PictureUrl1": "70ef1c15-420c-4eba-a21d-e340b9494d30-0000.webp",
-    "PictureUrl2": "70ef1c15-420c-4eba-a21d-e340b9494d30-0001.webp",
-    "PictureUrl3": "70ef1c15-420c-4eba-a21d-e340b9494d30-0002.webp",
-    "PictureUrl4": "70ef1c15-420c-4eba-a21d-e340b9494d30-0003.webp",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Symphonie Concertante n° 1 (avec piano)",
-    "LongTitle": "Première Symphonie Concertante pour deux cors, réduction avec piano",
-    "Instrumentation": "2 Horns, Piano",
-    "Price": 26,
-    "ProductTypeIds": [
-      15
-    ],
-    "ProductComposerIds": [
-      10
-    ],
-    "PictureUrl1": "da590101-91c6-4ef0-b7e1-4e091e365128-0000.webp",
-    "PictureUrl2": "Da590101-91c6-4ef0-b7e1-4e091e365128-0001.webp",
-    "PictureUrl3": "Da590101-91c6-4ef0-b7e1-4e091e365128-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Symphonie Concertante n° 1",
-    "LongTitle": "Première Symphonie Concertante pour deux cors (partition d’orchestre et parties séparées)",
-    "Instrumentation": "2 Horns, Orchestra",
-    "Price": 27,
-    "ProductTypeIds": [
-      15
-    ],
-    "ProductComposerIds": [
-      10
-    ],
-    "PictureUrl1": "a06d2224-16d8-4355-8d3d-bc010cbd2ac7-0000.webp",
-    "PictureUrl2": "A06d2224-16d8-4355-8d3d-bc010cbd2ac7-0001.webp",
-    "PictureUrl3": "A06d2224-16d8-4355-8d3d-bc010cbd2ac7-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "Sérénade D. 920",
-    "LongTitle": "Sérénade D. 920 pour cor solo, 4 cors et accompagnement de piano. Arrangement de Claude Maury",
-    "Instrumentation": "5 Horns, Piano",
-    "Price": 28,
-    "ProductTypeIds": [
-      5,
-      8
-    ],
-    "ProductComposerIds": [
-      11,
-      15
-    ],
-    "PictureUrl1": "5c99aef4-c76c-4c0d-9c44-73ff4d331d04-0000.webp",
-    "PictureUrl2": "5c99aef4-c76c-4c0d-9c44-73ff4d331d04-0001.webp",
-    "PictureUrl3": "5c99aef4-c76c-4c0d-9c44-73ff4d331d04-0002.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "2 Solos et 1 Duo, op. 12",
-    "LongTitle": "Deux Solos et un Duo pour premier et second cors avec accompagnement de piano, op. 12 et op. 2 des Solos",
-    "Instrumentation": "2 Horns, Piano",
-    "Price": 29,
-    "ProductTypeIds": [
-      2,
-      5
-    ],
-    "ProductComposerIds": [
-      12
-    ],
-    "PictureUrl1": "3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0000.webp",
-    "PictureUrl2": "3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0001.webp",
-    "PictureUrl3": "3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0002.webp",
-    "PictureUrl4": "3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0003.webp",
-    "PictureUrl5": "3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0004.webp"
-  },
-  {
-    "Title": "3 Quatuors",
-    "LongTitle": "Trois quatuors pour cors « en différens Tons »",
-    "Instrumentation": "4 Horns",
-    "Price": 30,
-    "ProductTypeIds": [
-      5,
-      12
-    ],
-    "ProductComposerIds": [
-      13
-    ],
-    "PictureUrl1": "Trois quatuors pour cors en dif - Javault, Alexandre (1785-_)-1.webp",
-    "PictureUrl2": "Trois quatuors pour cors en dif - Javault, Alexandre (1785-_)-2.webp",
-    "PictureUrl3": "Trois quatuors pour cors en dif - Javault, Alexandre (1785-_)-3.webp",
-    "PictureUrl4": "",
-    "PictureUrl5": ""
-  },
-  {
-    "Title": "10 Vocalises de Panseron et Bordogni",
-    "LongTitle": "10 Vocalises arrangées pour le cor en fa avec accompagnement de piano, extraites de la « Méthode pour le cor chromatique ou à pistons » (1840)",
-    "Instrumentation": "Piston Horn, Piano",
-    "Price": 31,
-    "ProductTypeIds": [
-      2,
-      8
-    ],
-    "ProductComposerIds": [
-      7,
-      18,
-      19
-    ],
-    "PictureUrl1": "Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-1.webp",
-    "PictureUrl2": "Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-2.webp",
-    "PictureUrl3": "Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-3.webp",
-    "PictureUrl4": "Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-4.webp",
-    "PictureUrl5": "Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-5.webp"
-  }
+	{
+		"Title": "Romance, op. 43 bis",
+		"LongTitle": "Romance pour hautbois et cor (ou cor anglais) avec accompagnement de piano, op. 43 bis",
+		"Instrumentation": "Oboe, Horn (or English Horn), Piano",
+		"Price": 10.25,
+		"ProductTypeIds": [1, 5],
+		"ProductComposerIds": [1],
+		"PictureUrl1": "images/products/20538eec-39d2-407a-8217-ab8f51ad046f-0000.webp",
+		"PictureUrl2": "images/products/20538eec-39d2-407a-8217-ab8f51ad046f-0001.webp",
+		"PictureUrl3": "",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Sonate, op. 43",
+		"LongTitle": "Sonate pour cor et piano, op. 43 (ou violon ou alto ou violoncelle)",
+		"Instrumentation": "Horn (or Violin, or Viola, or Cello), Piano",
+		"Price": 11,
+		"ProductTypeIds": [2, 4],
+		"ProductComposerIds": [1],
+		"PictureUrl1": "images/products/bbec1094-5303-4f7a-bece-7e8883a1410d-0000.webp",
+		"PictureUrl2": "images/products/bbec1094-5303-4f7a-bece-7e8883a1410d-0001.webp",
+		"PictureUrl3": "images/products/bbec1094-5303-4f7a-bece-7e8883a1410d-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Fantaisie, op. 63",
+		"LongTitle": "Fantaisie pour piano et cor (ou violon) sur des thèmes de l’opéra d’Otello de Rossini, op. 63",
+		"Instrumentation": "Horn (or Violin), Piano",
+		"Price": 12,
+		"ProductTypeIds": [2],
+		"ProductComposerIds": [2, 16],
+		"PictureUrl1": "images/products/ac855c50-d8cb-403e-8091-408a7283a6d4-0000.webp",
+		"PictureUrl2": "images/products/ac855c50-d8cb-403e-8091-408a7283a6d4-0001.webp",
+		"PictureUrl3": "",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Divertissements",
+		"LongTitle": "Divertissements pour deux cors de chasse ou trompettes, qui conviennent au flûtes traversières, hautbois, flûtes à bec, violons et tambourins, oeuvre septième",
+		"Instrumentation": "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)",
+		"Price": 13,
+		"ProductTypeIds": [5, 7],
+		"ProductComposerIds": [3],
+		"PictureUrl1": "images/products/5544291f-e572-44e6-950a-4b3010d40f9b-0000.webp",
+		"PictureUrl2": "images/products/5544291f-e572-44e6-950a-4b3010d40f9b-0001.webp",
+		"PictureUrl3": "",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Danse des esprits bienheureux",
+		"LongTitle": "Danse des esprits bienheureux, extrait d’Orphée et Eurydice, arrangée pour cor et quatuor à cordes par Claude Maury",
+		"Instrumentation": "Horn, String Quartet",
+		"Price": 14,
+		"ProductTypeIds": [5, 8],
+		"ProductComposerIds": [4, 15],
+		"PictureUrl1": "images/products/d23acffd-0fea-4eb9-9d21-aaf7102c72f9-0000.webp",
+		"PictureUrl2": "images/products/d23acffd-0fea-4eb9-9d21-aaf7102c72f9-0001.webp",
+		"PictureUrl3": "",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Lecture à vue de 1906 du Conservatoire",
+		"LongTitle": "Lecture à vue de 1906 du Conservatoire de Paris pour cor et piano",
+		"Instrumentation": "Horn, Piano",
+		"Price": 15,
+		"ProductTypeIds": [2, 9],
+		"ProductComposerIds": [5],
+		"PictureUrl1": "images/products/b6451bb2-da35-41ad-8ee5-5e1b691b3928-0000.webp",
+		"PictureUrl2": "images/products/b6451bb2-da35-41ad-8ee5-5e1b691b3928-0001.webp",
+		"PictureUrl3": "images/products/b6451bb2-da35-41ad-8ee5-5e1b691b3928-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "12 Études pour second cor, op. 57",
+		"LongTitle": "Douze Études pour second cor, op. 57",
+		"Instrumentation": "Horn",
+		"Price": 16,
+		"ProductTypeIds": [10, 11],
+		"ProductComposerIds": [6],
+		"PictureUrl1": "images/products/d2d90238-eb4b-4964-a17b-4dd6cfb554ed-0000.webp",
+		"PictureUrl2": "images/products/d2d90238-eb4b-4964-a17b-4dd6cfb554ed-0001.webp",
+		"PictureUrl3": "images/products/d2d90238-eb4b-4964-a17b-4dd6cfb554ed-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "12 Grands Caprices, op. 32",
+		"LongTitle": "Douze Grands Caprices pour le cor faisant suite aux Études et Préludes, op. 32",
+		"Instrumentation": "Horn",
+		"Price": 17,
+		"ProductTypeIds": [11],
+		"ProductComposerIds": [6],
+		"PictureUrl1": "images/products/f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0000.webp",
+		"PictureUrl2": "images/products/f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0001.webp",
+		"PictureUrl3": "images/products/f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0002.webp",
+		"PictureUrl4": "images/products/f5f84859-ee0d-4715-9bbb-bb823e0c1aef-0003.webp",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "6 Mélodies",
+		"LongTitle": "6 Mélodies pour cor à pistons et piano",
+		"Instrumentation": "Piston Horn, Piano",
+		"Price": 18,
+		"ProductTypeIds": [2],
+		"ProductComposerIds": [14],
+		"PictureUrl1": "images/products/089b8409-7f68-4252-a8ee-1946f381ad2e-0000.webp",
+		"PictureUrl2": "images/products/089b8409-7f68-4252-a8ee-1946f381ad2e-0001.webp",
+		"PictureUrl3": "images/products/089b8409-7f68-4252-a8ee-1946f381ad2e-0002.webp",
+		"PictureUrl4": "images/products/089b8409-7f68-4252-a8ee-1946f381ad2e-0003.webp",
+		"PictureUrl5": "images/products/089b8409-7f68-4252-a8ee-1946f381ad2e-0004.webp"
+	},
+	{
+		"Title": "Grand Quatuor, op. 26",
+		"LongTitle": "Grand Quatuor pour quatre cors en différens tons, op. 26",
+		"Instrumentation": "4 Horns",
+		"Price": 19,
+		"ProductTypeIds": [5, 12],
+		"ProductComposerIds": [6],
+		"PictureUrl1": "images/products/0474c7ff-9eda-4770-a75d-b4f490d6c016-0000.webp",
+		"PictureUrl2": "images/products/0474c7ff-9eda-4770-a75d-b4f490d6c016-0001.webp",
+		"PictureUrl3": "images/products/0474c7ff-9eda-4770-a75d-b4f490d6c016-0002.webp",
+		"PictureUrl4": "images/products/0474c7ff-9eda-4770-a75d-b4f490d6c016-0003.webp",
+		"PictureUrl5": "images/products/0474c7ff-9eda-4770-a75d-b4f490d6c016-0004.webp"
+	},
+	{
+		"Title": "12 Grandes Études Brillantes, op. 43",
+		"LongTitle": "12 Grandes Études Brillantes pour le cor, op. 43",
+		"Instrumentation": "Horn",
+		"Price": 20,
+		"ProductTypeIds": [10, 11],
+		"ProductComposerIds": [6],
+		"PictureUrl1": "images/products/95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0000.webp",
+		"PictureUrl2": "images/products/95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0001.webp",
+		"PictureUrl3": "images/products/95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0002.webp",
+		"PictureUrl4": "images/products/95c4d10b-8da3-4edd-bd48-384d9c35bbc1-0003.webp",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "La Choisy, XIV Concerto Comique",
+		"LongTitle": "La Choisy, XIV Concerto Comique pour le cors de chasse, musette, viele, flûte, violon avec la basse",
+		"Instrumentation": "Horn, Musette, Flute, Violin, Bass",
+		"Price": 21,
+		"ProductTypeIds": [3],
+		"ProductComposerIds": [3],
+		"PictureUrl1": "images/products/f0860def-70be-409c-966f-421bf4b52f07-0000.webp",
+		"PictureUrl2": "images/products/f0860def-70be-409c-966f-421bf4b52f07-0001.webp",
+		"PictureUrl3": "images/products/f0860def-70be-409c-966f-421bf4b52f07-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Étude",
+		"LongTitle": "Étude pour le cor à pistons, précédée des articles « Du Cor à Pistons » et « Des ressources du Cor à Pistons », extraits de l’Encyclopédie pittoresque de la musique",
+		"Instrumentation": "Horn, Piano",
+		"Price": 22,
+		"ProductTypeIds": [2, 1],
+		"ProductComposerIds": [7],
+		"PictureUrl1": "images/products/06a588d3-a4f1-44ca-9af8-ae40881d7f4d-0000.webp",
+		"PictureUrl2": "images/products/06a588d3-a4f1-44ca-9af8-ae40881d7f4d-0001.webp",
+		"PictureUrl3": "images/products/06a588d3-a4f1-44ca-9af8-ae40881d7f4d-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Méthode pour le cor chromatique",
+		"LongTitle": "Méthode pour le cor chromatique ou à pistons",
+		"Instrumentation": "Piston Horn",
+		"Price": 23,
+		"ProductTypeIds": [13],
+		"ProductComposerIds": [7],
+		"PictureUrl1": "images/products/6e6492a1-8149-4d43-a9be-ba32bdb5eb00-0000.webp",
+		"PictureUrl2": "images/products/6e6492a1-8149-4d43-a9be-ba32bdb5eb00-0001.webp",
+		"PictureUrl3": "images/products/6e6492a1-8149-4d43-a9be-ba32bdb5eb00-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Henri Chaussier : Oeuvre complète pour cor",
+		"LongTitle": "Fantaisie-Chasse pour cor d'harmonie avec accompagnement de piano (1881); Deux pièces pour cor d'harmonie avec accompagnement de piano (1882); Hérodiade, opéra de Jules Massenet - arrangement du prélude du 3ème acte pour cor et piano (1883); Andante et Rondo pour cor avec accompagnement de piano (1883); O Salutaris pour voix de contralto et cor en Fa avec accompagnement d'orgue (1885); Gavotte pour cor d'harmonie avec accompagnement de piano (1887); Élégie pour cor et harpe ou piano (1891); Le lillois à Paris (1898); Tableau synoptique des sons du cor (1884)",
+		"Instrumentation": "Horn, Piano, Harp, Organ, Contralto, 4 Horns",
+		"Price": 24,
+		"ProductTypeIds": [1, 2, 5, 8, 12],
+		"ProductComposerIds": [8, 17],
+		"PictureUrl1": "images/products/d576f2d7-5778-43f3-8081-9a44bf53b777-0000.webp",
+		"PictureUrl2": "images/products/D576f2d7-5778-43f3-8081-9a44bf53b777-0001.webp",
+		"PictureUrl3": "images/products/D576f2d7-5778-43f3-8081-9a44bf53b777-0002.webp",
+		"PictureUrl4": "images/products/D576f2d7-5778-43f3-8081-9a44bf53b777-0003.webp",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Offertoire (unfinished)",
+		"LongTitle": "Offertoire pour orgue et cor chromatique (inachevé)",
+		"Instrumentation": "Piston Horn, Organ",
+		"Price": 25,
+		"ProductTypeIds": [5],
+		"ProductComposerIds": [9],
+		"PictureUrl1": "images/products/70ef1c15-420c-4eba-a21d-e340b9494d30-0000.webp",
+		"PictureUrl2": "images/products/70ef1c15-420c-4eba-a21d-e340b9494d30-0001.webp",
+		"PictureUrl3": "images/products/70ef1c15-420c-4eba-a21d-e340b9494d30-0002.webp",
+		"PictureUrl4": "images/products/70ef1c15-420c-4eba-a21d-e340b9494d30-0003.webp",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Symphonie Concertante n° 1 (avec piano)",
+		"LongTitle": "Première Symphonie Concertante pour deux cors, réduction avec piano",
+		"Instrumentation": "2 Horns, Piano",
+		"Price": 26,
+		"ProductTypeIds": [15],
+		"ProductComposerIds": [10],
+		"PictureUrl1": "images/products/da590101-91c6-4ef0-b7e1-4e091e365128-0000.webp",
+		"PictureUrl2": "images/products/Da590101-91c6-4ef0-b7e1-4e091e365128-0001.webp",
+		"PictureUrl3": "images/products/Da590101-91c6-4ef0-b7e1-4e091e365128-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Symphonie Concertante n° 1",
+		"LongTitle": "Première Symphonie Concertante pour deux cors (partition d’orchestre et parties séparées)",
+		"Instrumentation": "2 Horns, Orchestra",
+		"Price": 27,
+		"ProductTypeIds": [15],
+		"ProductComposerIds": [10],
+		"PictureUrl1": "images/products/a06d2224-16d8-4355-8d3d-bc010cbd2ac7-0000.webp",
+		"PictureUrl2": "images/products/A06d2224-16d8-4355-8d3d-bc010cbd2ac7-0001.webp",
+		"PictureUrl3": "images/products/A06d2224-16d8-4355-8d3d-bc010cbd2ac7-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "Sérénade D. 920",
+		"LongTitle": "Sérénade D. 920 pour cor solo, 4 cors et accompagnement de piano. Arrangement de Claude Maury",
+		"Instrumentation": "5 Horns, Piano",
+		"Price": 28,
+		"ProductTypeIds": [5, 8],
+		"ProductComposerIds": [11, 15],
+		"PictureUrl1": "images/products/5c99aef4-c76c-4c0d-9c44-73ff4d331d04-0000.webp",
+		"PictureUrl2": "images/products/5c99aef4-c76c-4c0d-9c44-73ff4d331d04-0001.webp",
+		"PictureUrl3": "images/products/5c99aef4-c76c-4c0d-9c44-73ff4d331d04-0002.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "2 Solos et 1 Duo, op. 12",
+		"LongTitle": "Deux Solos et un Duo pour premier et second cors avec accompagnement de piano, op. 12 et op. 2 des Solos",
+		"Instrumentation": "2 Horns, Piano",
+		"Price": 29,
+		"ProductTypeIds": [2, 5],
+		"ProductComposerIds": [12],
+		"PictureUrl1": "images/products/3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0000.webp",
+		"PictureUrl2": "images/products/3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0001.webp",
+		"PictureUrl3": "images/products/3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0002.webp",
+		"PictureUrl4": "images/products/3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0003.webp",
+		"PictureUrl5": "images/products/3b47e1f4-abb8-4cae-8ae6-87b11a0d5d99-0004.webp"
+	},
+	{
+		"Title": "3 Quatuors",
+		"LongTitle": "Trois quatuors pour cors « en différens Tons »",
+		"Instrumentation": "4 Horns",
+		"Price": 30,
+		"ProductTypeIds": [5, 12],
+		"ProductComposerIds": [13],
+		"PictureUrl1": "images/products/Trois quatuors pour cors en dif - Javault, Alexandre (1785-_)-1.webp",
+		"PictureUrl2": "images/products/Trois quatuors pour cors en dif - Javault, Alexandre (1785-_)-2.webp",
+		"PictureUrl3": "images/products/Trois quatuors pour cors en dif - Javault, Alexandre (1785-_)-3.webp",
+		"PictureUrl4": "",
+		"PictureUrl5": ""
+	},
+	{
+		"Title": "10 Vocalises de Panseron et Bordogni",
+		"LongTitle": "10 Vocalises arrangées pour le cor en fa avec accompagnement de piano, extraites de la « Méthode pour le cor chromatique ou à pistons » (1840)",
+		"Instrumentation": "Piston Horn, Piano",
+		"Price": 31,
+		"ProductTypeIds": [2, 8],
+		"ProductComposerIds": [7, 18, 19],
+		"PictureUrl1": "images/products/Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-1.webp",
+		"PictureUrl2": "images/products/Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-2.webp",
+		"PictureUrl3": "images/products/Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-3.webp",
+		"PictureUrl4": "images/products/Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-4.webp",
+		"PictureUrl5": "images/products/Vocalises [10] pour cor et pian - Meifred, Joseph (1791-1867)-5.webp"
+	}
 ]
