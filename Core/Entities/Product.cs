@@ -11,8 +11,8 @@ namespace Core.Entities
         public string PictureUrl3 { get; set; }
         public string PictureUrl4 { get; set; }
         public string PictureUrl5 { get; set; }
-        public ICollection<ProductComposer> ProductComposers { get; set; }
-        public ICollection<ProductType> ProductTypes { get; set; }
+        public ICollection<ProductComposer> ProductComposers { get; set; } = new List<ProductComposer>();
+        public ICollection<ProductType> ProductTypes { get; set; } = new List<ProductType>();
 
     }
 } 

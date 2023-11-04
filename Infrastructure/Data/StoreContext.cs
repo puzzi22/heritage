@@ -21,33 +21,33 @@ namespace Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Configure the many-to-many relationship for Product and ProductComposer
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.ProductComposers)
-                .WithMany(c => c.Products);
+                .WithMany(pc => pc.Products)
+                .UsingEntity(j => j.ToTable("ProductProductComposer"));
 
+            // Configure the many-to-many relationship for Product and ProductType
             modelBuilder.Entity<Product>()
                 .HasMany(p => p.ProductTypes)
-                .WithMany(pt => pt.Products);
+                .WithMany(pt => pt.Products)
+                .UsingEntity(j => j.ToTable("ProductProductType"));
 
             modelBuilder.Entity<Product>()
                 .Property(p => p.PictureUrl1)
                 .IsRequired();
 
             modelBuilder.Entity<Product>()
-                .Property(p => p.PictureUrl2)
-                .IsRequired();
+                .Property(p => p.PictureUrl2);
 
             modelBuilder.Entity<Product>()
-                .Property(p => p.PictureUrl3)
-                .IsRequired();
+                .Property(p => p.PictureUrl3);
 
             modelBuilder.Entity<Product>()
-                .Property(p => p.PictureUrl4)
-                .IsRequired();
+                .Property(p => p.PictureUrl4);
 
             modelBuilder.Entity<Product>()
-                .Property(p => p.PictureUrl5)
-                .IsRequired();
+                .Property(p => p.PictureUrl5);
         }
     }
 }

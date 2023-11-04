@@ -105,7 +105,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("ProductProductComposer");
+                    b.ToTable("ProductProductComposer", (string)null);
                 });
 
             modelBuilder.Entity("ProductProductType", b =>
@@ -120,7 +120,7 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("ProductProductType");
+                    b.ToTable("ProductProductType", (string)null);
                 });
 
             modelBuilder.Entity("ProductProductComposer", b =>
