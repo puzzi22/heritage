@@ -12,13 +12,13 @@ namespace Infrastructure.Data.Config
             builder.Property(p => p.Title).IsRequired().HasMaxLength(100);
             builder.Property(p => p.LongTitle).IsRequired().HasMaxLength(180);
             builder.Property(p => p.Instrumentation).IsRequired();
-            builder.Property(p => p.Price).HasColumnType("decimal(18,2)");
+            builder.Property(p => p.Price).IsRequired().HasColumnType("decimal(18,2)");
 
             builder.Property(p => p.PictureUrl1).IsRequired();
-            builder.Property(p => p.PictureUrl2).IsRequired();
-            builder.Property(p => p.PictureUrl3).IsRequired();
-            builder.Property(p => p.PictureUrl4).IsRequired();
-            builder.Property(p => p.PictureUrl5).IsRequired();
+            builder.Property(p => p.PictureUrl2);
+            builder.Property(p => p.PictureUrl3);
+            builder.Property(p => p.PictureUrl4);
+            builder.Property(p => p.PictureUrl5);
 
             // Many-to-Many relationship configurations
             builder.HasMany(p => p.ProductComposers)
