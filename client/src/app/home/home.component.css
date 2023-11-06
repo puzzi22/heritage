@@ -1,0 +1,9 @@
+.featured {
+  height: 250px;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 600px;
+}/*# sourceMappingURL=home.component.css.map */
