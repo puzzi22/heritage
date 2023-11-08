@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, forkJoin, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ProductComposerDto } from '../interfaces/ProductComposerDto';
+import { ProductTypeDto } from '../interfaces/ProductTypeDto';
 import { Basket, BasketItem, BasketTotals } from '../shared/models/basket';
 import { Product } from '../shared/models/product';
 
@@ -15,7 +17,21 @@ export class BasketService {
   private basketTotalSource = new BehaviorSubject<BasketTotals | null>(null);
   basketTotalSource$ = this.basketTotalSource.asObservable();
 
+  // Add new properties for composers and types
+  private composers: ProductComposerDto[] = [];
+  private productTypes: ProductTypeDto[] = [];
+
   constructor(private http: HttpClient) {}
+
+  getProductComposers() {
+    return this.http.get<ProductComposerDto[]>(
+      this.baseUrl + 'products/composers'
+    );
+  }
+
+  getProductTypes() {
+    return this.http.get<ProductTypeDto[]>(this.baseUrl + 'products/types');
+  }
 
   getBasket(id: string) {
     return this.http.get<Basket>(this.baseUrl + 'basket?id=' + id).subscribe({
@@ -40,10 +56,22 @@ export class BasketService {
   }
 
   addItemToBasket(item: Product | BasketItem, quantity = 1) {
-    if (this.isProduct(item)) item = this.mapProductItemToBasketItem(item);
     const basket = this.getCurrentBasketValue() ?? this.createBasket();
-    basket.items = this.addOrUpdateItem(basket.items, item, quantity);
-    this.setBasket(basket);
+    if (this.isProduct(item)) {
+      this.mapProductItemToBasketItem(item).subscribe(
+        (itemToAdd: BasketItem) => {
+          basket.items = this.addOrUpdateItem(
+            basket.items,
+            itemToAdd,
+            quantity
+          );
+          this.setBasket(basket);
+        }
+      );
+    } else {
+      basket.items = this.addOrUpdateItem(basket.items, item, quantity);
+      this.setBasket(basket);
+    }
   }
 
   removeItemFromBasket(id: number, quantity = 1) {
@@ -89,16 +117,43 @@ export class BasketService {
     return basket;
   }
 
-  private mapProductItemToBasketItem(item: Product): BasketItem {
-    return {
-      id: item.id,
-      title: item.title,
-      price: item.price,
-      quantity: 0,
-      pictureUrl1: item.pictureUrl1,
-      productComposers: item.productComposerIds,
-      productTypes: item.productTypeIds,
-    };
+  getFullName(composer: ProductComposerDto): string {
+    return `${composer.firstName} ${composer.lastName}`;
+  }
+
+  private mapProductItemToBasketItem(item: Product): Observable<BasketItem> {
+    // Fetch composers and types
+    const composers$ = this.getProductComposers();
+    const types$ = this.getProductTypes();
+
+    return forkJoin({ composers: composers$, types: types$ }).pipe(
+      map((data) => {
+        const { composers, types } = data;
+
+        // Map the product composer IDs and type IDs to their full names
+        const composerNames = item.productComposerIds
+          .map((id) => {
+            const composer = composers.find((c) => c.id === id);
+            return composer ? this.getFullName(composer) : null;
+          })
+          .filter((name) => name !== null) as string[];
+
+        const typeNames = item.productTypeIds
+          .map((id) => types.find((t) => t.id === id)?.name)
+          .filter((name): name is string => !!name); // Ensures that undefined values are filtered out and that the result is an array of strings.
+
+        // Return a new BasketItem with all necessary transformations
+        return {
+          id: item.id,
+          productName: item.title, // Adjusted to match the BasketItem interface.
+          price: item.price,
+          quantity: 0,
+          pictureUrl: item.pictureUrl1, // Adjusted to match the BasketItem interface.
+          composerNames, // This is already filtered to be string[]
+          typeNames, // This is already filtered to be string[]
+        };
+      })
+    );
   }
 
   private calculateTotals() {

@@ -22,19 +22,22 @@
                 <th>
                   <div class="p-2 d-inline-block">
                     <img
-                      src="{{ item.pictureUrl1 }}"
-                      alt="{{ item.title }}"
+                      src="{{ item.pictureUrl }}"
+                      alt="{{ item.productName }}"
                       class="img-fluid"
                       style="max-height: 50px"
                     />
                     <div class="ms-3 d-inline-block align-middle">
                       <h5 class="mb-0">
-                        <a routerLink="/shop/{{item.id}}" class="text-dark text-decoration-none">
-                          {{ item.title }}
+                        <a
+                          routerLink="/shop/{{ item.id }}"
+                          class="text-dark text-decoration-none"
+                        >
+                          {{ item.productName }}
                         </a>
                       </h5>
                       <span class="text-muted fst-italic">
-                        Type: {{ item.productTypes }}
+                        {{ item.composerNames.join(", ") }}
                       </span>
                     </div>
                   </div>
@@ -46,12 +49,10 @@
                   <div class="d-flex align-items-center">
                     <i
                       class="fa fa-minus-circle text-warning me-2"
-                      style="cursor: pointer"
+                      style="cursor: pointer; font-size: 2em"
                       (click)="removeItem(item.id, 1)"
                     ></i>
-                    <strong style="font-size: 1.5em; font-size: 2em">{{
-                      item.quantity
-                    }}</strong>
+                    <strong>{{ item.quantity }}</strong>
                     <i
                       class="fa fa-plus-circle text-warning mx-2"
                       style="cursor: pointer; font-size: 2em"
