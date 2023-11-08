@@ -1,6 +1,7 @@
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
+using Core.Entities.Identity;
 
 namespace API.Helpers
 {
@@ -20,6 +21,8 @@ namespace API.Helpers
             // Additional mapping configuration for ProductTypes and ProductComposers
             CreateMap<ProductComposer, ProductComposerDto>();
             CreateMap<ProductType, ProductTypeDto>();
+
+            CreateMap<Address, AddressDto>().ReverseMap();
         }
     }
 }
