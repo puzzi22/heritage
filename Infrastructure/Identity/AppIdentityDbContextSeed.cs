@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Core.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 
@@ -11,7 +7,7 @@ namespace Infrastructure.Identity
     {
         public static async Task SeedUsersAsync(UserManager<AppUser> userManager)
         {
-            if(!userManager.Users.Any())
+            if (!userManager.Users.Any())
             {
                 var user = new AppUser
                 {
@@ -22,10 +18,10 @@ namespace Infrastructure.Identity
                     {
                         FirstName = "Bob",
                         LastName = "Bobbity",
-                        Street = "10 The Street",
+                        Street = "10 The street",
                         City = "New York",
                         State = "NY",
-                        ZipCode = "90210"
+                        Zipcode = "90210"
                     }
                 };
 

@@ -2,7 +2,7 @@ using Core.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Identity
+namespace Infrastructure.Data.Identity
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
@@ -14,6 +14,5 @@ namespace Infrastructure.Identity
         {
             base.OnModelCreating(builder);
         }
-
     }
 }
