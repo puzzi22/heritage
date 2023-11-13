@@ -145,10 +145,10 @@ export class BasketService {
         // Return a new BasketItem with all necessary transformations
         return {
           id: item.id,
-          productName: item.title, // Adjusted to match the BasketItem interface.
+          productTitle: item.title, // Adjusted to match the BasketItem interface.
           price: item.price,
           quantity: 0,
-          pictureUrl: item.pictureUrl1, // Adjusted to match the BasketItem interface.
+          pictureUrl1: item.pictureUrl1, // Adjusted to match the BasketItem interface.
           composerNames, // This is already filtered to be string[]
           typeNames, // This is already filtered to be string[]
         };

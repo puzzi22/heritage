@@ -2,10 +2,10 @@ import * as cuid from 'cuid';
 
 export interface BasketItem {
   id: number;
-  productName: string; // This should match your TypeScript model.
+  productTitle: string; // This should match your TypeScript model.
   price: number;
   quantity: number;
-  pictureUrl: string; // Make sure this matches your model.
+  pictureUrl1: string; // Make sure this matches your model.
   composerNames: string[];
   typeNames: string[];
 }
