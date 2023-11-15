@@ -9,7 +9,7 @@
     </div>
     <div class="col-6 mt-5">
       <h2>{{ product.title }}</h2>
-      <p>{{ product.price | currency }}</p>
+      <p>{{ product.price | currency : "EUR" }}</p>
       <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
         You have {{ quantityInBasket }} of this item in your basket
       </h5>
