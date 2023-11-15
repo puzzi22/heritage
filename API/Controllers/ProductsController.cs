@@ -36,6 +36,7 @@ namespace API.Controllers
             _urlResolver = new ProductUrlResolver(config); // Instantiate ProductUrlResolver with the config
         }
 
+        [Cached(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery] ProductSpecParams productParams)
         {
@@ -56,6 +57,7 @@ namespace API.Controllers
             return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
         }
 
+        [Cached(600)]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -75,6 +77,7 @@ namespace API.Controllers
             return productDto;
         }
 
+        [Cached(600)]
         [HttpGet("composers")]
         public async Task<ActionResult<IReadOnlyList<ProductComposerDto>>> GetProductComposers()
         {
@@ -82,6 +85,7 @@ namespace API.Controllers
             return Ok(_mapper.Map<IReadOnlyList<ProductComposer>, IReadOnlyList<ProductComposerDto>>(composers));
         }
 
+        [Cached(600)]
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
         {
