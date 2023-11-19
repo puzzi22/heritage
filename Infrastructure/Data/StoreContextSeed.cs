@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using Core.Entities;
+using Core.Entities.OrderAggregate;
 using Shared.Dtos;
 
 namespace Infrastructure.Data
@@ -49,6 +50,14 @@ namespace Infrastructure.Data
                     };
                     context.Products.Add(product);
                 }
+                await context.SaveChangesAsync();
+            }
+
+            if (!context.DeliveryMethods.Any())
+            {
+                var deliveryData = File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
+                var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+                context.DeliveryMethods.AddRange(methods);
                 await context.SaveChangesAsync();
             }
         }
