@@ -1,9 +1,9 @@
-import { Address } from "./user"
+import { Address } from './user';
 
 export interface OrderToCreate {
-    basketId: string;
-    deliveryMethodId: number;
-    shipToAddress: Address;
+  basketId: string;
+  deliveryMethodId: number;
+  shipToAddress: Address;
 }
 
 export interface OrderItem {
@@ -14,16 +14,14 @@ export interface OrderItem {
   quantity: number;
 }
 export interface Order {
-    id: number;
-    buyerEmail: string;
-    orderDate: Date;
-    shipToAddress: Address;
-    deliveryMethod: string;
-    shippingPrice: number;
-    orderItems: OrderItem[];
-    subtotal: number;
-    total: number;
-    status: string;
-  }
-  
-  
+  id: number;
+  buyerEmail: string;
+  orderDate: Date;
+  shipToAddress: Address;
+  deliveryMethod: string;
+  shippingPrice: number;
+  orderItems: OrderItem[];
+  subtotal: number;
+  total: number;
+  status: string;
+}
