@@ -9,13 +9,13 @@
                 <th scope="col" class="border-0 bg-light">
                   <div class="p-2 text-uppercase">Product</div>
                 </th>
-                <th scope="col" class="border-0 bg-light">
+                <th scope="col" class="border-0 bg-light text-center">
                   <div class="py-2 text-uppercase">Price</div>
                 </th>
-                <th scope="col" class="border-0 bg-light">
+                <th scope="col" class="border-0 bg-light text-center">
                   <div class="py-2 text-uppercase">Quantity</div>
                 </th>
-                <th scope="col" class="border-0 bg-light">
+                <th scope="col" class="border-0 bg-light text-center">
                   <div class="py-2 text-uppercase">Total</div>
                 </th>
               </tr>
@@ -37,14 +37,16 @@
                     </div>
                   </div>
                 </th>
-                <td class="align-middle">
-                  <strong>{{ item.price | currency }}</strong>
+                <td class="align-middle text-center">
+                  <strong>{{ item.price | currency:'EUR' }}</strong>
                 </td>
-                <td class="align-middle">
-                  <span class="font-weight-bold px-2">{{ item.quantity }}</span>
+                <td class="align-middle text-center">
+                  <strong class="font-weight-bold px-2">{{
+                    item.quantity
+                  }}</strong>
                 </td>
-                <td class="align-middle">
-                  <strong>{{ item.price * item.quantity | currency }}</strong>
+                <td class="align-middle text-center">
+                  <strong>{{ item.price * item.quantity | currency:'EUR' }}</strong>
                 </td>
               </tr>
             </tbody>
@@ -60,15 +62,15 @@
         <ul class="list-unstyled mb-1">
           <li class="d-flex justify-content-between py-3 border-bottom">
             <strong class="text-muted">Order subtotal</strong>
-            <strong>{{ order.subtotal | currency }}</strong>
+            <strong>{{ order.subtotal | currency:'EUR' }}</strong>
           </li>
           <li class="d-flex justify-content-between py-3 border-bottom">
             <strong class="text-muted">Shipping and handling</strong>
-            <strong>{{ order.shippingPrice | currency }}</strong>
+            <strong>{{ order.shippingPrice | currency:'EUR' }}</strong>
           </li>
           <li class="d-flex justify-content-between py-3 border-bottom">
             <strong class="text-muted">Total</strong>
-            <strong>{{ order.total | currency }}</strong>
+            <strong>{{ order.total | currency:'EUR' }}</strong>
           </li>
         </ul>
       </div>

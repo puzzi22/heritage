@@ -8,7 +8,6 @@ import { Order } from 'src/app/shared/models/order';
 })
 export class CheckoutSuccessComponent {
   order?: Order;
-
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
     this.order = navigation?.extras?.state as Order;

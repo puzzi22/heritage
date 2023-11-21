@@ -40,7 +40,7 @@
           </div>
         </th>
         <td class="align-middle">
-          <strong>{{ item.price | currency }}</strong>
+          <strong>{{ item.price | currency : "EUR" }}</strong>
         </td>
         <td class="align-middle">
           <div
@@ -63,7 +63,7 @@
           </div>
         </td>
         <td class="align-middle">
-          <strong>{{ item.price * item.quantity | currency }}</strong>
+          <strong>{{ item.price * item.quantity | currency : "EUR" }}</strong>
         </td>
         <td *ngIf="isBasket" class="align-middle">
           <a class="text-danger">
