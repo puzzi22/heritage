@@ -20,8 +20,8 @@ namespace Infrastructure.Identity
                         LastName = "Bobbity",
                         Street = "10 The street",
                         City = "New York",
-                        State = "NY",
-                        Zipcode = "90210"
+                        Zipcode = "90210",
+                        Country = "United States",
                     }
                 };
 

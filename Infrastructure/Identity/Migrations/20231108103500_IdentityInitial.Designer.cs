@@ -40,7 +40,7 @@ namespace Infrastructure.Identity.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("State")
+                    b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Street")

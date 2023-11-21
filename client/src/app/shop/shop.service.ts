@@ -84,16 +84,24 @@ export class ShopService {
   getComposers() {
     if (this.composers.length > 0) return of(this.composers);
 
-    return this.http
-      .get<Composer[]>(this.baseUrl + 'products/composers')
-      .pipe(map((composers) => (this.composers = composers)));
+    return this.http.get<Composer[]>(this.baseUrl + 'products/composers').pipe(
+      map((composers) => {
+        this.composers = composers.sort((a, b) =>
+          a.lastName.localeCompare(b.lastName)
+        );
+        return this.composers;
+      })
+    );
   }
 
   getTypes() {
     if (this.types.length > 0) return of(this.types);
 
-    return this.http
-      .get<Type[]>(this.baseUrl + 'products/types')
-      .pipe(map((types) => (this.types = types)));
+    return this.http.get<Type[]>(this.baseUrl + 'products/types').pipe(
+      map((types) => {
+        this.types = types.sort((a, b) => a.name.localeCompare(b.name));
+        return this.types;
+      })
+    );
   }
 }
