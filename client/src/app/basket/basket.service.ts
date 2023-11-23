@@ -25,14 +25,16 @@ export class BasketService {
   constructor(private http: HttpClient) {}
 
   createPaymentIntent() {
-    return this.http.post<Basket>(
-      this.baseUrl + 'payments/' + this.getCurrentBasketValue()?.id,
-      {}
-    ).pipe(
-      map(basket => {
-        this.basketSource.next(basket);
-      })
-    )
+    return this.http
+      .post<Basket>(
+        this.baseUrl + 'payments/' + this.getCurrentBasketValue()?.id,
+        {}
+      )
+      .pipe(
+        map((basket) => {
+          this.basketSource.next(basket);
+        })
+      );
   }
 
   setShippingPrice(deliveryMethod: DeliveryMethod) {
@@ -186,7 +188,11 @@ export class BasketService {
     if (!basket) return;
     const subtotal = basket.items.reduce((a, b) => b.price * b.quantity + a, 0);
     const total = subtotal + basket.shippingPrice;
-    this.basketTotalSource.next({ shipping: basket.shippingPrice, total, subtotal });
+    this.basketTotalSource.next({
+      shipping: basket.shippingPrice,
+      total,
+      subtotal,
+    });
   }
 
   private isProduct(item: Product | BasketItem): item is Product {
