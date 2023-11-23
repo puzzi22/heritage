@@ -17,6 +17,7 @@
                 [src]="selectedImage"
                 [alt]="product.title"
                 class="img-fluid"
+                (click)="openModal(selectedImage)"
               />
             </ng-template>
           </owl-carousel-o>
@@ -72,6 +73,12 @@
         <h4>Description</h4>
         <p>{{ product.longTitle }}</p>
       </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="isImageZoomed" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img [src]="zoomedImage" class="zoomed-image" />
     </div>
   </div>
 </div>

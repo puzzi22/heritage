@@ -19,6 +19,9 @@ export class ProductDetailsComponent implements OnInit {
   selectedImage: string = '';
   selectedImageIndex: number = 0;
 
+  isImageZoomed = false;
+  zoomedImage = '';
+
   @ViewChild('mainCarousel') mainCarousel: any; // or OwlCarouselOComponent if appropriate
 
   constructor(
@@ -73,6 +76,16 @@ export class ProductDetailsComponent implements OnInit {
     this.selectedImageIndex = index;
     this.selectedImage = this.imageUrls[index];
     this.cdr.detectChanges(); // Manually trigger change detection
+  }
+
+  openModal(imageSrc: string) {
+    this.zoomedImage = imageSrc;
+    this.isImageZoomed = true;
+    // this.cdr.detectChanges(); // Manually trigger change detection
+  }
+
+  closeModal() {
+    this.isImageZoomed = false;
   }
 
   incrementQuantity() {
