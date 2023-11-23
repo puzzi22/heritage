@@ -12,10 +12,12 @@ namespace Core.Specifications
         {
             public ProductsWithTypesAndComposersSpecification(ProductSpecParams productParams)
                 : base(x => 
-                    (string.IsNullOrEmpty(productParams.Search) || x.Title.ToLower().Contains(productParams.Search) || 
-                        x.LongTitle.ToLower().Contains(productParams.Search)) &&
-                    (!productParams.ComposerId.HasValue || x.ProductComposers.Any(pc => pc.Id == productParams.ComposerId)) &&
-                    (!productParams.TypeId.HasValue || x.ProductTypes.Any(pt => pt.Id == productParams.TypeId))
+                    (string.IsNullOrEmpty(productParams.Search) || 
+                    x.Title.ToLower().Contains(productParams.Search) || 
+                    x.LongTitle.ToLower().Contains(productParams.Search) ||
+                    x.Instrumentation.ToLower().Contains(productParams.Search)) ||
+                    x.ProductComposers.Any(pc => pc.LastName.ToLower().Contains(productParams.Search) || pc.FirstName.ToLower().Contains(productParams.Search)) || // Search in ProductComposer names
+                    x.ProductTypes.Any(pt => pt.Name.ToLower().Contains(productParams.Search)) // Search in ProductType names
                 )
             {
                 AddInclude(x => x.ProductTypes);
