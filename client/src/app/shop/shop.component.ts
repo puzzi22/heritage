@@ -1,5 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { Composer } from '../shared/models/composer';
 import { Product } from '../shared/models/product';
 import { ShopParams } from '../shared/models/shopParams';
@@ -23,6 +25,7 @@ export class ShopComponent implements OnInit {
     { name: 'Price: High to low', value: 'priceDesc' },
   ];
   totalCount = 0;
+  private searchUpdated = new Subject<string>();
 
   constructor(
     private shopService: ShopService,
@@ -35,6 +38,14 @@ export class ShopComponent implements OnInit {
     this.getProducts();
     this.getComposers();
     this.getTypes();
+
+    this.searchUpdated
+      .pipe(
+        debounceTime(500) // 300 ms debounce time
+      )
+      .subscribe((value) => {
+        this.onSearchChange(value);
+      });
   }
 
   getProducts() {
@@ -112,6 +123,20 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
+  }
+
+  onSearchChange(searchValue: string): void {
+    // Implement your search logic here
+    // For example, update the search parameter and fetch products
+    const params = this.shopService.getShopParams();
+    params.search = searchValue;
+    params.pageNumber = 1; // Reset to the first page
+    this.shopService.setShopParams(params);
+    this.getProducts();
+  }
+
+  onKeyUp(searchValue: string) {
+    this.searchUpdated.next(searchValue);
   }
 
   onReset() {

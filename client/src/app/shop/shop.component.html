@@ -47,7 +47,7 @@
 
         <div class="d-flex mt-2">
           <input
-            (keyup.enter)="onSearch()"
+            (keyup)="onKeyUp(search.value)"
             type="text"
             placeholder="Search"
             class="form-control me-2"
