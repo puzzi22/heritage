@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Composer } from '../shared/models/composer';
 import { Product } from '../shared/models/product';
@@ -23,7 +24,10 @@ export class ShopComponent implements OnInit {
   ];
   totalCount = 0;
 
-  constructor(private shopService: ShopService) {
+  constructor(
+    private shopService: ShopService,
+    private viewportScroller: ViewportScroller
+  ) {
     this.shopParams = shopService.getShopParams();
   }
 
@@ -68,6 +72,7 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
+    this.scrollToTop(); // Scrolls to the top after applying the filter
   }
 
   onTypeSelected(typeId: number) {
@@ -77,6 +82,7 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
+    this.scrollToTop(); // Scrolls to the top after applying the filter
   }
 
   onSortSelected(event: any) {
@@ -85,6 +91,7 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
+    this.scrollToTop(); // Scrolls to the top after applying the filter
   }
 
   onPageChanged(event: any) {
@@ -94,6 +101,7 @@ export class ShopComponent implements OnInit {
       this.shopService.setShopParams(params);
       this.shopParams = params;
       this.getProducts();
+      this.scrollToTop(); // Scrolls to the top after applying the filter
     }
   }
 
@@ -111,5 +119,9 @@ export class ShopComponent implements OnInit {
     const params = new ShopParams();
     this.shopService.setShopParams(params);
     this.getProducts();
+  }
+
+  scrollToTop() {
+    this.viewportScroller.scrollToPosition([0, 0]);
   }
 }
