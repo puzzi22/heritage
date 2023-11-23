@@ -1,15 +1,47 @@
 <div class="container">
   <div class="row" *ngIf="product">
     <div class="col-6">
-      <img
-        src="{{ product.pictureUrl1 }}"
-        alt="{{ product.title }}"
-        class="w-100"
-      />
+      <div class="row">
+        <div class="col-12">
+          <owl-carousel-o
+            [options]="{
+              items: 1,
+              dots: false,
+              mouseDrag: false,
+              touchDrag: false
+            }"
+            #mainCarousel
+          >
+            <ng-template carouselSlide>
+              <img
+                [src]="selectedImage"
+                [alt]="product.title"
+                class="img-fluid"
+              />
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+
+      <!-- Thumbnails Carousel -->
+      <div class="col-12">
+        <owl-carousel-o [options]="{ items: 5, dots: false, margin: 10 }">
+          <ng-container *ngFor="let url of imageUrls; let i = index">
+            <ng-template carouselSlide>
+              <img
+                [src]="url"
+                class="img-thumbnail"
+                [ngClass]="{ active: i === selectedImageIndex }"
+                (click)="mainCarousel.to(i.toString()); changeImage(i)"
+              />
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
     </div>
     <div class="col-6 mt-5">
       <h2>{{ product.title }}</h2>
-      <p>{{ product.price | currency: 'EUR' }}</p>
+      <p>{{ product.price | currency : "EUR" }}</p>
       <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
         You have {{ quantityInBasket }} of this item in your basket
       </h5>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 import { BasketService } from 'src/app/basket/basket.service';
@@ -15,12 +15,18 @@ export class ProductDetailsComponent implements OnInit {
   product?: Product;
   quantity = 1;
   quantityInBasket = 0;
+  imageUrls: string[] = [];
+  selectedImage: string = '';
+  selectedImageIndex: number = 0;
+
+  @ViewChild('mainCarousel') mainCarousel: any; // or OwlCarouselOComponent if appropriate
 
   constructor(
     private shopService: ShopService,
     private activatedRoute: ActivatedRoute,
     private bcService: BreadcrumbService,
-    private basketService: BasketService
+    private basketService: BasketService,
+    private cdr: ChangeDetectorRef
   ) {
     this.bcService.set('@productDetails', ' ');
   }
@@ -35,6 +41,19 @@ export class ProductDetailsComponent implements OnInit {
       this.shopService.getProduct(+id).subscribe({
         next: (product) => {
           this.product = product;
+          this.imageUrls = [
+            product.pictureUrl1,
+            product.pictureUrl2,
+            product.pictureUrl3,
+            product.pictureUrl4,
+            product.pictureUrl5,
+          ].filter((url) => url); // Filter inside the callback
+          if (this.imageUrls.length > 0) {
+            this.selectedImage = this.imageUrls[0]; // Set the first image as selected by default
+          }
+          if (this.imageUrls.length > 0) {
+            this.selectedImageIndex = 0;
+          }
           this.bcService.set('@productDetails', product.title);
           this.basketService.basketSource$.pipe(take(1)).subscribe({
             next: (basket) => {
@@ -48,6 +67,12 @@ export class ProductDetailsComponent implements OnInit {
         },
         error: (error) => console.log(error),
       });
+  }
+
+  changeImage(index: number) {
+    this.selectedImageIndex = index;
+    this.selectedImage = this.imageUrls[index];
+    this.cdr.detectChanges(); // Manually trigger change detection
   }
 
   incrementQuantity() {
