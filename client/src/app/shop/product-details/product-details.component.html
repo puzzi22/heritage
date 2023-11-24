@@ -2,7 +2,7 @@
   <div class="row" *ngIf="product">
     <div class="col-6">
       <div class="row">
-        <div class="col-12">
+        <div class="col-10">
           <owl-carousel-o
             [options]="{
               items: 1,
@@ -18,6 +18,7 @@
                 [alt]="product.title"
                 class="img-fluid"
                 (click)="openModal(selectedImage)"
+                style="cursor: pointer"
               />
             </ng-template>
           </owl-carousel-o>
@@ -42,7 +43,18 @@
     </div>
     <div class="col-6 mt-5">
       <h2>{{ product.title }}</h2>
-      <p>{{ product.price | currency : "EUR" }}</p>
+      <br />
+      <div class="row mt-4">
+        <h4>Description</h4>
+        <p>{{ product.longTitle }}</p>
+
+        <h4>Instrumentation</h4>
+        <p>{{ product.instrumentation }}</p>
+
+        <h4>Price</h4>
+        <p>{{ product.price | currency : "EUR" }}</p>
+      </div>
+      <br />
       <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
         You have {{ quantityInBasket }} of this item in your basket
       </h5>
@@ -68,10 +80,6 @@
         >
           {{ buttonText }}
         </button>
-      </div>
-      <div class="row mt-4">
-        <h4>Description</h4>
-        <p>{{ product.longTitle }}</p>
       </div>
     </div>
   </div>
