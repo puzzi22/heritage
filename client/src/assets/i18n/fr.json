@@ -1,0 +1,178 @@
+{
+  "loading": "Chargement...",
+
+  "home": {
+    "welcome": "Bienvenue !"
+  },
+
+  "shop": {
+    "sort": "Trier",
+    "composers": "Compositeurs",
+    "types": "Types",
+    "search": "Recherche",
+    "reset": "Réinitialiser"
+  },
+
+  "navbar": {
+    "home": "Accueil",
+    "shop": "Catalogue",
+    "errors": "Erreurs",
+    "welcome": "Bienvenue ",
+    "view basket": "Voir le panier",
+    "view orders": "Voir les commandes",
+    "log out": "Se déconnecter"
+  },
+
+  "footer": {
+    "about us": "À propos de nous",
+    "new critical editions of horn repertoire": "Nouvelles éditions critiques du répertoire pour cor",
+    "quick links": "Liens rapides",
+    "made by": "Fait par",
+    "in barcelona": "à Barcelone",
+    "updated on": "Mis à jour le "
+  },
+
+  "login": {
+    "login": "Se connecter",
+    "email address": "Adresse email",
+    "sign in": "S'enregistrer",
+    "register": "S'inscrire",
+    "password": "Mot de passe"
+  },
+
+  "error": {
+    "test 500 error": "Test Erreur de type 500",
+    "test 404 error": "Test Erreur de type 404",
+    "test 400 error": "Test Erreur de type 400",
+    "test 400 validation error": "Test Erreur de validation de type 400",
+    "not found": "Introuvable",
+    "badRequest": "Requête incorrecte",
+    "unauthorized": "Vous n'êtes pas autorisé",
+    "notFound": "Ressource non trouvée",
+    "serverError": "Erreur interne du serveur"
+  },
+
+  "validation": {
+    "required": "Veuillez entrer votre {{field}}",
+    "invalidEmail": "Adresse email invalide",
+    "passwordPattern": "Le mot de passe doit contenir au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial et être long de 6 à 10 caractères",
+    "emailExists": "L'adresse email est déjà utilisée"
+  },
+
+  "errorPage": {
+    "internalServerError": "Erreur interne du serveur - l'actualisation fera disparaître l'erreur",
+    "error": "Erreur",
+    "errorFromServer": "Cette erreur provient du serveur - et non d'Angular",
+    "whatToDo": "Que faire ensuite ?",
+    "checkNetworkTab": "Vérifiez l'onglet réseau dans les outils de développement Chrome",
+    "reproduceInPostman": "Reproduisez la requête dans Postman - si la même erreur se produit alors ce n'est définitivement pas Angular !",
+    "stackTrace": "Stack trace"
+  },
+
+  "basket": {
+    "emptyBasketMessage": "Il n'y a pas d'articles dans votre panier",
+    "proceedToCheckout": "Procéder au paiement"
+  },
+
+  "orders": {
+    "order": "Commande",
+    "date": "Date",
+    "total": "Total",
+    "status": "Statut"
+  },
+
+  "checkout": {
+    "address": "Adresse",
+    "delivery": "Livraison",
+    "review": "Révision",
+    "payment": "Paiement"
+  },
+
+  "product-item": {
+    "view": "Voir"
+  },
+
+  "orderSummary": {
+    "title": "Résumé de la commande",
+    "shippingInfo": "Les frais de livraison seront calculés en fonction des choix effectués lors du paiement",
+    "orderSubtotal": "Sous-total de la commande",
+    "shippingHandling": "Expédition et manutention",
+    "total": "Total"
+  },
+
+  "basket-summary": {
+    "product": "Produit",
+    "price": "Prix",
+    "quantity": "Quantité",
+    "total": "Total",
+    "remove": "Supprimer"
+  },
+
+  "product": {
+    "description": "Description",
+    "instrumentation": "Instrumentation",
+    "price": "Prix",
+    "quantityInBasket": "Vous avez {{count}} fois cet article dans votre panier"
+  },
+
+  "placeholder": {
+    "email": "Entrez l'email",
+    "password": "Entrez le mot de passe",
+    "search": "Recherche"
+  },
+
+  "label": {
+    "display name": "Identifiant",
+    "email address": "Adresse email",
+    "password": "Mot de passe"
+  },
+
+  "checkout-review": {
+    "backToDelivery": "Retour à la livraison",
+    "goToPayment": "Passer au paiement"
+  },
+
+  "shippingAddress": {
+    "title": "Adresse de livraison",
+    "saveAsDefault": "Enregistrer comme adresse par défaut",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "street": "Adresse",
+    "city": "Ville",
+    "country": "Pays",
+    "zipCode": "Code postal",
+    "goToDelivery": "Aller à la livraison",
+    "backToBasket": "Retour au panier"
+  },
+
+  "paymentForm": {
+    "nameOnCard": "Nom sur la carte",
+    "cardNumber": "Numéro de carte",
+    "cardExpiry": "Date d'expiration",
+    "cardCvc": "CVC de la carte",
+    "submitOrder": "Soumettre la commande",
+    "backToReview": "Retour à la révision"
+  },
+
+  "orderConfirmation": {
+    "thankYou": "Merci. Votre commande est confirmée",
+    "message": "Votre commande n'a pas encore été expédiée, mais c'était à prévoir car nous ne sommes pas un vrai commerce !",
+    "viewYourOrder": "Voir votre commande",
+    "viewYourOrders": "Voir vos commandes"
+  },
+
+  "deliveryOptions": {
+    "title": "{{name}} - {{price}}",
+    "StandardDelivery": "Livraison standard sous 5-7 jours",
+    "ExpressDelivery": "Livraison express sous 2-3 jours",
+    "backToAddress": "Retour à l'adresse",
+    "goToReview": "Aller à la révision"
+  },
+
+  "paging": {
+    "showing": "Affichage",
+    "of": "de",
+    "products": "produits",
+    "noResults": "Il n'y a pas de produit pour ce filtre"
+  }
+}

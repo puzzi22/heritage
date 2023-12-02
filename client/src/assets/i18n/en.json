@@ -1,0 +1,178 @@
+{
+  "loading": "Loading...",
+
+  "home": {
+    "welcome": "Welcome!"
+  },
+
+  "shop": {
+    "sort": "Sort",
+    "composers": "Composers",
+    "types": "Types",
+    "search": "Search",
+    "reset": "Reset"
+  },
+
+  "navbar": {
+    "home": "Home",
+    "shop": "Shop",
+    "errors": "Errors",
+    "welcome": "Welcome ",
+    "view basket": "View Basket",
+    "view orders": "View Orders",
+    "log out": "Log out"
+  },
+
+  "footer": {
+    "about us": "About us",
+    "new critical editions of horn repertoire": "New critical editions of horn repertoire.",
+    "quick links": "Quick Links",
+    "made by": "Made by",
+    "in barcelona": "in Barcelona",
+    "updated on": "Updated on "
+  },
+
+  "login": {
+    "login": "Login",
+    "email address": "Email Address",
+    "password": "Password",
+    "sign in": "Sign in",
+    "register": "Register"
+  },
+
+  "error": {
+    "test 500 error": "Test 500 Error",
+    "test 404 error": "Test 404 Error",
+    "test 400 error": "Test 400 Error",
+    "test 400 validation error": "Test 400 Validation Error",
+    "not found": "Not Found",
+    "badRequest": "You have made a bad request",
+    "unauthorized": "You are not authorized",
+    "notFound": "The resource was not found",
+    "serverError": "Internal server error"
+  },
+
+  "validation": {
+    "required": "Please enter your {{field}}",
+    "invalidEmail": "Invalid email address",
+    "passwordPattern": "Password should have at least 1 small-case letter, 1 capital letter, 1 digit, 1 special character and the length should be between 6-10 characters",
+    "emailExists": "Email address is taken"
+  },
+
+  "errorPage": {
+    "internalServerError": "Internal server error - refreshing will make the error disappear",
+    "error": "Error",
+    "errorFromServer": "This error comes from the server - not Angular",
+    "whatToDo": "What to do next?",
+    "checkNetworkTab": "Check the network tab in Chrome Dev Tools",
+    "reproduceInPostman": "Reproduce the request in Postman - if the same error occurs then definitely not Angular!",
+    "stackTrace": "Stack trace"
+  },
+
+  "basket": {
+    "emptyBasketMessage": "There are no items in your basket",
+    "proceedToCheckout": "Proceed to checkout"
+  },
+
+  "orders": {
+    "order": "Order",
+    "date": "Date",
+    "total": "Total",
+    "status": "Status"
+  },
+
+  "checkout": {
+    "address": "Address",
+    "delivery": "Delivery",
+    "review": "Review",
+    "payment": "Payment"
+  },
+
+  "product-item": {
+    "view": "View"
+  },
+
+  "orderSummary": {
+    "title": "Order Summary",
+    "shippingInfo": "Shipping costs will be calculated based on choices made during checkout",
+    "orderSubtotal": "Order Subtotal",
+    "shippingHandling": "Shipping and Handling",
+    "total": "Total"
+  },
+
+  "basket-summary": {
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "remove": "Remove"
+  },
+
+  "product": {
+    "description": "Description",
+    "instrumentation": "Instrumentation",
+    "price": "Price",
+    "quantityInBasket": "You have {{count}} of this item in your basket"
+  },
+
+  "placeholder": {
+    "email": "Enter email",
+    "password": "Enter password",
+    "search": "Search"
+  },
+
+  "label": {
+    "display name": "Display Name",
+    "email address": "Email",
+    "password": "Password"
+  },
+
+  "checkout-review": {
+    "backToDelivery": "Retour à la livraison",
+    "goToPayment": "Passer au paiement"
+  },
+
+  "shippingAddress": {
+    "title": "Shipping address",
+    "saveAsDefault": "Save as default address",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "street": "Street",
+    "city": "City",
+    "country": "Country",
+    "zipCode": "Zip Code",
+    "goToDelivery": "Go to Delivery",
+    "backToBasket": "Back to basket"
+  },
+
+  "paymentForm": {
+    "nameOnCard": "Name on card",
+    "cardNumber": "Card Number",
+    "cardExpiry": "Card Expiry",
+    "cardCvc": "Card Cvc",
+    "submitOrder": "Submit order",
+    "backToReview": "Back to Review"
+  },
+
+  "orderConfirmation": {
+    "thankYou": "Thank you. Your order is confirmed",
+    "message": "Your order has not shipped yet, but this is to be expected as we are not a real store!",
+    "viewYourOrder": "View your order",
+    "viewYourOrders": "View your orders"
+  },
+
+  "deliveryOptions": {
+    "title": "{{name}} - {{price}}",
+    "StandardDelivery": "Standard delivery within 5-7 days",
+    "ExpressDelivery": "Express delivery within 2-3 days",
+    "backToAddress": "Back to Address",
+    "goToReview": "Go to Review"
+  },
+
+  "paging": {
+    "showing": "Showing",
+    "of": "of",
+    "products": "Products",
+    "noResults": "There are no product for this filter"
+  }
+}

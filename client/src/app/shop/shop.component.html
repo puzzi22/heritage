@@ -46,8 +46,9 @@
         ></app-paging-header>
 
         <div class="d-flex mt-2">
+          <!-- (keyup.enter)="onSearch()" -->
           <input
-            (keyup)="onKeyUp(search.value)"
+          (keyup)="onKeyUp(search.value)"
             type="text"
             placeholder="Search"
             class="form-control me-2"

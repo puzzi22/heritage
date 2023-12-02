@@ -93,7 +93,7 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
-    this.scrollToTop(); // Scrolls to the top after applying the filter
+    this.scrollToTop();
   }
 
   onSortSelected(event: any) {
@@ -102,7 +102,7 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
-    this.scrollToTop(); // Scrolls to the top after applying the filter
+    this.scrollToTop();
   }
 
   onPageChanged(event: any) {
@@ -112,7 +112,7 @@ export class ShopComponent implements OnInit {
       this.shopService.setShopParams(params);
       this.shopParams = params;
       this.getProducts();
-      this.scrollToTop(); // Scrolls to the top after applying the filter
+      this.scrollToTop();
     }
   }
 
@@ -126,8 +126,6 @@ export class ShopComponent implements OnInit {
   }
 
   onSearchChange(searchValue: string): void {
-    // Implement your search logic here
-    // For example, update the search parameter and fetch products
     const params = this.shopService.getShopParams();
     params.search = searchValue;
     params.pageNumber = 1; // Reset to the first page
@@ -140,9 +138,17 @@ export class ShopComponent implements OnInit {
   }
 
   onReset() {
-    if (this.searchTerm) this.searchTerm.nativeElement.value = '';
+    // Reset the filters using a new instance of ShopParams
     const params = new ShopParams();
     this.shopService.setShopParams(params);
+    this.shopParams = params;
+
+    // Reset any UI elements if necessary
+    if (this.searchTerm) {
+      this.searchTerm.nativeElement.value = '';
+    }
+
+    // Fetch the products again with the reset filters
     this.getProducts();
   }
 
