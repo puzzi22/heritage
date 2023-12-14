@@ -1,20 +1,20 @@
 <div class="bg-light px-4 py-3 text-uppercase fw-bold">
-    Order summary
+    {{ "orderSummary.title" | translate }}
 </div>
 
 <div class="p-4">
-    <p class="fst-italic mb-4">Shipping costs will be calculated based on choices made during checkout</p>
+    <p class="fst-italic mb-4">{{ "orderSummary.shippingInfo" | translate }}</p>
     <ul class="list-unstyled mb-4" *ngIf="(basketService.basketTotalSource$ | async) as totals">
         <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Order subtotal</strong>
+            <strong class="text-muted">{{ "orderSummary.orderSubtotal" | translate }}</strong>
             <strong>{{totals.subtotal | currency:'EUR'}}</strong>
         </li>
         <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Shipping and handling</strong>
+            <strong class="text-muted">{{ "orderSummary.shippingHandling" | translate }}</strong>
             <strong>{{totals.shipping | currency:'EUR'}}</strong>
         </li>
         <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Total</strong>
+            <strong class="text-muted">{{ "orderSummary.total" | translate }}</strong>
             <strong>{{totals.total | currency:'EUR'}}</strong>
         </li>
     </ul>

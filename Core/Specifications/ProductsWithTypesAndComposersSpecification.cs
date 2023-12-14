@@ -21,7 +21,9 @@ namespace Core.Specifications
                 // )
                 : base(x => 
                     (string.IsNullOrEmpty(productParams.Search) || x.Title.ToLower().Contains(productParams.Search) || 
-                        x.LongTitle.ToLower().Contains(productParams.Search) || x.Instrumentation.ToLower().Contains(productParams.Search)) &&
+                        x.LongTitle.ToLower().Contains(productParams.Search) || 
+                        x.Instrumentation.ToLower().Contains(productParams.Search)) &&
+                        // x.ProductComposers.Any(pc => pc.LastName.ToLower().Contains(productParams.Search.ToLower()))) &&
                     (!productParams.ComposerId.HasValue || x.ProductComposers.Any(pc => pc.Id == productParams.ComposerId)) &&
                     (!productParams.TypeId.HasValue || x.ProductTypes.Any(pt => pt.Id == productParams.TypeId))
                 )

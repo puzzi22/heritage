@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AccountService } from './account/account.service';
 import { BasketService } from './basket/basket.service';
+import { LanguageService } from './core/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +13,14 @@ export class AppComponent implements OnInit {
   title = 'Héritage';
   constructor(
     private basketService: BasketService,
-    private accountService: AccountService
-  ) {}
+    private accountService: AccountService,
+    private translate: TranslateService,
+    private languageService: LanguageService
+  ) {
+    const userLang = this.languageService.getLanguage();
+    this.translate.setDefaultLang('en');
+    this.translate.use(userLang); // Use the saved or default language
+  }
 
   ngOnInit(): void {
     this.loadBasket();

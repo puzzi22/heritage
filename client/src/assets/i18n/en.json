@@ -1,5 +1,6 @@
 {
   "loading": "Loading...",
+  "orderDetails": "Order #{{id}} - {{status}}",
 
   "home": {
     "welcome": "Welcome!"
@@ -18,37 +19,37 @@
     "shop": "Shop",
     "errors": "Errors",
     "welcome": "Welcome ",
-    "view basket": "View Basket",
-    "view orders": "View Orders",
-    "log out": "Log out"
+    "viewBasket": "View Basket",
+    "viewOrders": "View Orders",
+    "logOut": "Log out"
   },
 
   "footer": {
-    "about us": "About us",
-    "new critical editions of horn repertoire": "New critical editions of horn repertoire.",
-    "quick links": "Quick Links",
-    "made by": "Made by",
-    "in barcelona": "in Barcelona",
-    "updated on": "Updated on "
+    "aboutUs": "About us",
+    "newCriticalEditions": "New critical editions of horn repertoire.",
+    "quickLinks": "Quick Links",
+    "madeBy": "Made by",
+    "inBarcelona": "in Barcelona",
+    "updatedOn": "Updated on "
   },
 
   "login": {
     "login": "Login",
-    "email address": "Email Address",
+    "emailAddress": "Email Address",
     "password": "Password",
-    "sign in": "Sign in",
+    "signIn": "Sign in",
     "register": "Register"
   },
 
   "error": {
-    "test 500 error": "Test 500 Error",
-    "test 404 error": "Test 404 Error",
-    "test 400 error": "Test 400 Error",
-    "test 400 validation error": "Test 400 Validation Error",
-    "not found": "Not Found",
+    "test500Error": "Test 500 Error",
+    "test404Error": "Test 404 Error",
+    "test400Error": "Test 400 Error",
+    "test400ValidationError": "Test 400 Validation Error",
+    "notFound": "Not Found",
     "badRequest": "You have made a bad request",
     "unauthorized": "You are not authorized",
-    "notFound": "The resource was not found",
+    "ResourceNotFound": "The resource was not found",
     "serverError": "Internal server error"
   },
 
@@ -88,7 +89,7 @@
     "payment": "Payment"
   },
 
-  "product-item": {
+  "productItem": {
     "view": "View"
   },
 
@@ -100,7 +101,7 @@
     "total": "Total"
   },
 
-  "basket-summary": {
+  "basketSummary": {
     "product": "Product",
     "price": "Price",
     "quantity": "Quantity",
@@ -112,7 +113,7 @@
     "description": "Description",
     "instrumentation": "Instrumentation",
     "price": "Price",
-    "quantityInBasket": "You have {{count}} of this item in your basket"
+    "quantityInBasket": "You have {{quantityInBasket}} of this item in your basket"
   },
 
   "placeholder": {
@@ -122,14 +123,14 @@
   },
 
   "label": {
-    "display name": "Display Name",
-    "email address": "Email",
+    "displayName": "Display Name",
+    "emailAddress": "Email",
     "password": "Password"
   },
 
-  "checkout-review": {
-    "backToDelivery": "Retour à la livraison",
-    "goToPayment": "Passer au paiement"
+  "checkoutReview": {
+    "backToDelivery": "Back to Delivery",
+    "goToPayment": "Go to Payment"
   },
 
   "shippingAddress": {
@@ -142,7 +143,8 @@
     "country": "Country",
     "zipCode": "Zip Code",
     "goToDelivery": "Go to Delivery",
-    "backToBasket": "Back to basket"
+    "backToBasket": "Back to basket",
+    "saveSuccess": "Address saved"
   },
 
   "paymentForm": {
@@ -174,5 +176,49 @@
     "of": "of",
     "products": "Products",
     "noResults": "There are no product for this filter"
+  },
+
+  "sortOptions": {
+    "alphabetical": "Alphabetical",
+    "priceLowToHigh": "Price: Low to high",
+    "priceHighToLow": "Price: High to low"
+  },
+
+  "common": {
+    "all": "All"
+  },
+
+  "deliveryMethods": {
+    "UPS1": {
+      "description": "Fastest delivery time",
+      "deliveryTime": "1-2 Days"
+    },
+    "UPS2": {
+      "description": "Get it within 5 days",
+      "deliveryTime": "2-5 Days"
+    },
+    "UPS3": {
+      "description": "Slower but cheap",
+      "deliveryTime": "5-10 Days"
+    },
+    "FREE": {
+      "description": "Free! You get what you pay for",
+      "deliveryTime": "1-2 Weeks"
+    }
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "products": "Products",
+    "shop": "Shop",
+    "test-error": "Errors",
+    "server-error": "Server error",
+    "not-found": "Not found",
+    "basket": "Basket",
+    "orders": "Orders",
+    "login": "Login",
+    "register": "Register",
+    "checkout": "Checkout",
+    "success": "Success",
+    "account": "Account"
   }
 }

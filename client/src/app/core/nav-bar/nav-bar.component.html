@@ -14,11 +14,16 @@
       routerLink="/"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
+      >{{ "navbar.home" | translate }}</a
     >
-    <a class="p-2" routerLink="/shop" routerLinkActive="active">Shop</a>
-    <a class="p-2" routerLink="/test-error" routerLinkActive="active">Errors</a>
+    <a class="p-2" routerLink="/shop" routerLinkActive="active">{{
+      "navbar.shop" | translate
+    }}</a>
+    <a class="p-2" routerLink="/test-error" routerLinkActive="active">{{
+      "navbar.errors" | translate
+    }}</a>
   </nav>
+
   <div class="d-flex align-items-center">
     <a routerLink="/basket" class="position-relative">
       <i class="fa fa-shopping-cart fa-2x me-5 text-dark"></i>
@@ -30,38 +35,65 @@
       </div>
     </a>
     <ng-container *ngIf="(accountService.currentUser$ | async) === null">
-      <a routerLink="/account/login" class="btn btn-outline-secondary me-2"
-        >Login</a
-      >
-      <a routerLink="/account/register" class="btn btn-outline-secondary me-3"
-        >Sign up</a
+      <a routerLink="/account/login" class="btn btn-outline-secondary me-2">{{
+        "login.login" | translate
+      }}</a>
+      <a
+        routerLink="/account/register"
+        class="btn btn-outline-secondary me-3"
+        >{{ "login.register" | translate }}</a
       >
     </ng-container>
 
     <ng-container *ngIf="accountService.currentUser$ | async as user">
       <div class="dropdown ms-3 me-5" style="cursor: pointer" dropdown>
         <a dropdownToggle class="dropdown-toggle">
-          <strong>Welcome {{ user.displayName }}</strong>
+          <strong
+            >{{ "navbar.welcome" | translate }}{{ user.displayName }}</strong
+          >
         </a>
         <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
           <li class="py-1">
             <a routerLink="/basket" class="dropdown-item">
-              <i class="fa fa-shopping-cart me-3"></i>View basket
+              <i class="fa fa-shopping-cart me-3"></i
+              >{{ "navbar.viewBasket" | translate }}
             </a>
           </li>
           <li class="py-1">
             <a routerLink="/orders" class="dropdown-item">
-              <i class="fa fa-history me-3"></i>View orders
+              <i class="fa fa-history me-3"></i
+              >{{ "navbar.viewOrders" | translate }}
             </a>
           </li>
           <div class="dropdown-divider"></div>
           <li class="py-1">
             <a (click)="accountService.logout()" class="dropdown-item">
-              <i class="fa fa-sign-out me-3"></i>Logout
+              <i class="fa fa-sign-out me-3"></i
+              >{{ "navbar.logOut" | translate }}
             </a>
           </li>
         </ul>
       </div>
     </ng-container>
+    <div class="language-switcher ms-3">
+      <button
+        type="button"
+        class="btn"
+        [class.btn-primary]="currentLang === 'en'"
+        [class.btn-secondary]="currentLang !== 'en'"
+        (click)="changeLanguage('en')"
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        class="btn"
+        [class.btn-primary]="currentLang === 'fr'"
+        [class.btn-secondary]="currentLang !== 'fr'"
+        (click)="changeLanguage('fr')"
+      >
+        FR
+      </button>
+    </div>
   </div>
 </header>

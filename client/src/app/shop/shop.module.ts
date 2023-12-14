@@ -5,9 +5,10 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [ShopComponent, ProductItemComponent, ProductDetailsComponent],
-  imports: [CommonModule, SharedModule, ShopRoutingModule],
+  imports: [CommonModule, SharedModule, ShopRoutingModule, TranslateModule],
 })
 export class ShopModule {}

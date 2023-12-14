@@ -3,7 +3,7 @@
     <div class="col-8">
       <app-stepper #appStepper>
         <cdk-step
-          [label]="'Address'"
+          [label]="'checkout.address' | translate"
           [completed]="checkoutForm.get('addressForm')?.valid"
         >
           <app-checkout-address
@@ -11,18 +11,18 @@
           ></app-checkout-address>
         </cdk-step>
         <cdk-step
-          [label]="'Delivery'"
+          [label]="'checkout.delivery' | translate"
           [completed]="checkoutForm.get('deliveryForm')?.valid"
         >
           <app-checkout-delivery
             [checkoutForm]="checkoutForm"
           ></app-checkout-delivery>
         </cdk-step>
-        <cdk-step [label]="'Review'">
+        <cdk-step [label]="'checkout.review' | translate">
           <app-checkout-review [appStepper]="appStepper"></app-checkout-review>
         </cdk-step>
         <cdk-step
-          [label]="'Payment'"
+          [label]="'checkout.payment' | translate"
           [completed]="checkoutForm.get('paymentForm')?.valid"
           ><app-checkout-payment
             [checkoutForm]="checkoutForm"

@@ -1,18 +1,18 @@
 <div class="container mt-5">
   <button (click)="get500Error()" class="btn btn-outline-primary me-3">
-    Test 500 error
+    {{ "error.test500Error" | translate }}
   </button>
   <button (click)="get404Error()" class="btn btn-outline-primary me-3">
-    Test 404 error
+    {{ "error.test404Error" | translate }}
   </button>
   <button (click)="get400Error()" class="btn btn-outline-primary me-3">
-    Test 400 error
+    {{ "error.test400Error" | translate }}
   </button>
   <button
     (click)="get400ValidationError()"
     class="btn btn-outline-primary me-3"
   >
-    Test 400 validation error
+    {{ "error.test400ValidationError" | translate }}
   </button>
   <div class="row mt-5" *ngIf="validationErrors.length > 0">
     <ul class="text-danger">

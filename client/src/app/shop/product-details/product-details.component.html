@@ -45,18 +45,21 @@
       <h2>{{ product.title }}</h2>
       <br />
       <div class="row mt-4">
-        <h4>Description</h4>
+        <h4>{{ "product.description" | translate }}</h4>
         <p>{{ product.longTitle }}</p>
 
-        <h4>Instrumentation</h4>
+        <h4>{{ "product.instrumentation" | translate }}</h4>
         <p>{{ product.instrumentation }}</p>
 
-        <h4>Price</h4>
+        <h4>{{ "product.price" | translate }}</h4>
         <p>{{ product.price | currency : "EUR" }}</p>
       </div>
       <br />
       <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
-        You have {{ quantityInBasket }} of this item in your basket
+        {{
+          "product.quantityInBasket"
+            | translate : { quantityInBasket: quantityInBasket }
+        }}
       </h5>
       <div class="d-flex justify-content-start align-items-center">
         <i

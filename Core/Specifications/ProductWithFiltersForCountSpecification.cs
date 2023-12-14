@@ -14,6 +14,7 @@ namespace Core.Specifications
          x.Title.ToLower().Contains(productParams.Search.ToLower()) || 
          x.LongTitle.ToLower().Contains(productParams.Search.ToLower()) || 
          x.Instrumentation.ToLower().Contains(productParams.Search.ToLower())) &&
+        //  x.ProductComposers.Any(pc => pc.LastName.ToLower().Contains(productParams.Search.ToLower()))) &&
         (!productParams.ComposerId.HasValue || x.ProductComposers.Any(pc => pc.Id == productParams.ComposerId)) &&
         (!productParams.TypeId.HasValue || x.ProductTypes.Any(pt => pt.Id == productParams.TypeId))
     )

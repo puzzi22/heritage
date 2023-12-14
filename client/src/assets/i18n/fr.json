@@ -1,5 +1,6 @@
 {
   "loading": "Chargement...",
+  "orderDetails": "Commande #{{id}} - {{status}}",
 
   "home": {
     "welcome": "Bienvenue !"
@@ -18,42 +19,42 @@
     "shop": "Catalogue",
     "errors": "Erreurs",
     "welcome": "Bienvenue ",
-    "view basket": "Voir le panier",
-    "view orders": "Voir les commandes",
-    "log out": "Se déconnecter"
+    "viewBasket": "Voir le panier",
+    "viewOrders": "Voir les commandes",
+    "logOut": "Se déconnecter"
   },
 
   "footer": {
-    "about us": "À propos de nous",
-    "new critical editions of horn repertoire": "Nouvelles éditions critiques du répertoire pour cor",
-    "quick links": "Liens rapides",
-    "made by": "Fait par",
-    "in barcelona": "à Barcelone",
-    "updated on": "Mis à jour le "
+    "aboutUs": "À propos de nous",
+    "newCriticalEditions": "Nouvelles éditions critiques du répertoire pour cor",
+    "quickLinks": "Liens rapides",
+    "madeBy": "Fait par",
+    "inBarcelona": "à Barcelone",
+    "updatedOn": "Mis à jour le "
   },
 
   "login": {
     "login": "Se connecter",
-    "email address": "Adresse email",
-    "sign in": "S'enregistrer",
+    "emailAddress": "Adresse courriel",
+    "signIn": "S'enregistrer",
     "register": "S'inscrire",
     "password": "Mot de passe"
   },
 
   "error": {
-    "test 500 error": "Test Erreur de type 500",
-    "test 404 error": "Test Erreur de type 404",
-    "test 400 error": "Test Erreur de type 400",
-    "test 400 validation error": "Test Erreur de validation de type 400",
-    "not found": "Introuvable",
+    "test500Error": "Test Erreur de type 500",
+    "test404Error": "Test Erreur de type 404",
+    "test400Error": "Test Erreur de type 400",
+    "test400ValidationError": "Test Erreur de validation de type 400",
+    "notFound": "Introuvable",
     "badRequest": "Requête incorrecte",
     "unauthorized": "Vous n'êtes pas autorisé",
-    "notFound": "Ressource non trouvée",
+    "ResourceNotFound": "Ressource non trouvée",
     "serverError": "Erreur interne du serveur"
   },
 
   "validation": {
-    "required": "Veuillez entrer votre {{field}}",
+    "required": "Veuillez entrer votre {{label}}",
     "invalidEmail": "Adresse email invalide",
     "passwordPattern": "Le mot de passe doit contenir au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial et être long de 6 à 10 caractères",
     "emailExists": "L'adresse email est déjà utilisée"
@@ -88,7 +89,7 @@
     "payment": "Paiement"
   },
 
-  "product-item": {
+  "productItem": {
     "view": "Voir"
   },
 
@@ -100,7 +101,7 @@
     "total": "Total"
   },
 
-  "basket-summary": {
+  "basketSummary": {
     "product": "Produit",
     "price": "Prix",
     "quantity": "Quantité",
@@ -112,7 +113,7 @@
     "description": "Description",
     "instrumentation": "Instrumentation",
     "price": "Prix",
-    "quantityInBasket": "Vous avez {{count}} fois cet article dans votre panier"
+    "quantityInBasket": "Vous avez {{quantityInBasket}} fois cet article dans votre panier"
   },
 
   "placeholder": {
@@ -122,12 +123,12 @@
   },
 
   "label": {
-    "display name": "Identifiant",
-    "email address": "Adresse email",
+    "displayName": "Identifiant",
+    "emailAddress": "Adresse email",
     "password": "Mot de passe"
   },
 
-  "checkout-review": {
+  "checkoutReview": {
     "backToDelivery": "Retour à la livraison",
     "goToPayment": "Passer au paiement"
   },
@@ -142,7 +143,8 @@
     "country": "Pays",
     "zipCode": "Code postal",
     "goToDelivery": "Aller à la livraison",
-    "backToBasket": "Retour au panier"
+    "backToBasket": "Retour au panier",
+    "saveSuccess": "Adresse enregistrée"
   },
 
   "paymentForm": {
@@ -174,5 +176,49 @@
     "of": "de",
     "products": "produits",
     "noResults": "Il n'y a pas de produit pour ce filtre"
+  },
+
+  "sortOptions": {
+    "alphabetical": "Alphabétique",
+    "priceLowToHigh": "Prix : du moins cher au plus cher",
+    "priceHighToLow": "Price : du plus cher au moins cher"
+  },
+
+  "common": {
+    "all": "Tous"
+  },
+
+  "deliveryMethods": {
+    "UPS1": {
+      "description": "Livraison la plus rapide",
+      "deliveryTime": "1-2 Jours"
+    },
+    "UPS2": {
+      "description": "Obtenez-le sous 5 jours",
+      "deliveryTime": "2-5 Jours"
+    },
+    "UPS3": {
+      "description": "Plus lent mais moins cher",
+      "deliveryTime": "5-10 Jours"
+    },
+    "FREE": {
+      "description": "Gratuit ! Vous en aurez pour votre argent",
+      "deliveryTime": "1-2 Semaines"
+    }
+  },
+  "breadcrumb": {
+    "home": "Accueil",
+    "products": "Produits",
+    "shop": "Catalogue",
+    "test-error": "Erreurs",
+    "server-error": "Erreur du serveur",
+    "not-found": "Introuvable",
+    "basket": "Panier",
+    "orders": "Commandes",
+    "login": "Connection",
+    "register": "Inscription",
+    "checkout": "Paiement",
+    "success": "Confirmation",
+    "account": "Compte"
   }
 }
