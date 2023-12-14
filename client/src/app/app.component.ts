@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     private languageService: LanguageService
   ) {
     const userLang = this.languageService.getLanguage();
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('fr');
     this.translate.use(userLang); // Use the saved or default language
   }
 
