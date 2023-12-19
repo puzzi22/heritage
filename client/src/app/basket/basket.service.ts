@@ -78,8 +78,22 @@ export class BasketService {
     return this.basketSource.value;
   }
 
+  initializeOrGetBasket(): Basket {
+    let basket = this.getCurrentBasketValue();
+    if (!basket) {
+      basket = this.createBasket();
+      this.basketSource.next(basket);
+    }
+    return basket;
+  }
+
   addItemToBasket(item: Product | BasketItem, quantity = 1) {
-    const basket = this.getCurrentBasketValue() ?? this.createBasket();
+    const basket = this.getCurrentBasketValue();
+    if (!basket) {
+      console.error('No basket found when trying to add item.');
+      return;
+    }
+
     if (this.isProduct(item)) {
       this.mapProductItemToBasketItem(item).subscribe(
         (itemToAdd: BasketItem) => {
@@ -88,7 +102,7 @@ export class BasketService {
             itemToAdd,
             quantity
           );
-          this.setBasket(basket);
+          // this.setBasket(basket);
         }
       );
     } else {

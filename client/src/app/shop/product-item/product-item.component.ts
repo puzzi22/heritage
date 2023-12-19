@@ -42,6 +42,10 @@ export class ProductItemComponent implements OnInit {
   }
 
   addItemToBasket() {
-    this.product && this.basketService.addItemToBasket(this.product);
+    if (this.product) {
+      // Ensure the basket is initialized before adding the item
+      this.basketService.initializeOrGetBasket();
+      this.basketService.addItemToBasket(this.product);
+    }
   }
 }
