@@ -6,6 +6,8 @@
     "welcome": "Bienvenue !"
   },
 
+  "about": {},
+
   "shop": {
     "sort": "Trier",
     "composers": "Compositeurs",
@@ -17,6 +19,8 @@
   "navbar": {
     "home": "Accueil",
     "shop": "Catalogue",
+    "contact": "Contact",
+    "about-us": "À propos",
     "errors": "Erreurs",
     "welcome": "Bienvenue ",
     "viewBasket": "Voir le panier",
@@ -123,7 +127,8 @@
     "addToBasket": "Ajouter au panier",
     "updateBasket": "Mettre à jour le panier",
     "composer": "Compositeur",
-    "type": "Type"
+    "type": "Type",
+    "editor": "Éditeur"
   },
 
   "placeholder": {
@@ -220,6 +225,8 @@
     "home": "Accueil",
     "products": "Produits",
     "shop": "Catalogue",
+    "about-us": "À propos",
+    "contact": "Contact",
     "test-error": "Erreurs",
     "server-error": "Erreur du serveur",
     "not-found": "Introuvable",

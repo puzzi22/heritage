@@ -18,13 +18,15 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import { HomeModule } from './home/home.module';
 import { OrderDetailedComponent } from './order-detailed/order-detailed.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [AppComponent, OrderDetailedComponent, FooterComponent],
+  declarations: [AppComponent, OrderDetailedComponent, FooterComponent, AboutUsComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

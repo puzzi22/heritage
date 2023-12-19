@@ -6,6 +6,8 @@
     "welcome": "Welcome!"
   },
 
+  "about": {},
+
   "shop": {
     "sort": "Sort",
     "composers": "Composers",
@@ -17,6 +19,8 @@
   "navbar": {
     "home": "Home",
     "shop": "Shop",
+    "contact": "Contact",
+    "about-us": "About Us",
     "errors": "Errors",
     "welcome": "Welcome ",
     "viewBasket": "View Basket",
@@ -123,7 +127,8 @@
     "addToBasket": "Add to Basket",
     "updateBasket": "Update Basket",
     "composer": "Composer",
-    "type": "Type"
+    "type": "Type",
+    "editor": "Editor"
   },
 
   "placeholder": {
@@ -220,6 +225,8 @@
     "home": "Home",
     "products": "Products",
     "shop": "Shop",
+    "about-us": "About Us",
+    "contact": "Contact",
     "test-error": "Errors",
     "server-error": "Server error",
     "not-found": "Not found",

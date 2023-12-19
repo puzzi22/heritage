@@ -2,14 +2,7 @@
   class="d-flex flex-row align-items-center justify-content-between p-3 px-4 mb-3 bg-white border-bottom fixed-top shadow-sm"
   style="height: 110px"
 >
-  <!-- <img
-    src="/assets/images/logo.png"
-    alt="logo"
-    class="logo"
-    style="max-height: 70px"
-    routerLink="/"
-  /> -->
-  <div class="logo text-uppercase fs-2" routerLink="/">
+  <div class="logo text-uppercase fs-2 flex-equal" routerLink="/">
     L'Héritage <span>du</span> Cor
   </div>
   <nav class="my-2 text-uppercase fs-4">
@@ -23,14 +16,17 @@
     <a class="p-2" routerLink="/shop" routerLinkActive="active">{{
       "navbar.shop" | translate
     }}</a>
-    <a class="p-2" routerLink="/test-error" routerLinkActive="active">{{
-      "navbar.errors" | translate
+    <a class="p-2" routerLink="/about-us" routerLinkActive="active">{{
+      "navbar.about-us" | translate
+    }}</a>
+    <a class="p-2" routerLink="/contact" routerLinkActive="active">{{
+      "navbar.contact" | translate
     }}</a>
   </nav>
 
-  <div class="d-flex align-items-center">
-    <a routerLink="/basket" class="position-relative">
-      <i class="fa fa-shopping-cart fa-2x me-5 text-dark"></i>
+  <div class="d-flex flex-equal justify-content-end align-items-center">
+    <a routerLink="/basket" class="position-relative order-3">
+      <i class="fa fa-shopping-cart fa-2x me-3 text-dark"></i>
       <div
         *ngIf="basketService.basketSource$ | async as basket"
         class="cart-no"
@@ -38,7 +34,10 @@
         {{ getCount(basket.items) }}
       </div>
     </a>
-    <ng-container *ngIf="(accountService.currentUser$ | async) === null">
+    <ng-container
+      *ngIf="(accountService.currentUser$ | async) === null"
+      class="order-1"
+    >
       <a routerLink="/account/login" class="btn btn-outline-secondary me-2">{{
         "login.login" | translate
       }}</a>
@@ -49,8 +48,11 @@
       >
     </ng-container>
 
-    <ng-container *ngIf="accountService.currentUser$ | async as user">
-      <div class="dropdown ms-3 me-5" style="cursor: pointer" dropdown>
+    <ng-container
+      *ngIf="accountService.currentUser$ | async as user"
+      class="order-2"
+    >
+      <div class="dropdown ms-3 me-4" style="cursor: pointer" dropdown>
         <a dropdownToggle class="dropdown-toggle">
           <strong
             >{{ "navbar.welcome" | translate }}{{ user.displayName }}</strong
@@ -79,7 +81,7 @@
         </ul>
       </div>
     </ng-container>
-    <div class="language-switcher ms-3">
+    <div class="language-switcher ms-3 order-4">
       <button
         type="button"
         class="btn"

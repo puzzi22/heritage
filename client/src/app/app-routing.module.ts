@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ServerErrorComponent } from './core/server-error/server-error.component';
 import { TestErrorComponent } from './core/test-error/test-error.component';
 import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     data: { breadcrumb: { alias: 'breadcrumb.home' } },
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
+    data: { breadcrumb: { alias: 'breadcrumb.about-us' } },
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { breadcrumb: { alias: 'breadcrumb.contact' } },
   },
   {
     path: 'test-error',

@@ -7,7 +7,7 @@
   color: white;
   text-align: center;
   top: -12px;
-  right: 32px;
+  right: 3px;
 }
 
 a {
@@ -42,4 +42,8 @@ a.active {
 /* Optional: Reduce the focus outline size for a cleaner look */
 .language-switcher button:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.flex-equal {
+  flex: 1;
 }/*# sourceMappingURL=nav-bar.component.css.map */
