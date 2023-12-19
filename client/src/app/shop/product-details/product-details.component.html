@@ -49,7 +49,7 @@
         <p>{{ product.longTitle }}</p>
 
         <h4>{{ "product.instrumentation" | translate }}</h4>
-        <p>{{ product.instrumentation }}</p>
+        <p>{{ "instrumentation." + product.instrumentation | translate }}</p>
 
         <h4>{{ "product.price" | translate }}</h4>
         <p>{{ product.price | currency : "EUR" }}</p>

@@ -47,7 +47,7 @@
     "test400Error": "Test Erreur de type 400",
     "test400ValidationError": "Test Erreur de validation de type 400",
     "notFound": "Introuvable",
-    "badRequest": "Requête incorrecte",
+    "badRequest": "Vous avez fait une mauvaise demande",
     "unauthorized": "Vous n'êtes pas autorisé",
     "ResourceNotFound": "Ressource non trouvée",
     "serverError": "Erreur interne du serveur"
@@ -82,6 +82,12 @@
     "status": "Statut"
   },
 
+  "orderStatus": {
+    "pending": "En attente",
+    "paymentReceived": "Paiement reçu",
+    "paymentFailed": "Paiement échoué"
+  },
+
   "checkout": {
     "address": "Adresse",
     "delivery": "Livraison",
@@ -113,7 +119,9 @@
     "description": "Description",
     "instrumentation": "Instrumentation",
     "price": "Prix",
-    "quantityInBasket": "Vous avez {{quantityInBasket}} fois cet article dans votre panier"
+    "quantityInBasket": "Vous avez {{quantityInBasket}} fois cet article dans votre panier",
+    "addToBasket": "Ajouter au panier",
+    "updateBasket": "Mettre à jour le panier"
   },
 
   "placeholder": {
@@ -220,5 +228,23 @@
     "checkout": "Paiement",
     "success": "Confirmation",
     "account": "Compte"
+  },
+  "instrumentation": {
+    "Oboe, Horn (or English Horn), Piano": "Hautbois, Cor (ou Cor Anglais), Piano",
+    "Horn (or Violin, or Viola, or Cello), Piano": "Cor (ou Violon, ou Alto, ou Violoncelle), Piano",
+    "Horn (or Violin), Piano": "Cor (ou Violon), Piano",
+    "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)": "2 Cors (ou Trompettes, ou Flûtes, ou Hautbois, ou Flûtes à bec, ou Violons, ou Tambourins)",
+    "Horn, String Quartet": "Cor, Quatuor à cordes",
+    "Horn, Piano": "Cor, Piano",
+    "Horn": "Cor",
+    "Piston Horn, Piano": "Cor à pistons, Piano",
+    "4 Horns": "4 Cors",
+    "Horn, Musette, Flute, Violin, Bass": "Cor, Musette, Flûte, Violon, Basse",
+    "Piston Horn": "Cor à pistons",
+    "Horn, Piano, Harp, Organ, Contralto, 4 Horns": "Cor, Piano, Harpe, Orgue, Contralto, 4 Cors",
+    "Piston Horn, Organ": "Cor à pistons, Orgue",
+    "2 Horns, Piano": "2 Cors, Piano",
+    "2 Horns, Orchestra": "2 Cors, Orchestre",
+    "5 Horns, Piano": "5 Cors, Piano"
   }
 }

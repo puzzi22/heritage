@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { take } from 'rxjs';
 import { BasketService } from 'src/app/basket/basket.service';
 import { Product } from 'src/app/shared/models/product';
@@ -29,7 +30,8 @@ export class ProductDetailsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private bcService: BreadcrumbService,
     private basketService: BasketService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private translate: TranslateService
   ) {
     this.bcService.set('@productDetails', ' ');
   }
@@ -111,6 +113,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   get buttonText() {
-    return this.quantityInBasket === 0 ? 'Add to basket' : 'Update basket';
+    const key =
+      this.quantityInBasket === 0
+        ? 'product.addToBasket'
+        : 'product.updateBasket';
+    return this.translate.instant(key);
   }
 }

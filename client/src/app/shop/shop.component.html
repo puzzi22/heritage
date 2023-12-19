@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <section class="col-3">
-      <h5 class="text-warning ms-3">{{ 'shop.sort' | translate }}</h5>
+      <h5 class="text-warning ms-3">{{ "shop.sort" | translate }}</h5>
       <select class="form-select mb-4" (change)="onSortSelected($event)">
         <option
           *ngFor="let sort of sortOptions"
@@ -12,7 +12,7 @@
         </option>
       </select>
 
-      <h5 class="text-warning ms-3">{{ 'shop.composers' | translate }}</h5>
+      <h5 class="text-warning ms-3">{{ "shop.composers" | translate }}</h5>
       <ul class="list-group my-3">
         <li
           class="list-group-item"
@@ -24,7 +24,7 @@
           {{ composer.lastName }}
         </li>
       </ul>
-      <h5 class="text-warning ms-3">{{ 'shop.types' | translate }}</h5>
+      <h5 class="text-warning ms-3">{{ "shop.types" | translate }}</h5>
       <ul class="list-group my-3">
         <li
           class="list-group-item"
@@ -48,17 +48,17 @@
         <div class="d-flex mt-2">
           <!-- (keyup.enter)="onSearch()" -->
           <input
-          (keyup)="onKeyUp(search.value)"
+            (keyup)="onKeyUp(search.value)"
             type="text"
-            placeholder="Search"
+            placeholder="{{ 'placeholder.search' | translate }}"
             class="form-control me-2"
             #search
           />
           <button (click)="onSearch()" class="btn btn-outline-primary mx-2">
-            {{ 'shop.search' | translate }}
+            {{ "shop.search" | translate }}
           </button>
           <button (click)="onReset()" class="btn btn-outline-success">
-            {{ 'shop.reset' | translate }}
+            {{ "shop.reset" | translate }}
           </button>
         </div>
       </div>

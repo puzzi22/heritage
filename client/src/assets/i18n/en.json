@@ -82,6 +82,12 @@
     "status": "Status"
   },
 
+  "orderStatus": {
+    "pending": "Pending",
+    "paymentReceived": "Payment Received",
+    "paymentFailed": "Payment Failed"
+  },
+
   "checkout": {
     "address": "Address",
     "delivery": "Delivery",
@@ -113,7 +119,9 @@
     "description": "Description",
     "instrumentation": "Instrumentation",
     "price": "Price",
-    "quantityInBasket": "You have {{quantityInBasket}} of this item in your basket"
+    "quantityInBasket": "You have {{quantityInBasket}} of this item in your basket",
+    "addToBasket": "Add to Basket",
+    "updateBasket": "Update Basket"
   },
 
   "placeholder": {
@@ -220,5 +228,23 @@
     "checkout": "Checkout",
     "success": "Success",
     "account": "Account"
+  },
+  "instrumentation": {
+    "Oboe, Horn (or English Horn), Piano": "Oboe, Horn (or English Horn), Piano",
+    "Horn (or Violin, or Viola, or Cello), Piano": "Horn (or Violin, or Viola, or Cello), Piano",
+    "Horn (or Violin), Piano": "Horn (or Violin), Piano",
+    "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)": "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)",
+    "Horn, String Quartet": "Horn, String Quartet",
+    "Horn, Piano": "Horn, Piano",
+    "Horn": "Horn",
+    "Piston Horn, Piano": "Piston Horn, Piano",
+    "4 Horns": "4 Horns",
+    "Horn, Musette, Flute, Violin, Bass": "Horn, Musette, Flute, Violin, Bass",
+    "Piston Horn": "Piston Horn",
+    "Horn, Piano, Harp, Organ, Contralto, 4 Horns": "Horn, Piano, Harp, Organ, Contralto, 4 Horns",
+    "Piston Horn, Organ": "Piston Horn, Organ",
+    "2 Horns, Piano": "2 Horns, Piano",
+    "2 Horns, Orchestra": "2 Horns, Orchestra",
+    "5 Horns, Piano": "5 Horns, Piano"
   }
 }
