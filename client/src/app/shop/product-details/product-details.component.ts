@@ -3,7 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { take } from 'rxjs';
 import { BasketService } from 'src/app/basket/basket.service';
+import { Composer } from 'src/app/shared/models/composer';
 import { Product } from 'src/app/shared/models/product';
+import { Type } from 'src/app/shared/models/type';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { ShopService } from '../shop.service';
 
@@ -23,6 +25,11 @@ export class ProductDetailsComponent implements OnInit {
   isImageZoomed = false;
   zoomedImage = '';
 
+  composers: Composer[] = [];
+  composerNames: string[] = []; // Array to store composer names
+  types: Type[] = [];
+  typeNames: string[] = []; // Array to store type names
+
   @ViewChild('mainCarousel') mainCarousel: any; // or OwlCarouselOComponent if appropriate
 
   constructor(
@@ -38,6 +45,44 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProduct();
+    this.shopService.getComposers().subscribe({
+      next: (response) => {
+        this.composers = response;
+        this.setComposerNames();
+      },
+      error: (error) => console.error(error),
+    });
+    this.shopService.getTypes().subscribe({
+      next: (response) => {
+        this.types = response;
+        this.setTypeNames();
+      },
+      error: (error) => console.error(error),
+    });
+  }
+
+  setComposerNames() {
+    if (this.product) {
+      this.composerNames = this.product.productComposerIds
+        .map((id) => {
+          const composer = this.composers.find((c) => c.id === id);
+          return composer ? `${composer.firstName} ${composer.lastName}` : '';
+          // return composer ? `${composer.lastName}` : '';
+        })
+        .filter((name) => name);
+    }
+  }
+
+  setTypeNames() {
+    if (this.product) {
+      this.typeNames = this.product.productTypeIds
+        .map((id) => {
+          const type = this.types.find((c) => c.id === id);
+          // return type ? `${t.firstName} ${composer.lastName}` : '';
+          return type ? `${type.name}` : '';
+        })
+        .filter((name) => name);
+    }
   }
 
   loadProduct() {

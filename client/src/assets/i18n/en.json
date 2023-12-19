@@ -121,7 +121,9 @@
     "price": "Price",
     "quantityInBasket": "You have {{quantityInBasket}} of this item in your basket",
     "addToBasket": "Add to Basket",
-    "updateBasket": "Update Basket"
+    "updateBasket": "Update Basket",
+    "composer": "Composer",
+    "type": "Type"
   },
 
   "placeholder": {

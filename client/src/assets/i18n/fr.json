@@ -121,7 +121,9 @@
     "price": "Prix",
     "quantityInBasket": "Vous avez {{quantityInBasket}} fois cet article dans votre panier",
     "addToBasket": "Ajouter au panier",
-    "updateBasket": "Mettre à jour le panier"
+    "updateBasket": "Mettre à jour le panier",
+    "composer": "Compositeur",
+    "type": "Type"
   },
 
   "placeholder": {

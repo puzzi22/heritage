@@ -45,13 +45,19 @@
       <h2>{{ product.title }}</h2>
       <br />
       <div class="row mt-4">
-        <h4>{{ "product.description" | translate }}</h4>
+        <h5>{{ "product.composer" | translate }}</h5>
+        <p>{{ composerNames.join(", ") }}</p>
+
+        <h5>{{ "product.description" | translate }}</h5>
         <p>{{ product.longTitle }}</p>
 
-        <h4>{{ "product.instrumentation" | translate }}</h4>
+        <h5>{{ "product.instrumentation" | translate }}</h5>
         <p>{{ "instrumentation." + product.instrumentation | translate }}</p>
 
-        <h4>{{ "product.price" | translate }}</h4>
+        <h5>{{ "product.type" | translate }}</h5>
+        <p>{{ typeNames.join(", ") }}</p>
+
+        <h5>{{ "product.price" | translate }}</h5>
         <p>{{ product.price | currency : "EUR" }}</p>
       </div>
       <br />
