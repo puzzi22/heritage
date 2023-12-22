@@ -33,8 +33,4 @@ export class NavBarComponent {
     this.currentLang = lang;
     this.languageService.setLanguage(lang); // This will also update the language in local storage
   }
-
-  scrollToTop() {
-    this.viewportScroller.scrollToPosition([0, 0]);
-  }
 }

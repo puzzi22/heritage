@@ -95,9 +95,9 @@
   },
 
   "orderStatus": {
-    "pending": "Pending",
-    "paymentReceived": "Payment Received",
-    "paymentFailed": "Payment Failed"
+    "Pending": "Pending",
+    "PaymentReceived": "Payment Received",
+    "PaymentFailed": "Payment Failed"
   },
 
   "checkout": {

@@ -8,8 +8,4 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   constructor(private viewportScroller: ViewportScroller) {}
-
-  scrollToTop() {
-    this.viewportScroller.scrollToPosition([0, 0]);
-  }
 }

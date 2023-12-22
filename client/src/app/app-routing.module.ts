@@ -73,7 +73,11 @@ const routes: Routes = [
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top', // Add this line
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

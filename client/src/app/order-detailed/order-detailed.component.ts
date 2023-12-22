@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { Order } from 'src/app/shared/models/order';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { OrdersService } from '../orders/orders.service';
@@ -16,27 +15,29 @@ export class OrderDetailedComponent implements OnInit {
     private orderService: OrdersService,
     private route: ActivatedRoute,
     private bcService: BreadcrumbService,
-    private translate: TranslateService
+    private changeDetectorRef: ChangeDetectorRef // Inject ChangeDetectorRef
   ) {
-    this.bcService.set('@OrderDetailed', ' ');
+    console.log('Here we are');
+    this.bcService.set('@OrderDetailed', '');
   }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
+    id &&
       this.orderService.getOrderDetailed(+id).subscribe({
         next: (order) => {
           this.order = order;
-          // Translate the label with dynamic content
-          const translatedLabel = this.translate.instant('orderDetails', {
-            id: order.id,
-            status: order.status,
-          });
-          // Set the breadcrumb label
-          this.bcService.set('@OrderDetailed', translatedLabel);
+          console.log(order);
+          this.bcService.set(
+            '@OrderDetailed',
+            `Order #${order.id} - ${order.status}`
+          );
+          console.log(
+            `Breadcrumb set to: Order #${order.id} - ${order.status}`
+          );
+          // Manually trigger change detection
+          this.changeDetectorRef.detectChanges();
         },
-        // ... error handling
       });
-    }
   }
 }

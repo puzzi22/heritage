@@ -20,8 +20,4 @@ export class BasketComponent {
   removeItem(event: { id: number; quantity: number }) {
     this.basketService.removeItemFromBasket(event.id, event.quantity);
   }
-
-  scrollToTop() {
-    this.viewportScroller.scrollToPosition([0, 0]);
-  }
 }

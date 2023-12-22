@@ -106,7 +106,6 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
-    this.scrollToTop(); // Scrolls to the top after applying the filter
   }
 
   onTypeSelected(typeId: number) {
@@ -116,7 +115,6 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
-    this.scrollToTop();
   }
 
   onSortSelected(event: any) {
@@ -125,7 +123,6 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
-    this.scrollToTop();
   }
 
   onPageChanged(event: any) {
@@ -135,7 +132,6 @@ export class ShopComponent implements OnInit {
       this.shopService.setShopParams(params);
       this.shopParams = params;
       this.getProducts();
-      this.scrollToTop();
     }
   }
 
@@ -175,9 +171,6 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
-  scrollToTop() {
-    this.viewportScroller.scrollToPosition([0, 0]);
-  }
 
   ngOnDestroy(): void {
     // Unsubscribe to avoid memory leaks

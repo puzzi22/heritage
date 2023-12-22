@@ -7,16 +7,24 @@
             <thead>
               <tr>
                 <th scope="col" class="border-0 bg-light">
-                  <div class="p-2 text-uppercase">Product</div>
+                  <div class="p-2 text-uppercase">
+                    {{ "basketSummary.product" | translate }}
+                  </div>
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
-                  <div class="py-2 text-uppercase">Price</div>
+                  <div class="py-2 text-uppercase">
+                    {{ "basketSummary.price" | translate }}
+                  </div>
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
-                  <div class="py-2 text-uppercase">Quantity</div>
+                  <div class="py-2 text-uppercase">
+                    {{ "basketSummary.quantity" | translate }}
+                  </div>
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
-                  <div class="py-2 text-uppercase">Total</div>
+                  <div class="py-2 text-uppercase">
+                    {{ "basketSummary.total" | translate }}
+                  </div>
                 </th>
               </tr>
             </thead>
@@ -38,7 +46,7 @@
                   </div>
                 </th>
                 <td class="align-middle text-center">
-                  <strong>{{ item.price | currency:'EUR' }}</strong>
+                  <strong>{{ item.price | currency : "EUR" }}</strong>
                 </td>
                 <td class="align-middle text-center">
                   <strong class="font-weight-bold px-2">{{
@@ -46,7 +54,9 @@
                   }}</strong>
                 </td>
                 <td class="align-middle text-center">
-                  <strong>{{ item.price * item.quantity | currency:'EUR' }}</strong>
+                  <strong>{{
+                    item.price * item.quantity | currency : "EUR"
+                  }}</strong>
                 </td>
               </tr>
             </tbody>
@@ -56,21 +66,27 @@
     </div>
     <div class="col-4">
       <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
-        Order summary
+        {{ "orderSummary.title" | translate }}
       </div>
       <div class="p-4">
         <ul class="list-unstyled mb-1">
           <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Order subtotal</strong>
-            <strong>{{ order.subtotal | currency:'EUR' }}</strong>
+            <strong class="text-muted">{{
+              "orderSummary.orderSubtotal" | translate
+            }}</strong>
+            <strong>{{ order.subtotal | currency : "EUR" }}</strong>
           </li>
           <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Shipping and handling</strong>
-            <strong>{{ order.shippingPrice | currency:'EUR' }}</strong>
+            <strong class="text-muted">{{
+              "orderSummary.shippingHandling" | translate
+            }}</strong>
+            <strong>{{ order.shippingPrice | currency : "EUR" }}</strong>
           </li>
           <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Total</strong>
-            <strong>{{ order.total | currency:'EUR' }}</strong>
+            <strong class="text-muted">{{
+              "orderSummary.total" | translate
+            }}</strong>
+            <strong>{{ order.total | currency : "EUR" }}</strong>
           </li>
         </ul>
       </div>

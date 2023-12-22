@@ -25,7 +25,6 @@ export class ContactComponent {
     const email = (document.getElementById('email') as HTMLInputElement)?.value;
     const comment = (document.getElementById('comment') as HTMLTextAreaElement)
       ?.value;
-    console.log(name, email);
 
     return name && email && comment; // Returns true only if all fields are filled
   }
