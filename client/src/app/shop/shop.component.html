@@ -33,7 +33,7 @@
           [value]="type.id"
           (click)="onTypeSelected(type.id)"
         >
-          {{ type.name }}
+          {{ "types." + type.name | translate }}
         </li>
       </ul>
     </section>

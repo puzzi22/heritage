@@ -207,10 +207,6 @@
     "priceHighToLow": "Price: High to low"
   },
 
-  "common": {
-    "all": "All"
-  },
-
   "deliveryMethods": {
     "UPS1": {
       "description": "Fastest delivery time",
@@ -225,10 +221,35 @@
       "deliveryTime": "5-10 Days"
     },
     "FREE": {
-      "description": "Free! You get what you pay for",
-      "deliveryTime": "1-2 Weeks"
+      "description": "Free! We will send you the documents digitally by email",
+      "deliveryTime": "Same Day"
     }
   },
+
+  "common": {
+    "all": "All"
+  },
+
+
+  "types": {
+    "all": "All",
+    "Arrangement": "Arrangement",
+    "Chamber Music": "Chamber Music",
+    "Concerto": "Concerto",
+    "Horn and Organ": "Horn and Organ",
+    "Horn and Piano": "Horn and Piano",
+    "Horn Duet": "Horn Duet",
+    "Horn Quartet": "Horn Quartet",
+    "Method": "Method",
+    "Other": "Other",
+    "Sight-reading": "Sight-reading",
+    "Sinfonia Concertante": "Sinfornia Concertante",
+    "Solo Horn": "Solo Horn",
+    "Sonata": "Sonata",
+    "Study": "Study",
+    "Trio": "Trio"
+  },
+
   "breadcrumb": {
     "home": "Home",
     "products": "Products",

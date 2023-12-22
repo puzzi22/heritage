@@ -9,13 +9,29 @@
         <h5>{{ "footer.quickLinks" | translate }}</h5>
         <ul class="list-unstyled">
           <li>
-            <a routerLink="/home">{{ "navbar.home" | translate }}</a>
+            <a routerLink="/home" (click)="scrollToTop()">{{
+              "navbar.home" | translate
+            }}</a>
           </li>
           <li>
-            <a routerLink="/shop">{{ "navbar.shop" | translate }}</a>
+            <a routerLink="/shop" (click)="scrollToTop()">{{
+              "navbar.shop" | translate
+            }}</a>
           </li>
           <li>
-            <a routerLink="/test-error">{{ "navbar.errors" | translate }}</a>
+            <a routerLink="/about-us" (click)="scrollToTop()">{{
+              "navbar.about-us" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/contact" (click)="scrollToTop()">{{
+              "navbar.contact" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/test-error" (click)="scrollToTop()">{{
+              "navbar.errors" | translate
+            }}</a>
           </li>
         </ul>
       </div>

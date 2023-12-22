@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AccountService } from 'src/app/account/account.service';
@@ -17,7 +18,8 @@ export class NavBarComponent {
     public basketService: BasketService,
     public accountService: AccountService,
     private translate: TranslateService, // Inject TranslateService
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private viewportScroller: ViewportScroller
   ) {
     this.currentLang = this.languageService.getLanguage();
     this.translate.use(this.currentLang); // Apply the language
@@ -30,5 +32,9 @@ export class NavBarComponent {
   changeLanguage(lang: string): void {
     this.currentLang = lang;
     this.languageService.setLanguage(lang); // This will also update the language in local storage
+  }
+
+  scrollToTop() {
+    this.viewportScroller.scrollToPosition([0, 0]);
   }
 }

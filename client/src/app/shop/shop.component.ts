@@ -72,7 +72,7 @@ export class ShopComponent implements OnInit {
   setAllLabels() {
     const allLabel = this.translateService.instant('common.all');
     this.getComposers(allLabel);
-    this.getTypes(allLabel);
+    this.getTypes();
   }
 
   getComposers(allLabel: string) {
@@ -87,10 +87,13 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  getTypes(allLabel: string) {
+  getTypes() {
     this.shopService.getTypes().subscribe({
       next: (response) => {
-        this.types = [{ id: 0, name: allLabel }, ...response];
+        this.types = [
+          { id: 0, name: this.translateService.instant('all') },
+          ...response,
+        ];
       },
       error: (error) => console.log(error),
     });

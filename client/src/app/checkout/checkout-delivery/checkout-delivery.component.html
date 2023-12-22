@@ -1,25 +1,19 @@
 <div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
   <div class="row" formGroupName="deliveryForm">
-    <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
+    <div class="col-6 form-group mb-3 m" *ngFor="let method of deliveryMethods; let i = index">
       <input
         type="radio"
         id="{{ method.id }}"
         value="{{ method.id }}"
         formControlName="deliveryMethod"
         class="form-check-input"
+        [class.grey-out]="i < 3"
         (click)="setShippingPrice(method)"
       />
-      <label for="{{ method.id }}" class="form-check-label ms-2 mb-3">
-        <strong
-          >{{ method.shortName }} -
-          {{ method.price | currency : "EUR" }}</strong
-        >
-
+      <label for="{{ method.id }}" class="form-check-label ms-2 mb-3 d-inline" [class.grey-out]="i < 3">
+        <strong>{{ method.shortName }} - {{ method.price | currency: 'EUR' }}</strong>
         <br />
-        <span class="label-description">{{
-          "deliveryMethods." + method.shortName + ".description" | translate
-        }}</span>
-        <!-- <span class="label-description">{{ method.description }}</span> -->
+        <span class="label-description d-block ms-4">{{ "deliveryMethods." + method.shortName + ".description" | translate }}</span>
       </label>
     </div>
   </div>

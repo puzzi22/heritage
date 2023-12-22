@@ -10,22 +10,39 @@
       class="p-2"
       routerLink="/"
       routerLinkActive="active"
+      (click)="scrollToTop()"
       [routerLinkActiveOptions]="{ exact: true }"
       >{{ "navbar.home" | translate }}</a
     >
-    <a class="p-2" routerLink="/shop" routerLinkActive="active">{{
-      "navbar.shop" | translate
-    }}</a>
-    <a class="p-2" routerLink="/about-us" routerLinkActive="active">{{
-      "navbar.about-us" | translate
-    }}</a>
-    <a class="p-2" routerLink="/contact" routerLinkActive="active">{{
-      "navbar.contact" | translate
-    }}</a>
+    <a
+      class="p-2"
+      (click)="scrollToTop()"
+      routerLink="/shop"
+      routerLinkActive="active"
+      >{{ "navbar.shop" | translate }}</a
+    >
+    <a
+      class="p-2"
+      (click)="scrollToTop()"
+      routerLink="/about-us"
+      routerLinkActive="active"
+      >{{ "navbar.about-us" | translate }}</a
+    >
+    <a
+      class="p-2"
+      (click)="scrollToTop()"
+      routerLink="/contact"
+      routerLinkActive="active"
+      >{{ "navbar.contact" | translate }}</a
+    >
   </nav>
 
   <div class="d-flex flex-equal justify-content-end align-items-center">
-    <a routerLink="/basket" class="position-relative order-3">
+    <a
+      routerLink="/basket"
+      (click)="scrollToTop()"
+      class="position-relative order-3"
+    >
       <i class="fa fa-shopping-cart fa-2x me-3 text-dark"></i>
       <div
         *ngIf="basketService.basketSource$ | async as basket"
@@ -38,12 +55,16 @@
       *ngIf="(accountService.currentUser$ | async) === null"
       class="order-1"
     >
-      <a routerLink="/account/login" class="btn btn-outline-secondary me-2">{{
-        "login.login" | translate
-      }}</a>
+      <a
+        routerLink="/account/login"
+        (click)="scrollToTop()"
+        class="btn btn-outline-secondary me-2"
+        >{{ "login.login" | translate }}</a
+      >
       <a
         routerLink="/account/register"
         class="btn btn-outline-secondary me-3"
+        (click)="scrollToTop()"
         >{{ "login.register" | translate }}</a
       >
     </ng-container>

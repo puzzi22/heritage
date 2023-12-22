@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BasketService } from 'src/app/basket/basket.service';
 import { Composer } from 'src/app/shared/models/composer';
 import { Product } from 'src/app/shared/models/product';
@@ -16,7 +17,8 @@ export class ProductItemComponent implements OnInit {
 
   constructor(
     private basketService: BasketService,
-    private shopService: ShopService
+    private shopService: ShopService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -26,6 +28,12 @@ export class ProductItemComponent implements OnInit {
         this.setComposerNames();
       },
       error: (error) => console.error(error),
+    });
+  }
+
+  viewProductDetails(productId: number) {
+    this.router.navigate(['/shop', productId]).then(() => {
+      window.scrollTo(0, 0); // Scroll to the top of the page
     });
   }
 

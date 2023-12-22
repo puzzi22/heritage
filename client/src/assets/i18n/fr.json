@@ -207,10 +207,6 @@
     "priceHighToLow": "Price : du plus cher au moins cher"
   },
 
-  "common": {
-    "all": "Tous"
-  },
-
   "deliveryMethods": {
     "UPS1": {
       "description": "Livraison la plus rapide",
@@ -225,10 +221,34 @@
       "deliveryTime": "5-10 Jours"
     },
     "FREE": {
-      "description": "Gratuit ! Vous en aurez pour votre argent",
-      "deliveryTime": "1-2 Semaines"
+      "description": "Gratuit ! Nous vons enverrons les documents en format digital par email",
+      "deliveryTime": "Le même jour"
     }
   },
+
+  "common": {
+    "all": "Tous"
+  },
+
+  "types": {
+    "all": "Tous",
+    "Arrangement": "Arrangement",
+    "Chamber Music": "Musique de chambre",
+    "Concerto": "Concerto",
+    "Horn and Organ": "Cor et orgue",
+    "Horn and Piano": "Cor et piano",
+    "Horn Duet": "Duo de cors",
+    "Horn Quartet": "Quatuor de cors",
+    "Method": "Méthode",
+    "Other": "Autre",
+    "Sight-reading": "Lecture à vue",
+    "Sinfonia Concertante": "Symphonie concertante",
+    "Solo Horn": "Cor solo",
+    "Sonata": "Sonate",
+    "Study": "Étude",
+    "Trio": "Trio"
+  },
+
   "breadcrumb": {
     "home": "Accueil",
     "products": "Produits",
