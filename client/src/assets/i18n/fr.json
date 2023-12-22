@@ -16,6 +16,14 @@
     "reset": "Réinitialiser"
   },
 
+  "contact": {
+    "writeUs": "Écrivez-nous",
+    "yourEmail": "Email",
+    "yourName": "Nom",
+    "writeYourMessageHere": "Écrivez votre message ou votre question ici",
+    "submit": "Soumettre"
+  },
+
   "navbar": {
     "home": "Accueil",
     "shop": "Catalogue",

@@ -1,1 +1,68 @@
-<p>contact works!</p>
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-3">
+    <!-- <form
+      [formGroup]="FormData"
+      (ngSubmit)="onSubmit()"
+      action="https://formspree.io/f/xpzvajbr"
+      method="POST"
+    > -->
+    <form
+      id="fs-frm"
+      name="simple-contact-form"
+      accept-charset="utf-8"
+      action="https://formspree.io/f/xpzvajbr"
+      method="POST"
+    >
+      <div class="text-center mb-4">
+        <h1 class="mb-3">{{ "contact.writeUs" | translate }}</h1>
+      </div>
+
+      <app-text-input
+        [formControl]="FormData.controls['name']"
+        [label]="'contact.yourName' | translate"
+        id="name"
+        name="name"
+        required
+      ></app-text-input>
+
+      <app-text-input
+        [formControl]="FormData.controls['email']"
+        [label]="'contact.yourEmail' | translate"
+        id="email"
+        name="_replyto"
+        required
+      ></app-text-input>
+
+      <div class="form-group">
+        <textarea
+          class="form-control"
+          [formControl]="FormData.controls['comment']"
+          formControlName="comment"
+          [placeholder]="'contact.writeYourMessageHere' | translate"
+          id="comment"
+          name="comment"
+          required
+        ></textarea>
+      </div>
+
+      <ul class="text-danger list-unstyled" *ngIf="errors">
+        <li *ngFor="let error of errors">
+          {{ error }}
+        </li>
+      </ul>
+
+      <!-- <pre>Form Value: {{ FormData.value | json }}</pre>
+      <pre>Form Valid: {{ FormData.valid }}</pre> -->
+
+      <div class="d-grid">
+        <button
+          type="submit"
+          class="btn btn-lg btn-primary mt-3"
+          [disabled]="!FormData.valid"
+        >
+          {{ "contact.submit" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

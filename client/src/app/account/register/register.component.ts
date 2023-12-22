@@ -23,8 +23,6 @@ export class RegisterComponent {
     private router: Router
   ) {}
 
-  // complexPassword =
-  //   "(?=^.{6,10}$)(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*s).*$";
   complexPassword =
     '(?=^.{6,10}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{";:\'?/>.<,])(?!.*\\s).*$';
 
