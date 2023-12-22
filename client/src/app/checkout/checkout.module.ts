@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { CheckoutAddressComponent } from './checkout-address/checkout-address.component';
@@ -19,6 +20,12 @@ import { CheckoutComponent } from './checkout.component';
     CheckoutPaymentComponent,
     CheckoutSuccessComponent,
   ],
-  imports: [CommonModule, CheckoutRoutingModule, SharedModule, TranslateModule],
+  imports: [
+    CommonModule,
+    CheckoutRoutingModule,
+    SharedModule,
+    FormsModule,
+    TranslateModule,
+  ],
 })
 export class CheckoutModule {}

@@ -153,7 +153,11 @@
 
   "checkoutReview": {
     "backToDelivery": "Retour à la livraison",
-    "goToPayment": "Passer au paiement"
+    "goToPayment": "Passer au paiement",
+    "discount": "Entrez votre bon de réduction",
+    "applyCode": "Enregistrer",
+    "success": "Discount code applied successfully",
+    "error": "Veuillez entrer un bon de réduction"
   },
 
   "shippingAddress": {

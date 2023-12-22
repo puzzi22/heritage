@@ -46,6 +46,19 @@ export class BasketService {
     }
   }
 
+  applyDiscountCode(discountCode: string): Observable<Basket> {
+    return this.http.post<Basket>(
+      this.baseUrl + 'basket/apply-discount',
+      { discountCode, basketId: this.getCurrentBasketValue()?.id }
+    ).pipe(
+      map((basket: Basket) => {
+        this.basketSource.next(basket);
+        this.calculateTotals();
+        return basket;
+      })
+    );
+  }
+
   getProductComposers() {
     return this.http.get<ProductComposerDto[]>(
       this.baseUrl + 'products/composers'

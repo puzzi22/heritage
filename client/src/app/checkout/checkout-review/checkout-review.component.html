@@ -2,13 +2,28 @@
   <app-basket-summary [isBasket]="false"></app-basket-summary>
 </div>
 
-<div class="d-flex justify-content-between flex-row mb-5">
-  <button class="btn btn-outline-primary" cdkStepperPrevious>
-    <i class="fa fa-angle-left"></i>
-    {{ "checkoutReview.backToDelivery" | translate }}
-  </button>
-  <button class="btn btn-primary" (click)="createPaymentIntent()">
-    {{ "checkoutReview.goToPayment" | translate }}t
-    <i class="fa fa-angle-right"></i>
-  </button>
+<div class="mt-4 mb-4">
+  <!-- Input field in its own div -->
+  <div class="d-flex justify-content-end mb-4">
+    <input
+      type="text"
+      class="form-control w-25 me-3"
+      [(ngModel)]="discountCode"
+      placeholder="{{ 'checkoutReview.discount' | translate }}"
+    />
+    <button class="btn btn-success" (click)="applyDiscountCode()">
+      {{ "checkoutReview.applyCode" | translate }}
+    </button>
+  </div>
+
+  <div class="d-flex justify-content-between flex-row mb-5">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+      <i class="fa fa-angle-left"></i>
+      {{ "checkoutReview.backToDelivery" | translate }}
+    </button>
+    <button class="btn btn-primary" (click)="createPaymentIntent()">
+      {{ "checkoutReview.goToPayment" | translate }}t
+      <i class="fa fa-angle-right"></i>
+    </button>
+  </div>
 </div>
