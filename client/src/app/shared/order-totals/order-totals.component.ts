@@ -8,4 +8,20 @@ import { BasketService } from 'src/app/basket/basket.service';
 })
 export class OrderTotalsComponent {
   constructor(public basketService: BasketService) {}
+
+  hasDiscountedItems(): boolean {
+    const basket = this.basketService.getCurrentBasketValue();
+  
+    if (basket && basket.items) {
+      // Check if any item has a discounted price that is not null
+      return basket.items.some(
+        (item) =>
+          item.discountedPrice !== undefined &&
+          item.discountedPrice !== null &&
+          item.discountedPrice < item.price
+      );
+    }
+  
+    return false;
+  }
 }

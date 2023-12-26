@@ -5,25 +5,34 @@
   <table class="table">
     <thead class="text-uppercase" [class.bg-light]="isBasket">
       <tr>
-        <th><div class="py-2">{{ 'basketSummary.product' | translate }}</div></th>
-        <th><div class="py-2">{{ 'basketSummary.price' | translate }}</div></th>
-        <th [class.text-center]="!isBasket">
-          <div class="py-2">{{ 'basketSummary.quantity' | translate }}</div>
+        <th>
+          <div class="py-2">{{ "basketSummary.product" | translate }}</div>
         </th>
-        <th><div class="py-2">{{ 'basketSummary.total' | translate }}</div></th>
-        <th *ngIf="isBasket"><div class="py-2">{{ 'basketSummary.remove' | translate }}</div></th>
+        <th>
+          <div class="py-2">{{ "basketSummary.price" | translate }}</div>
+        </th>
+        <th>
+          <div class="py-2">{{ "basketSummary.quantity" | translate }}</div>
+        </th>
+        <th>
+          <div class="py-2">{{ "basketSummary.subtotal" | translate }}</div>
+        </th>
+        <th *ngIf="isBasket">
+          <div class="py-2">{{ "basketSummary.remove" | translate }}</div>
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of basket.items">
-        <th>
+        <!-- Product Column -->
+        <th style="padding: 0">
+          <img
+            src="{{ item.pictureUrl }}"
+            alt="{{ item.productName }}"
+            class="img-fluid"
+            style="height: 120px"
+          />
           <div class="p-2 d-inline-block">
-            <img
-              src="{{ item.pictureUrl }}"
-              alt="{{ item.productName }}"
-              class="img-fluid"
-              style="max-height: 50px"
-            />
             <div class="ms-3 d-inline-block align-middle">
               <h5 class="mb-0">
                 <a
@@ -39,9 +48,34 @@
             </div>
           </div>
         </th>
+        <!-- Price Column -->
         <td class="align-middle">
-          <strong>{{ item.price | currency : "EUR" }}</strong>
+          <div
+            *ngIf="
+              item.discountedPrice && item.discountedPrice !== item.price;
+              else originalPrice
+            "
+          >
+            <span class="text-decoration-line-through">{{
+              item.price | currency : "EUR"
+            }}</span
+            ><br />
+            <strong class="text-success">{{
+              item.discountedPrice | currency : "EUR"
+            }}</strong>
+          </div>
+          <ng-template #originalPrice>
+            <strong>{{ item.price | currency : "EUR" }}</strong>
+          </ng-template>
         </td>
+        <!-- <td class="align-middle">
+          <strong>{{
+            (item.discountedPrice && item.discountedPrice !== item.price
+              ? item.discountedPrice
+              : item.price) * item.quantity | currency : "EUR"
+          }}</strong>
+        </td> -->
+        <!-- Quantity Column -->
         <td class="align-middle">
           <div
             class="d-flex align-items-center"
@@ -62,9 +96,14 @@
             ></i>
           </div>
         </td>
+        <!-- Subtotal Column -->
         <td class="align-middle">
-          <strong>{{ item.price * item.quantity | currency : "EUR" }}</strong>
+          <strong>{{
+            (item.discountedPrice != null ? item.discountedPrice : item.price) *
+              item.quantity | currency : "EUR"
+          }}</strong>
         </td>
+        <!-- Remove Item Column -->
         <td *ngIf="isBasket" class="align-middle">
           <a class="text-danger">
             <i

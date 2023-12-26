@@ -62,7 +62,13 @@
     "badRequest": "Vous avez fait une mauvaise demande",
     "unauthorized": "Vous n'êtes pas autorisé",
     "ResourceNotFound": "Ressource non trouvée",
-    "serverError": "Erreur interne du serveur"
+    "serverError": "Erreur interne du serveur",
+    "basketIdNullOrEmpty": "Le ID du panier est nul ou vide",
+    "invalidDiscount": "Code de réduction invalide",
+    "basketNotFound": "Panier introuvable",
+    "alreadyApplied": "Un code de réduction a déjà été appliqué",
+    "defaultErrorKey": "Une erreur est survenue en applicant le code",
+    "undefined": "Le code de réduction est invalide"
   },
 
   "validation": {
@@ -116,6 +122,7 @@
     "shippingInfo": "Les frais de livraison seront calculés en fonction des choix effectués lors du paiement",
     "orderSubtotal": "Sous-total de la commande",
     "shippingHandling": "Expédition et manutention",
+    "discountApplied": "Réduction",
     "total": "Total"
   },
 
@@ -123,7 +130,7 @@
     "product": "Produit",
     "price": "Prix",
     "quantity": "Quantité",
-    "total": "Total",
+    "subtotal": "Subtotal",
     "remove": "Supprimer"
   },
 
@@ -156,7 +163,7 @@
     "goToPayment": "Passer au paiement",
     "discount": "Entrez votre bon de réduction",
     "applyCode": "Enregistrer",
-    "success": "Discount code applied successfully",
+    "success": "Bon de réduction entré avec succès",
     "error": "Veuillez entrer un bon de réduction"
   },
 

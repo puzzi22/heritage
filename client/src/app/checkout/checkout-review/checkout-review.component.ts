@@ -12,6 +12,7 @@ import { BasketService } from 'src/app/basket/basket.service';
 export class CheckoutReviewComponent {
   @Input() appStepper?: CdkStepper;
   discountCode: string = '';
+  isDiscountApplied: boolean = false;
 
   constructor(
     private basketService: BasketService,
@@ -23,20 +24,34 @@ export class CheckoutReviewComponent {
     if (this.discountCode) {
       this.basketService.applyDiscountCode(this.discountCode).subscribe({
         next: (response) => {
-          // Handle response, e.g., update the basket total
+          this.basketService.setBasket(response);
           this.translate
-            .get('checkoutReview.discountApplied')
-            .subscribe((translatedText) => {
-              this.toastr.success(translatedText);
-            });
-          // Update the basket display or trigger a re-fetch
-        },
+              .get('checkoutReview.success')
+              .subscribe((translatedText) => {
+                  this.toastr.success(translatedText);
+              });
+          this.isDiscountApplied = true; // Set the flag to true after successful application
+      },
         error: (error) => {
-          this.translate
-            .get('checkoutReview.error')
-            .subscribe((translatedText) => {
-              this.toastr.error(translatedText);
-            });
+          let errorKey = 'error.defaultErrorKey'; // A default error key
+          if (error.error && error.error.messageKey) {
+            // If the backend provides a specific error key
+            errorKey = error.error.messageKey;
+          }
+
+          this.translate.get(errorKey).subscribe((translatedErrorMessage) => {
+            let errorMessage = translatedErrorMessage;
+
+            // If there's no translation found for the key, use a default message
+            if (errorKey === translatedErrorMessage) {
+              errorMessage = 'error.defaultErrorKey';
+            }
+
+            // Display the error message
+            console.error(errorMessage);
+            // Optionally, use a toastr or other notification service to show the error
+            this.toastr.error(errorMessage);
+          });
         },
       });
     } else {

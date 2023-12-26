@@ -11,6 +11,7 @@ export interface OrderItem {
   productTitle: string;
   pictureUrl1: string;
   price: number;
+  discountedPrice?: number; // Discounted price, if applicable
   quantity: number;
 }
 export interface Order {

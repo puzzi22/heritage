@@ -1,21 +1,38 @@
 <div class="bg-light px-4 py-3 text-uppercase fw-bold">
-    {{ "orderSummary.title" | translate }}
+  {{ "orderSummary.title" | translate }}
 </div>
 
 <div class="p-4">
-    <p class="fst-italic mb-4">{{ "orderSummary.shippingInfo" | translate }}</p>
-    <ul class="list-unstyled mb-4" *ngIf="(basketService.basketTotalSource$ | async) as totals">
-        <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">{{ "orderSummary.orderSubtotal" | translate }}</strong>
-            <strong>{{totals.subtotal | currency:'EUR'}}</strong>
-        </li>
-        <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">{{ "orderSummary.shippingHandling" | translate }}</strong>
-            <strong>{{totals.shipping | currency:'EUR'}}</strong>
-        </li>
-        <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">{{ "orderSummary.total" | translate }}</strong>
-            <strong>{{totals.total | currency:'EUR'}}</strong>
-        </li>
-    </ul>
+  <p class="fst-italic mb-4">{{ "orderSummary.shippingInfo" | translate }}</p>
+  <ul
+    class="list-unstyled mb-4"
+    *ngIf="basketService.basketTotalSource$ | async as totals"
+  >
+    <li class="d-flex justify-content-between py-3 border-bottom">
+      <strong class="text-muted">{{
+        "orderSummary.orderSubtotal" | translate
+      }}</strong>
+      <strong>{{ totals.subtotal | currency : "EUR" }}</strong>
+    </li>
+    <li class="d-flex justify-content-between py-3 border-bottom">
+      <strong class="text-muted">{{
+        "orderSummary.shippingHandling" | translate
+      }}</strong>
+      <strong>{{ totals.shipping | currency : "EUR" }}</strong>
+    </li>
+    <!-- Display discount information if a discount is applied -->
+    <li
+      *ngIf="hasDiscountedItems()"
+      class="d-flex justify-content-between py-3 border-bottom"
+    >
+      <strong class="text-success">{{
+        "orderSummary.discountApplied" | translate
+      }}</strong>
+      <strong class="text-success">-50%</strong>
+    </li>
+    <li class="d-flex justify-content-between py-3 border-bottom">
+      <strong class="text-muted">{{ "orderSummary.total" | translate }}</strong>
+      <strong>{{ totals.total | currency : "EUR" }}</strong>
+    </li>
+  </ul>
 </div>

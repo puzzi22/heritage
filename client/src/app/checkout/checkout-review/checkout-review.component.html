@@ -11,7 +11,11 @@
       [(ngModel)]="discountCode"
       placeholder="{{ 'checkoutReview.discount' | translate }}"
     />
-    <button class="btn btn-success" (click)="applyDiscountCode()">
+    <button
+      class="btn btn-success"
+      (click)="applyDiscountCode()"
+      [disabled]="isDiscountApplied"
+    >
       {{ "checkoutReview.applyCode" | translate }}
     </button>
   </div>
@@ -22,7 +26,7 @@
       {{ "checkoutReview.backToDelivery" | translate }}
     </button>
     <button class="btn btn-primary" (click)="createPaymentIntent()">
-      {{ "checkoutReview.goToPayment" | translate }}t
+      {{ "checkoutReview.goToPayment" | translate }}
       <i class="fa fa-angle-right"></i>
     </button>
   </div>

@@ -62,7 +62,13 @@
     "badRequest": "You have made a bad request",
     "unauthorized": "You are not authorized",
     "ResourceNotFound": "The resource was not found",
-    "serverError": "Internal server error"
+    "serverError": "Internal server error",
+    "basketIdNullOrEmpty": "Basket ID cannot be null or empty",
+    "invalidDiscount": "Invalid discount code",
+    "basketNotFound": "Basket not found",
+    "alreadyApplied": "A discount code has already been applied",
+    "defaultErrorKey": "An error occurred while applying the discount code",
+    "undefined": "The discount code is invalid"
   },
 
   "validation": {
@@ -116,6 +122,7 @@
     "shippingInfo": "Shipping costs will be calculated based on choices made during checkout",
     "orderSubtotal": "Order Subtotal",
     "shippingHandling": "Shipping and Handling",
+    "discountApplied": "Discount applied",
     "total": "Total"
   },
 
@@ -123,7 +130,7 @@
     "product": "Product",
     "price": "Price",
     "quantity": "Quantity",
-    "total": "Total",
+    "subtotal": "Subtotal",
     "remove": "Remove"
   },
 
@@ -156,7 +163,7 @@
     "goToPayment": "Go to Payment",
     "discount": "Enter Your Discount Code",
     "applyCode": "Apply Code",
-    "success": "Bon de réduction entré avec succès",
+    "success": "Discount code applied successfully",
     "error": "Please enter a discount code"
   },
 
@@ -233,7 +240,6 @@
   "common": {
     "all": "All"
   },
-
 
   "types": {
     "all": "All",

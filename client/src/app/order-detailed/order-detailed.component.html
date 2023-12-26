@@ -23,13 +23,14 @@
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
                   <div class="py-2 text-uppercase">
-                    {{ "basketSummary.total" | translate }}
+                    {{ "basketSummary.subtotal" | translate }}
                   </div>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of order.orderItems">
+                <!-- Product details -->
                 <th scope="row">
                   <div class="p-2">
                     <img
@@ -45,17 +46,34 @@
                     </div>
                   </div>
                 </th>
+
+                <!-- Price column -->
                 <td class="align-middle text-center">
-                  <strong>{{ item.price | currency : "EUR" }}</strong>
+                  <div *ngIf="item.discountedPrice; else originalPrice">
+                    <span class="text-decoration-line-through">{{
+                      item.price | currency : "EUR"
+                    }}</span>
+                    <strong class="text-success">{{
+                      item.discountedPrice | currency : "EUR"
+                    }}</strong>
+                  </div>
+                  <ng-template #originalPrice>
+                    <strong>{{ item.price | currency : "EUR" }}</strong>
+                  </ng-template>
                 </td>
+
+                <!-- Quantity column -->
                 <td class="align-middle text-center">
                   <strong class="font-weight-bold px-2">{{
                     item.quantity
                   }}</strong>
                 </td>
+
+                <!-- Subtotal column -->
                 <td class="align-middle text-center">
                   <strong>{{
-                    item.price * item.quantity | currency : "EUR"
+                    (item.discountedPrice ? item.discountedPrice : item.price) *
+                      item.quantity | currency : "EUR"
                   }}</strong>
                 </td>
               </tr>
