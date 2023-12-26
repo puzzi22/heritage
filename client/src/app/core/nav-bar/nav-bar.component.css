@@ -18,6 +18,10 @@ a.active {
   color: orange;
 }
 
+.main-links:hover {
+  color: rgba(52, 58, 64, 0.675);
+}
+
 .logo {
   cursor: pointer;
   margin-bottom: 0;

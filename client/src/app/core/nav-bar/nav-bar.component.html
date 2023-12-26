@@ -7,19 +7,22 @@
   </div>
   <nav class="my-2 text-uppercase fs-4">
     <a
-      class="p-2"
+      class="p-2 main-links"
       routerLink="/"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
       >{{ "navbar.home" | translate }}</a
     >
-    <a class="p-2" routerLink="/shop" routerLinkActive="active">{{
+    <a class="p-2 main-links" routerLink="/shop" routerLinkActive="active">{{
       "navbar.shop" | translate
     }}</a>
-    <a class="p-2" routerLink="/about-us" routerLinkActive="active">{{
-      "navbar.about-us" | translate
-    }}</a>
-    <a class="p-2" routerLink="/contact" routerLinkActive="active">{{
+    <a
+      class="p-2 main-links"
+      routerLink="/about-us"
+      routerLinkActive="active"
+      >{{ "navbar.about-us" | translate }}</a
+    >
+    <a class="p-2 main-links" routerLink="/contact" routerLinkActive="active">{{
       "navbar.contact" | translate
     }}</a>
   </nav>

@@ -41,12 +41,11 @@ export class SectionHeaderComponent implements OnDestroy {
     // Subscribe to breadcrumbs
     this.bcService.breadcrumbs$.subscribe((breadcrumbs) => {
       breadcrumbs.forEach((breadcrumb) => {
-        if (breadcrumb.alias === '@OrderDetailed') {
-          // Already set dynamically in OrderDetailedComponent
+        if (breadcrumb.alias === 'orderDetailed') {
+          // Do not translate, already set dynamically in OrderDetailedComponent
           return;
         } else if (breadcrumb.alias === 'productDetails') {
           // Skip translation for product details
-          // The label is directly set in the ProductDetailsComponent
           return;
         } else if (typeof breadcrumb.alias === 'string') {
           this.translate.get(breadcrumb.alias).subscribe((translatedLabel) => {

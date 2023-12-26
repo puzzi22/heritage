@@ -31,15 +31,15 @@
             <tbody>
               <tr *ngFor="let item of order.orderItems">
                 <!-- Product details -->
-                <th scope="row">
-                  <div class="p-2">
-                    <img
-                      src="{{ item.pictureUrl1 }}"
-                      alt="{{ item.productTitle }}"
-                      class="img-fluid"
-                      style="max-height: 50px"
-                    />
-                    <div class="ml-3 d-inline-block align-middle">
+                <th style="padding: 0">
+                  <img
+                    src="{{ item.pictureUrl1 }}"
+                    alt="{{ item.productTitle }}"
+                    class="img-fluid"
+                    style="height: 120px"
+                  />
+                  <div class="p-2 d-inline-block">
+                    <div class="ms-3 d-inline-block align-middle">
                       <h5 class="mb-0">
                         {{ item.productTitle }}
                       </h5>

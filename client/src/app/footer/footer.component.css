@@ -2,17 +2,17 @@
   position: relative;
   bottom: 0;
   width: 100%;
-  background-color: rgb(81, 80, 80);
-  color: rgb(224, 223, 223);
+  background-color: rgba(42, 41, 41, 0.854);
+  color: rgb(215, 214, 214);
   margin-top: 80px;
   /* Customize further below */
 }
 
 .footer a {
   text-decoration: none;
-  color: rgb(224, 223, 223);
+  color: rgb(215, 214, 214);
 }
 
 .footer a:hover {
-  color: rgb(115, 117, 255);
+  color: rgb(255, 255, 255);
 }/*# sourceMappingURL=footer.component.css.map */
