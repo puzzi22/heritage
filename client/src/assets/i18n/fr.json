@@ -1,12 +1,10 @@
 {
   "loading": "Chargement...",
-  "orderDetails": "Commande #{{id}} - {{status}}",
+  "orderDetails": "Commande #{{id}} ({{status}})",
 
   "home": {
     "welcome": "Bienvenue !"
   },
-
-  "about": {},
 
   "shop": {
     "sort": "Trier",
@@ -104,6 +102,10 @@
     "Pending": "En attente",
     "PaymentReceived": "Paiement reçu",
     "PaymentFailed": "Échec du paiement"
+  },
+
+  "status": {
+    "Pending": "En attente"
   },
 
   "checkout": {

@@ -1,12 +1,10 @@
 {
   "loading": "Loading...",
-  "orderDetails": "Order #{{id}} - {{status}}",
+  "orderDetails": "Order #{{id}} ({{status}})",
 
   "home": {
     "welcome": "Welcome!"
   },
-
-  "about": {},
 
   "shop": {
     "sort": "Sort",
@@ -104,6 +102,10 @@
     "Pending": "Pending",
     "PaymentReceived": "Payment Received",
     "PaymentFailed": "Payment Failed"
+  },
+
+  "status": {
+    "Pending": "Pending"
   },
 
   "checkout": {

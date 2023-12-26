@@ -28,21 +28,21 @@ export class OrderDetailedComponent implements OnInit {
       this.orderService.getOrderDetailed(+id).subscribe({
         next: (order) => {
           this.order = order;
-          // Translate the breadcrumb label with dynamic values
           this.translate
-            .get('orderDetails', { id: order.id, status: order.status })
-            .subscribe((translatedLabel) => {
-              this.bcService.set('@orderDetailed', translatedLabel);
-              this.changeDetectorRef.detectChanges(); // Trigger change detection if needed
+            .get('status.' + order.status)
+            .subscribe((translatedStatus) => {
+              const breadcrumbLabel = this.translate.instant('orderDetails', {
+                id: order.id,
+                status: translatedStatus,
+              });
+              this.bcService.set('@orderDetailed', breadcrumbLabel);
+              this.changeDetectorRef.detectChanges(); // Trigger change detection
             });
         },
-        error: (err) => {
-          console.error('Error fetching order:', err);
-          // Handle error, maybe redirect or show a message
-        },
+        // ... error handling
       });
     } else {
-      // Handle case where id is not available, maybe redirect or show an error
+      // ... handle missing id
     }
   }
 }

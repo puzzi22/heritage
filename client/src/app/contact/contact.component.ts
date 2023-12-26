@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-// import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +10,7 @@ export class ContactComponent {
   errors: string[] | null = null;
 
   constructor(
-    private builder: FormBuilder // private contact: ContactService
+    private builder: FormBuilder
   ) {}
 
   FormData = this.builder.group({

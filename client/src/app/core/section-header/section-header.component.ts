@@ -5,7 +5,7 @@ import {
   Router,
   Event as RouterEvent,
 } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { BreadcrumbService } from 'xng-breadcrumb';
@@ -18,6 +18,7 @@ import { BreadcrumbService } from 'xng-breadcrumb';
 export class SectionHeaderComponent implements OnDestroy {
   isHomePage: boolean = false;
   private routerEventsSubscription: Subscription;
+  private langChangeSubscription: Subscription;
 
   constructor(
     public bcService: BreadcrumbService,
@@ -34,18 +35,28 @@ export class SectionHeaderComponent implements OnDestroy {
         )
       )
       .subscribe((event: NavigationEnd) => {
-        // Update isHomePage based on the current URL
         this.isHomePage = event.urlAfterRedirects === '/';
       });
 
-    // Subscribe to breadcrumbs
+    // Subscribe to language change
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(
+      (event: LangChangeEvent) => {
+        this.updateBreadcrumbTranslations();
+      }
+    );
+
+    // Initialize breadcrumbs
+    this.updateBreadcrumbTranslations();
+  }
+
+  private updateBreadcrumbTranslations() {
     this.bcService.breadcrumbs$.subscribe((breadcrumbs) => {
       breadcrumbs.forEach((breadcrumb) => {
-        if (breadcrumb.alias === 'orderDetailed') {
-          // Do not translate, already set dynamically in OrderDetailedComponent
-          return;
-        } else if (breadcrumb.alias === 'productDetails') {
-          // Skip translation for product details
+        if (
+          breadcrumb.alias === 'orderDetailed' ||
+          breadcrumb.alias === 'productDetails'
+        ) {
+          // Skip translation for these breadcrumbs
           return;
         } else if (typeof breadcrumb.alias === 'string') {
           this.translate.get(breadcrumb.alias).subscribe((translatedLabel) => {
@@ -62,8 +73,7 @@ export class SectionHeaderComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     // Unsubscribe to avoid memory leaks
-    if (this.routerEventsSubscription) {
-      this.routerEventsSubscription.unsubscribe();
-    }
+    this.routerEventsSubscription?.unsubscribe();
+    this.langChangeSubscription?.unsubscribe();
   }
 }
