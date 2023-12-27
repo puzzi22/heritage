@@ -10,16 +10,16 @@
             {{ "basketSummary.product" | translate }}
           </div>
         </th>
-        <th>
+        <th class="text-center">
           <div class="py-2">{{ "basketSummary.price" | translate }}</div>
         </th>
-        <th>
+        <th class="text-center">
           <div class="py-2">{{ "basketSummary.quantity" | translate }}</div>
         </th>
-        <th>
+        <th class="text-center">
           <div class="py-2">{{ "basketSummary.subtotal" | translate }}</div>
         </th>
-        <th *ngIf="isBasket">
+        <th *ngIf="isBasket" class="text-center">
           <div class="py-2">{{ "basketSummary.remove" | translate }}</div>
         </th>
       </tr>
@@ -51,7 +51,7 @@
           </div>
         </th>
         <!-- Price Column -->
-        <td class="align-middle">
+        <td class="align-middle text-center">
           <div
             *ngIf="
               item.discountedPrice && item.discountedPrice !== item.price;
@@ -78,35 +78,34 @@
           }}</strong>
         </td> -->
         <!-- Quantity Column -->
-        <td class="align-middle">
-          <div
-            class="d-flex align-items-center"
-            [class.justify-content-center]="!isBasket"
-          >
+        <td class="align-middle text-center">
+          <div class="d-flex align-items-center justify-content-center">
             <i
               *ngIf="isBasket"
               class="fa fa-minus-circle text-warning me-2"
               style="cursor: pointer; font-size: 2em"
               (click)="removeBasketItem(item.id, 1)"
-            ></i>
+            >
+            </i>
             <strong>{{ item.quantity }}</strong>
             <i
               *ngIf="isBasket"
-              class="fa fa-plus-circle text-warning mx-2"
+              class="fa fa-plus-circle text-warning ms-2"
               style="cursor: pointer; font-size: 2em"
               (click)="addBasketItem(item)"
-            ></i>
+            >
+            </i>
           </div>
         </td>
         <!-- Subtotal Column -->
-        <td class="align-middle">
+        <td class="align-middle text-center">
           <strong>{{
             (item.discountedPrice != null ? item.discountedPrice : item.price) *
               item.quantity | currency : "EUR"
           }}</strong>
         </td>
         <!-- Remove Item Column -->
-        <td *ngIf="isBasket" class="align-middle">
+        <td *ngIf="isBasket" class="align-middle text-center">
           <a class="text-danger">
             <i
               class="fa fa-trash"
