@@ -117,9 +117,17 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
-  onSortSelected(event: any) {
+  onSortSelected(value: any) {
     const params = this.shopService.getShopParams();
-    params.sort = event.target.value;
+
+    // Check if the value is an event object or directly the value
+    if (value.target && value.target.value) {
+      params.sort = value.target.value;
+    } else {
+      params.sort = value;
+    }
+
+    console.log(`Sort selected: ${params.sort}`);
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
@@ -170,7 +178,6 @@ export class ShopComponent implements OnInit {
     // Fetch the products again with the reset filters
     this.getProducts();
   }
-
 
   ngOnDestroy(): void {
     // Unsubscribe to avoid memory leaks

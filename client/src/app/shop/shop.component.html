@@ -1,69 +1,164 @@
 <div class="container">
   <div class="row">
-    <section class="col-3">
-      <h5 class="text-warning ms-3">{{ "shop.sort" | translate }}</h5>
-      <select class="form-select mb-4" (change)="onSortSelected($event)">
-        <option
-          *ngFor="let sort of sortOptions"
-          [selected]="shopParams.sort === sort.value"
-          [value]="sort.value"
-        >
-          {{ sort.name | translate }}
-        </option>
-      </select>
+    <section class="col-12 col-md-3">
+      <div class="row d-flex d-md-none justify-content-between gx-2 mb-4">
+        <!-- Sort Dropdown for small devices -->
+        <div class="col-auto">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="sortDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ "shop.sort" | translate }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+              <li *ngFor="let sort of sortOptions">
+                <a
+                  class="dropdown-item"
+                  [class.active]="shopParams.sort === sort.value"
+                  (click)="onSortSelected(sort.value)"
+                >
+                  {{ sort.name | translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <h5 class="text-warning ms-3">{{ "shop.composers" | translate }}</h5>
-      <ul class="list-group my-3">
-        <li
-          class="list-group-item"
-          *ngFor="let composer of composers"
-          [class.active]="composer.id === shopParams.composerId"
-          [value]="composer.id"
-          (click)="onComposerSelected(composer.id)"
-        >
-          {{ composer.lastName }}
-        </li>
-      </ul>
-      <h5 class="text-warning ms-3">{{ "shop.types" | translate }}</h5>
-      <ul class="list-group my-3">
-        <li
-          class="list-group-item"
-          *ngFor="let type of types"
-          [class.active]="type.id === shopParams.typeId"
-          [value]="type.id"
-          (click)="onTypeSelected(type.id)"
-        >
-          {{ "types." + type.name | translate }}
-        </li>
-      </ul>
+        <!-- Composers Dropdown for small devices -->
+        <div class="col-auto">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="composersDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ "shop.composers" | translate }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="composersDropdown">
+              <li *ngFor="let composer of composers">
+                <a
+                  class="dropdown-item"
+                  [class.active]="composer.id === shopParams.composerId"
+                  (click)="onComposerSelected(composer.id)"
+                >
+                  {{ composer.lastName }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Types Dropdown for small devices -->
+        <div class="col-auto">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="typesDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ "shop.types" | translate }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="typesDropdown">
+              <li *ngFor="let type of types">
+                <a
+                  class="dropdown-item"
+                  [class.active]="type.id === shopParams.typeId"
+                  (click)="onTypeSelected(type.id)"
+                >
+                  {{ "types." + type.name | translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-none d-md-block">
+        <h5 class="text-warning ms-3">{{ "shop.sort" | translate }}</h5>
+        <select class="form-select mb-4" (change)="onSortSelected($event)">
+          <option
+            *ngFor="let sort of sortOptions"
+            [selected]="shopParams.sort === sort.value"
+            [value]="sort.value"
+          >
+            {{ sort.name | translate }}
+          </option>
+        </select>
+      </div>
+
+      <div class="d-none d-md-block">
+        <h5 class="text-warning ms-3">{{ "shop.composers" | translate }}</h5>
+        <ul class="list-group my-3">
+          <li
+            class="list-group-item"
+            *ngFor="let composer of composers"
+            [class.active]="composer.id === shopParams.composerId"
+            [value]="composer.id"
+            (click)="onComposerSelected(composer.id)"
+          >
+            {{ composer.lastName }}
+          </li>
+        </ul>
+
+        <h5 class="text-warning ms-3">{{ "shop.types" | translate }}</h5>
+        <ul class="list-group my-3">
+          <li
+            class="list-group-item"
+            *ngFor="let type of types"
+            [class.active]="type.id === shopParams.typeId"
+            [value]="type.id"
+            (click)="onTypeSelected(type.id)"
+          >
+            {{ "types." + type.name | translate }}
+          </li>
+        </ul>
+      </div>
     </section>
-    <section class="col-9">
-      <div class="d-flex justify-content-between align-items-center pb-2">
+    <section class="col-md-9 col-12">
+      <div
+        class="d-flex flex-column flex-md-row justify-content-between align-items-center pb-2"
+      >
         <app-paging-header
           [totalCount]="totalCount"
           [pageNumber]="shopParams.pageNumber"
           [pageSize]="shopParams.pageSize"
         ></app-paging-header>
 
-        <div class="d-flex mt-2">
-          <!-- (keyup.enter)="onSearch()" -->
+        <div class="d-flex flex-column flex-md-row mt-2">
           <input
             (keyup)="onKeyUp(search.value)"
             type="text"
             placeholder="{{ 'placeholder.search' | translate }}"
-            class="form-control me-2"
+            class="form-control me-md-2 my-3 my-md-0"
             #search
           />
-          <button (click)="onSearch()" class="btn btn-outline-primary mx-2">
-            {{ "shop.search" | translate }}
-          </button>
-          <button (click)="onReset()" class="btn btn-outline-success">
-            {{ "shop.reset" | translate }}
-          </button>
+          <div class="row gx-2 w-100 m-0">
+            <div class="col-6 p-0">
+              <button
+                (click)="onSearch()"
+                class="btn btn-outline-primary w-100"
+              >
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+            <div class="col-6 p-0">
+              <button (click)="onReset()" class="btn btn-outline-success w-100">
+                <i class="fa fa-rotate"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="row row-cols-3 g-3 mb-4">
+      <div class="row row-cols-1 row-cols-md-3 g-3 mb-4">
         <div class="col" *ngFor="let product of products">
           <app-product-item [product]="product"></app-product-item>
         </div>

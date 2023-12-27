@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row" *ngIf="product">
-    <div class="col-6">
+    <div class="col-md-6 col-12">
       <div class="row">
-        <div class="col-10">
+        <div class="col-md-10 col-12">
           <owl-carousel-o
             [options]="{
               items: 1,
@@ -41,7 +41,7 @@
         </owl-carousel-o>
       </div>
     </div>
-    <div class="col-6 mt-5">
+    <div class="col-md-6 col-12 mt-5">
       <h2>{{ product.title }}</h2>
       <br />
       <div class="row mt-4">
@@ -64,31 +64,37 @@
         <p>{{ product.price | currency : "EUR" }}</p>
       </div>
       <br />
-      <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
+      <h5
+        class="text-primary mb-3 text-center text-md-start"
+        *ngIf="quantityInBasket > 0"
+      >
         {{
           "product.quantityInBasket"
             | translate : { quantityInBasket: quantityInBasket }
         }}
       </h5>
-      <div class="d-flex justify-content-start align-items-center">
-        <i
-          (click)="decrementQuantity()"
-          class="fa fa-minus-circle text-warning me-2"
-          style="cursor: pointer; font-size: 2em"
-        ></i>
-        <span class="font-weight-bold" style="font-size: 1.5em">{{
-          quantity
-        }}</span>
-        <i
-          (click)="incrementQuantity()"
-          class="fa fa-plus-circle text-warning ms-2"
-          style="cursor: pointer; font-size: 2em"
-          st
-        ></i>
+      <div
+        class="d-flex flex-column flex-md-row justify-content-center justify-content-md-start align-items-center"
+      >
+        <div class="d-flex align-items-center">
+          <i
+            (click)="decrementQuantity()"
+            class="fa fa-minus-circle text-warning me-2"
+            style="cursor: pointer; font-size: 2em"
+          ></i>
+          <span class="font-weight-bold" style="font-size: 1.5em">{{
+            quantity
+          }}</span>
+          <i
+            (click)="incrementQuantity()"
+            class="fa fa-plus-circle text-warning ms-2"
+            style="cursor: pointer; font-size: 2em"
+          ></i>
+        </div>
         <button
-          class="btn btn-outline-primary ms-4"
+          class="btn btn-outline-primary mt-2 mt-md-0 ms-md-4"
           (click)="updateBasket()"
-          (disabled)="(quantity === quantityInBasket)"
+          [disabled]="quantity === quantityInBasket"
         >
           {{ buttonText }}
         </button>

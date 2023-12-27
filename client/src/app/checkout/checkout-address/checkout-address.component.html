@@ -1,8 +1,10 @@
 <div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
-  <div class="d-flex justify-content-between align-items-center">
+  <div
+    class="d-flex justify-content-between align-items-center flex-column flex-md-row"
+  >
     <h4>{{ "shippingAddress.title" | translate }}</h4>
     <button
-      class="btn btn-outline-success mb-3"
+      class="btn btn-outline-success my-3 my-md-0 mb-md-3"
       (click)="saveUserAddress()"
       [disabled]="
         !checkoutForm.get('addressForm')?.valid ||
@@ -13,37 +15,37 @@
     </button>
   </div>
   <div class="row" formGroupName="addressForm">
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
         [label]="'shippingAddress.firstName' | translate"
         formControlName="firstName"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
         [label]="'shippingAddress.lastName' | translate"
         formControlName="lastName"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
         [label]="'shippingAddress.street' | translate"
         formControlName="street"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
         [label]="'shippingAddress.city' | translate"
         formControlName="city"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
         [label]="'shippingAddress.country' | translate"
         formControlName="country"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
         [label]="'shippingAddress.zipCode' | translate"
         formControlName="zipcode"

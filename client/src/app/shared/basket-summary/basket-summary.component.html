@@ -6,7 +6,9 @@
     <thead class="text-uppercase" [class.bg-light]="isBasket">
       <tr>
         <th>
-          <div class="py-2">{{ "basketSummary.product" | translate }}</div>
+          <div class="py-2" style="min-width: 200px">
+            {{ "basketSummary.product" | translate }}
+          </div>
         </th>
         <th>
           <div class="py-2">{{ "basketSummary.price" | translate }}</div>
@@ -29,11 +31,11 @@
           <img
             src="{{ item.pictureUrl }}"
             alt="{{ item.productName }}"
-            class="img-fluid"
+            class="img-fluid d-none d-md-inline-block"
             style="height: 120px"
           />
           <div class="p-2 d-inline-block">
-            <div class="ms-3 d-inline-block align-middle">
+            <div class="ms-md-3 d-inline-block align-middle">
               <h5 class="mb-0">
                 <a
                   routerLink="/shop/{{ item.id }}"

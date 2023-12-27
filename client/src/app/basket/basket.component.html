@@ -14,13 +14,10 @@
       </div>
 
       <div class="row">
-        <div class="col-6 offset-6">
+        <div class="col-md-6 offset-0 offset-md-6 col-12">
           <app-order-totals></app-order-totals>
           <div class="d-grid">
-            <a
-              routerLink="/checkout"
-              class="btn btn-outline-primary py-2"
-            >
+            <a routerLink="/checkout" class="btn btn-outline-primary py-2">
               {{ "basket.proceedToCheckout" | translate }}
             </a>
           </div>
