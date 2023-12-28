@@ -49,6 +49,11 @@ a {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.flex-equal {
-  flex: 1;
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+  background-color: #f8f9fa; /* This is the light-grey color used by Bootstrap */
+}
+
+.navbar-collapse {
+  width: 100%;
 }

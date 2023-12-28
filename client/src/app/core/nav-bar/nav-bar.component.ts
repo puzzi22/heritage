@@ -33,4 +33,14 @@ export class NavBarComponent {
     this.currentLang = lang;
     this.languageService.setLanguage(lang); // This will also update the language in local storage
   }
+
+  closeNavbar() {
+    const navbarToggler = document.querySelector('.navbar-toggler') as HTMLElement;
+    const navbarContent = document.querySelector('#navbarSupportedContent') as HTMLElement;
+
+    if (navbarToggler && navbarContent && !navbarToggler.classList.contains('collapsed')) {
+      navbarToggler.classList.add('collapsed');
+      navbarContent.classList.remove('show');
+    }
+  }
 }
