@@ -82,13 +82,8 @@ namespace Infrastructure.Migrations.AppIdentityDb
                     LastName = table.Column<string>(type: "TEXT", nullable: true),
                     Street = table.Column<string>(type: "TEXT", nullable: true),
                     City = table.Column<string>(type: "TEXT", nullable: true),
-<<<<<<<< HEAD:Infrastructure/Migrations/AppIdentityDb/20231113203826_InitialCreate.cs
-                    State = table.Column<string>(type: "TEXT", nullable: true),
-                    Zipcode = table.Column<string>(type: "TEXT", nullable: true),
-========
                     Zipcode = table.Column<string>(type: "TEXT", nullable: true),
                     Country = table.Column<string>(type: "TEXT", nullable: true),
->>>>>>>> branch2:Infrastructure/Migrations/AppIdentityDb/20231219203800_InitialCreate.cs
                     AppUserId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

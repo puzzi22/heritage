@@ -11,11 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations.AppIdentityDb
 {
     [DbContext(typeof(AppIdentityDbContext))]
-<<<<<<<< HEAD:Infrastructure/Migrations/AppIdentityDb/20231113203826_InitialCreate.Designer.cs
-    [Migration("20231113203826_InitialCreate")]
-========
-    [Migration("20231219203800_InitialCreate")]
->>>>>>>> branch2:Infrastructure/Migrations/AppIdentityDb/20231219203800_InitialCreate.Designer.cs
+    [Migration("20240101233638_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

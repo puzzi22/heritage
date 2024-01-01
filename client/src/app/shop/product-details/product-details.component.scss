@@ -1,4 +1,5 @@
-.img-thumbnail.active {
+.img-thumbnail.active,
+.img-thumbnail:hover {
   border-color: blue; // or any other style to indicate active state
 }
 
@@ -31,5 +32,9 @@
   float: right;
   font-size: 30px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.img-thumbnail {
   cursor: pointer;
 }
