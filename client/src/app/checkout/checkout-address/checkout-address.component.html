@@ -1,48 +1,53 @@
 <div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
-  <div class="d-flex justify-content-between align-items-center">
-    <h4>Shipping address</h4>
+  <div
+    class="d-flex justify-content-between align-items-center flex-column flex-md-row"
+  >
+    <h4>{{ "shippingAddress.title" | translate }}</h4>
     <button
-      class="btn btn-outline-success mb-3"
+      class="btn btn-outline-success my-3 my-md-0 mb-md-3"
       (click)="saveUserAddress()"
       [disabled]="
         !checkoutForm.get('addressForm')?.valid ||
         !checkoutForm.get('addressForm')?.dirty
       "
     >
-      Save as default address
+      {{ "shippingAddress.saveAsDefault" | translate }}
     </button>
   </div>
   <div class="row" formGroupName="addressForm">
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
-        [label]="'First name'"
+        [label]="'shippingAddress.firstName' | translate"
         formControlName="firstName"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
-        [label]="'Last name'"
+        [label]="'shippingAddress.lastName' | translate"
         formControlName="lastName"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
-        [label]="'Street'"
+        [label]="'shippingAddress.street' | translate"
         formControlName="street"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
-      <app-text-input [label]="'City'" formControlName="city"></app-text-input>
-    </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
-        [label]="'State'"
-        formControlName="state"
+        [label]="'shippingAddress.city' | translate"
+        formControlName="city"
       ></app-text-input>
     </div>
-    <div class="form-group col-6">
+    <div class="form-group col-md-6">
       <app-text-input
-        [label]="'Zip code'"
+        [label]="'shippingAddress.country' | translate"
+        formControlName="country"
+      ></app-text-input>
+    </div>
+    <div class="form-group col-md-6">
+      <app-text-input
+        [label]="'shippingAddress.zipCode' | translate"
         formControlName="zipcode"
       ></app-text-input>
     </div>
@@ -51,9 +56,15 @@
 
 <div class="d-flex justify-content-between flex-row mb-5">
   <button class="btn btn-outline-primary" routerLink="/basket">
-    <i class="fa fa-angle-left"></i> Back to Basket
+    <i class="fa fa-angle-left"></i>
+    {{ "shippingAddress.backToBasket" | translate }}
   </button>
-  <button [disabled]="checkoutForm?.get('addressForm')?.invalid" class="btn btn-primary" cdkStepperNext>
-    Go to Delivery <i class="fa fa-angle-right"></i>
+  <button
+    [disabled]="checkoutForm?.get('addressForm')?.invalid"
+    class="btn btn-primary"
+    cdkStepperNext
+  >
+    {{ "shippingAddress.goToDelivery" | translate }}
+    <i class="fa fa-angle-right"></i>
   </button>
 </div>

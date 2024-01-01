@@ -1,52 +1,80 @@
 <div class="container mt-5">
-  <div class="row" *ngIf="order">
-    <div class="col-8">
+  <div class="row flex-column flex-md-row" *ngIf="order">
+    <div class="col-md-8 col-12">
       <div>
         <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
                 <th scope="col" class="border-0 bg-light">
-                  <div class="p-2 text-uppercase">Product</div>
+                  <div class="p-2 text-uppercase" style="min-width: 200px">
+                    {{ "basketSummary.product" | translate }}
+                  </div>
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
-                  <div class="py-2 text-uppercase">Price</div>
+                  <div class="py-2 text-uppercase">
+                    {{ "basketSummary.price" | translate }}
+                  </div>
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
-                  <div class="py-2 text-uppercase">Quantity</div>
+                  <div class="py-2 text-uppercase">
+                    {{ "basketSummary.quantity" | translate }}
+                  </div>
                 </th>
                 <th scope="col" class="border-0 bg-light text-center">
-                  <div class="py-2 text-uppercase">Total</div>
+                  <div class="py-2 text-uppercase">
+                    {{ "basketSummary.subtotal" | translate }}
+                  </div>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let item of order.orderItems">
-                <th scope="row">
-                  <div class="p-2">
-                    <img
-                      src="{{ item.pictureUrl1 }}"
-                      alt="{{ item.productTitle }}"
-                      class="img-fluid"
-                      style="max-height: 50px"
-                    />
-                    <div class="ml-3 d-inline-block align-middle">
-                      <h5 class="mb-0">
+                <!-- Product details -->
+                <th style="padding: 0">
+                  <img
+                    src="{{ item.pictureUrl1 }}"
+                    alt="{{ item.productTitle }}"
+                    class="img-fluid d-none d-md-inline-block"
+                    style="height: 120px"
+                  />
+                  <div class="p-2 d-inline-block">
+                    <div class="ms-md-3 d-inline-block align-middle">
+                      <h5 class="mb-md-0">
                         {{ item.productTitle }}
                       </h5>
                     </div>
                   </div>
                 </th>
+
+                <!-- Price column -->
                 <td class="align-middle text-center">
-                  <strong>{{ item.price | currency:'EUR' }}</strong>
+                  <div *ngIf="item.discountedPrice; else originalPrice">
+                    <span class="text-decoration-line-through">{{
+                      item.price | currency : "EUR"
+                    }}</span>
+                    <strong class="text-success">{{
+                      item.discountedPrice | currency : "EUR"
+                    }}</strong>
+                  </div>
+                  <ng-template #originalPrice>
+                    <strong>{{ item.price | currency : "EUR" }}</strong>
+                  </ng-template>
                 </td>
+
+                <!-- Quantity column -->
                 <td class="align-middle text-center">
                   <strong class="font-weight-bold px-2">{{
                     item.quantity
                   }}</strong>
                 </td>
+
+                <!-- Subtotal column -->
                 <td class="align-middle text-center">
-                  <strong>{{ item.price * item.quantity | currency:'EUR' }}</strong>
+                  <strong>{{
+                    (item.discountedPrice ? item.discountedPrice : item.price) *
+                      item.quantity | currency : "EUR"
+                  }}</strong>
                 </td>
               </tr>
             </tbody>
@@ -54,23 +82,29 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-md-4 col-12 mt-5 mt-md-0">
       <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
-        Order summary
+        {{ "orderSummary.title" | translate }}
       </div>
       <div class="p-4">
         <ul class="list-unstyled mb-1">
           <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Order subtotal</strong>
-            <strong>{{ order.subtotal | currency:'EUR' }}</strong>
+            <strong class="text-muted">{{
+              "orderSummary.orderSubtotal" | translate
+            }}</strong>
+            <strong>{{ order.subtotal | currency : "EUR" }}</strong>
           </li>
           <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Shipping and handling</strong>
-            <strong>{{ order.shippingPrice | currency:'EUR' }}</strong>
+            <strong class="text-muted">{{
+              "orderSummary.shippingHandling" | translate
+            }}</strong>
+            <strong>{{ order.shippingPrice | currency : "EUR" }}</strong>
           </li>
           <li class="d-flex justify-content-between py-3 border-bottom">
-            <strong class="text-muted">Total</strong>
-            <strong>{{ order.total | currency:'EUR' }}</strong>
+            <strong class="text-muted">{{
+              "orderSummary.total" | translate
+            }}</strong>
+            <strong>{{ order.total | currency : "EUR" }}</strong>
           </li>
         </ul>
       </div>

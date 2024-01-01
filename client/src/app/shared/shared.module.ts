@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TranslateModule } from '@ngx-translate/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BasketSummaryComponent } from './basket-summary/basket-summary.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
@@ -25,12 +26,13 @@ import { PagingHeaderComponent } from './paging-header/paging-header.component';
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
-    CarouselModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
     BsDropdownModule.forRoot(),
     CdkStepperModule,
     RouterModule,
+    CarouselModule,
+    TranslateModule,
   ],
   exports: [
     PaginationModule,

@@ -11,12 +11,13 @@ export interface OrderItem {
   productTitle: string;
   pictureUrl1: string;
   price: number;
+  discountedPrice?: number; // Discounted price, if applicable
   quantity: number;
 }
 export interface Order {
   id: number;
   buyerEmail: string;
-  orderDate: string;
+  orderDate: Date;
   shipToAddress: Address;
   deliveryMethod: string;
   shippingPrice: number;

@@ -9,6 +9,6 @@ export interface Address {
     lastName: string;
     street: string;
     city: string;
-    state: string;
     zipcode: string
+    country: string;
 }

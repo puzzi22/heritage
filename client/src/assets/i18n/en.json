@@ -1,0 +1,319 @@
+{
+  "loading": "Loading...",
+  "orderDetails": "Order #{{id}} ({{status}})",
+
+  "home": {
+    "welcome": "Welcome!"
+  },
+
+  "shop": {
+    "sort": "Sort",
+    "composers": "Composers",
+    "types": "Types",
+    "search": "Search",
+    "reset": "Reset"
+  },
+
+  "contact": {
+    "writeUs": "Write us",
+    "yourEmail": "Email",
+    "yourName": "Name",
+    "writeYourMessageHere": "Write Your Message Or Question Here",
+    "submit": "Submit"
+  },
+
+  "navbar": {
+    "home": "Home",
+    "shop": "Shop",
+    "contact": "Contact",
+    "about-us": "About Us",
+    "errors": "Errors",
+    "welcome": "Welcome ",
+    "viewBasket": "View Basket",
+    "viewOrders": "View Orders",
+    "logOut": "Log out"
+  },
+
+  "footer": {
+    "aboutUs": "About us",
+    "newCriticalEditions": "New critical editions of horn repertoire.",
+    "quickLinks": "Quick Links",
+    "madeBy": "Made by",
+    "inBarcelona": "in Barcelona",
+    "updatedOn": "Updated on "
+  },
+
+  "login": {
+    "login": "Login",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "signIn": "Sign in",
+    "register": "Register"
+  },
+
+  "error": {
+    "test500Error": "Test 500 Error",
+    "test404Error": "Test 404 Error",
+    "test400Error": "Test 400 Error",
+    "test400ValidationError": "Test 400 Validation Error",
+    "notFound": "Not Found",
+    "badRequest": "You have made a bad request",
+    "unauthorized": "You are not authorized",
+    "ResourceNotFound": "The resource was not found",
+    "serverError": "Internal server error",
+    "basketIdNullOrEmpty": "Basket ID cannot be null or empty",
+    "invalidDiscount": "Invalid discount code",
+    "basketNotFound": "Basket not found",
+    "alreadyApplied": "A discount code has already been applied",
+    "defaultErrorKey": "An error occurred while applying the discount code",
+    "undefined": "The discount code is invalid",
+    "invalidValue": "The value 'hundredfortytwo' is not valid"
+  },
+
+  "validation": {
+    "required": "Please enter your {{label}}",
+    "invalidEmail": "Invalid email address",
+    "passwordPattern": "Password should have at least 1 small-case letter, 1 capital letter, 1 digit, 1 special character and the length should be between 6-10 characters",
+    "emailExists": "Email address is taken"
+  },
+
+  "errorPage": {
+    "internalServerError": "Internal server error - refreshing will make the error disappear",
+    "error": "Error",
+    "errorFromServer": "This error comes from the server - not Angular",
+    "whatToDo": "What to do next?",
+    "checkNetworkTab": "Check the network tab in Chrome Dev Tools",
+    "reproduceInPostman": "Reproduce the request in Postman - if the same error occurs then definitely not Angular!",
+    "stackTrace": "Stack trace"
+  },
+
+  "basket": {
+    "emptyBasketMessage": "There are no items in your basket",
+    "proceedToCheckout": "Proceed to checkout"
+  },
+
+  "orders": {
+    "order": "Order",
+    "date": "Date",
+    "total": "Total",
+    "status": "Status"
+  },
+
+  "orderStatus": {
+    "Pending": "Pending",
+    "PaymentReceived": "Payment Received",
+    "PaymentFailed": "Payment Failed"
+  },
+
+  "status": {
+    "Pending": "Pending"
+  },
+
+  "checkout": {
+    "address": "Address",
+    "delivery": "Delivery",
+    "review": "Review",
+    "payment": "Payment"
+  },
+
+  "productItem": {
+    "view": "View"
+  },
+
+  "orderSummary": {
+    "title": "Order Summary",
+    "shippingInfo": "Shipping costs will be calculated based on choices made during checkout",
+    "orderSubtotal": "Order Subtotal",
+    "shippingHandling": "Shipping and Handling",
+    "discountApplied": "Discount applied",
+    "total": "Total"
+  },
+
+  "basketSummary": {
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "remove": "Remove"
+  },
+
+  "product": {
+    "description": "Description",
+    "instrumentation": "Instrumentation",
+    "price": "Price",
+    "quantityInBasket": "You have {{quantityInBasket}} of this item in your basket",
+    "addToBasket": "Add to Basket",
+    "updateBasket": "Update Basket",
+    "composer": "Composer",
+    "type": "Type",
+    "editor": "Editor"
+  },
+
+  "placeholder": {
+    "email": "Enter email",
+    "password": "Enter password",
+    "search": "Search"
+  },
+
+  "label": {
+    "displayName": "Display Name",
+    "emailAddress": "Email",
+    "password": "Password"
+  },
+
+  "checkoutReview": {
+    "backToDelivery": "Back to Delivery",
+    "goToPayment": "Go to Payment",
+    "discount": "Enter Your Discount Code",
+    "applyCode": "Apply Code",
+    "success": "Discount code applied successfully",
+    "error": "Please enter a discount code"
+  },
+
+  "shippingAddress": {
+    "title": "Shipping address",
+    "saveAsDefault": "Save as default address",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "street": "Street",
+    "city": "City",
+    "country": "Country",
+    "zipCode": "Zip Code",
+    "goToDelivery": "Go to Delivery",
+    "backToBasket": "Back to basket",
+    "saveSuccess": "Address saved"
+  },
+
+  "paymentForm": {
+    "nameOnCard": "Name on card",
+    "cardNumber": "Card Number",
+    "cardExpiry": "Card Expiry",
+    "cardCvc": "Card Cvc",
+    "submitOrder": "Submit order",
+    "backToReview": "Back to Review"
+  },
+
+  "orderConfirmation": {
+    "thankYou": "Thank you. Your order is confirmed",
+    "message": "Your order has not shipped yet, but this is to be expected as we are not a real store!",
+    "viewYourOrder": "View your order",
+    "viewYourOrders": "View your orders"
+  },
+
+  "deliveryOptions": {
+    "title": "{{name}} - {{price}}",
+    "StandardDelivery": "Standard delivery within 5-7 days",
+    "ExpressDelivery": "Express delivery within 2-3 days",
+    "backToAddress": "Back to Address",
+    "goToReview": "Go to Review"
+  },
+
+  "paging": {
+    "showing": "Showing",
+    "of": "of",
+    "products": "Products",
+    "noResults": "There are no product for this filter"
+  },
+
+  "sortOptions": {
+    "alphabetical": "Alphabetical",
+    "priceLowToHigh": "Price: Low to high",
+    "priceHighToLow": "Price: High to low"
+  },
+
+  "deliveryMethods": {
+    "UPS1": {
+      "description": "Fastest delivery time",
+      "deliveryTime": "1-2 Days"
+    },
+    "UPS2": {
+      "description": "Get it within 5 days",
+      "deliveryTime": "2-5 Days"
+    },
+    "UPS3": {
+      "description": "Slower but cheap",
+      "deliveryTime": "5-10 Days"
+    },
+    "FREE": {
+      "description": "Free! We will send you the documents digitally by email",
+      "deliveryTime": "Same Day"
+    }
+  },
+
+  "common": {
+    "all": "All"
+  },
+
+  "types": {
+    "all": "All",
+    "Arrangement": "Arrangement",
+    "Chamber Music": "Chamber Music",
+    "Concerto": "Concerto",
+    "Horn and Organ": "Horn and Organ",
+    "Horn and Piano": "Horn and Piano",
+    "Horn Duet": "Horn Duet",
+    "Horn Quartet": "Horn Quartet",
+    "Method": "Method",
+    "Other": "Other",
+    "Sight-reading": "Sight-reading",
+    "Sinfonia Concertante": "Sinfornia Concertante",
+    "Solo Horn": "Solo Horn",
+    "Sonata": "Sonata",
+    "Study": "Study",
+    "Trio": "Trio"
+  },
+
+  "breadcrumb": {
+    "home": "Home",
+    "products": "Products",
+    "shop": "Shop",
+    "about-us": "About Us",
+    "contact": "Contact",
+    "test-error": "Errors",
+    "server-error": "Server error",
+    "not-found": "Not found",
+    "basket": "Basket",
+    "orders": "Orders",
+    "login": "Login",
+    "register": "Register",
+    "checkout": "Checkout",
+    "success": "Success",
+    "account": "Account"
+  },
+
+  "instrumentation": {
+    "Oboe, Horn (or English Horn), Piano": "Oboe, Horn (or English Horn), Piano",
+    "Horn (or Violin, or Viola, or Cello), Piano": "Horn (or Violin, or Viola, or Cello), Piano",
+    "Horn (or Violin), Piano": "Horn (or Violin), Piano",
+    "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)": "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)",
+    "Horn, String Quartet": "Horn, String Quartet",
+    "Horn, Piano": "Horn, Piano",
+    "Horn": "Horn",
+    "Piston Horn, Piano": "Piston Horn, Piano",
+    "4 Horns": "4 Horns",
+    "Horn, Musette, Flute, Violin, Bass": "Horn, Musette, Flute, Violin, Bass",
+    "Piston Horn": "Piston Horn",
+    "Horn, Piano, Harp, Organ, Contralto, 4 Horns": "Horn, Piano, Harp, Organ, Contralto, 4 Horns",
+    "Piston Horn, Organ": "Piston Horn, Organ",
+    "2 Horns, Piano": "2 Horns, Piano",
+    "2 Horns, Orchestra": "2 Horns, Orchestra",
+    "5 Horns, Piano": "5 Horns, Piano"
+  },
+  "about-us": {
+    "discover": "Discover Our New Editions",
+    "reviving": "Reviving Musical Heritage",
+    "blend": "A Blend of History and Research",
+    "clarity": "Clarity in Every Note",
+    "embracing": "Embracing the Digital Era",
+    "maury": "Meet Claude Maury: The Main Editor",
+    "join": "Join Us in This Musical Expedition",
+    "empowering": "Empowering the Next Generation with 'STUDENT50'",
+    "at-l'héritage": "At L'Héritage du Cor we are passionate about rediscovering and bringing back old music for horn that has been deglected. Our dedication lies in unearthing forgotten works from the 18th and 19th centuries, bringing them back to life for modern horn players, students and audiences. But our journey doesn't end with the rarities; we also offer new, critical editions of well-known works from the horn repertoire.",
+    "every-piece": "Every piece in our collection is more than just a score; it's a bridge to the past. Each edition comes with a thoroughly researched introduction, delving into the musical context of both the composer and the composition. This approach provides musicians and enthusiasts alike a deeper understanding of the work, enriching their experience and connection to the music.",
+    "we-believe": "We believe in absolute transparency and authenticity. That's why we clearly state the sources of our editions, ensuring that our users can trust the historical accuracy and integrity of our editions. This commitment to authenticity is not just about respecting history – it’s about bringing it to life in the most genuine way possible.",
+    "in-today's": "In today’s fast-paced world, access to music should be instant and hassle-free. To meet this modern need, we currently offer our editions in a digital format, delivering them directly to our buyers’ emails. This approach ensures that our precious musical heritage is just a few clicks away, ready to be explored and enjoyed. It's also a small gesture in aknowledging the need for more durable and environmentally friendly solutions.",
+    "our-journey": "Our journey of musical rediscovery is spearheaded by the Claude Maury, former Professor of early horns at the Conservatoire National Supérieur de Musique et de Danse de Paris (2006-2020). Prize recipient at the Gallay competition in Perpignan, France (1981), and another in Bad Harzburg, Germany (1984), he embraces a freelancing natural horn career from 1985. He has collaborated with some of the most respected orchestras and ensembles specializing in period instruments, with ensembles such as La Petite Bande, Orchestra of the 18th Century, and Les Musiciens du Louvre, to name a few. His discography includes numerous solo and chamber music CDs, primarily featuring the natural horn. Beyond his performance career, Claude is renowned for his educational contributions. He has been teaching for many years at both Conservatoire de Versailles and the Conservatoire de Paris (CNSMDP).",
+    "we-invite": "We invite you to explore our carefully curated collection and experience the rich history of our favorite instrument through our editions. Whether you're a professional musician, a student, or a natural horn enthusiast, our offerings are sure to enrich and inspire your musical journey.",
+    "in-our-commitment": "In our commitment to supporting student musicians, we're proud to offer the 'STUDENT50' discount code, granting a 50% discount on all orders. This initiative reflects our dedication to making high-quality music editions accessible to aspiring artists, fostering their growth and passion for musical heritage."
+  }
+}

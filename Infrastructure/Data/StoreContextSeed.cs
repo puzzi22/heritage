@@ -16,7 +16,7 @@ namespace Infrastructure.Data
                 var composersData = File.ReadAllText("../Infrastructure/Data/SeedData/composers.json");
                 var composers = JsonSerializer.Deserialize<List<ProductComposer>>(composersData);
                 context.ProductComposers.AddRange(composers);
-                // await context.SaveChangesAsync();
+                await context.SaveChangesAsync();
             }
 
             if (!context.ProductTypes.Any())
@@ -24,7 +24,7 @@ namespace Infrastructure.Data
                 var typesData = File.ReadAllText("../Infrastructure/Data/SeedData/types.json");
                 var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
                 context.ProductTypes.AddRange(types);
-                // await context.SaveChangesAsync();
+                await context.SaveChangesAsync();
             }
 
             if (!context.Products.Any())
@@ -40,6 +40,7 @@ namespace Infrastructure.Data
                         LongTitle = productSeedDto.LongTitle,
                         Instrumentation = productSeedDto.Instrumentation,
                         Price = productSeedDto.Price,
+                        Editor = productSeedDto.Editor,
                         PictureUrl1 = productSeedDto.PictureUrl1,
                         PictureUrl2 = productSeedDto.PictureUrl2,
                         PictureUrl3 = productSeedDto.PictureUrl3,
@@ -50,7 +51,7 @@ namespace Infrastructure.Data
                     };
                     context.Products.Add(product);
                 }
-                // await context.SaveChangesAsync();
+                await context.SaveChangesAsync();
             }
 
             if (!context.DeliveryMethods.Any())
@@ -58,10 +59,8 @@ namespace Infrastructure.Data
                 var deliveryData = File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
                 var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
                 context.DeliveryMethods.AddRange(methods);
-                // await context.SaveChangesAsync();
+                await context.SaveChangesAsync();
             }
-
-            if (context.ChangeTracker.HasChanges()) await context.SaveChangesAsync();
         }
     }
 }

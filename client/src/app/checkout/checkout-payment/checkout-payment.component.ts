@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import {
   Stripe,
   StripeCardCvcElement,
@@ -40,12 +41,16 @@ export class CheckoutPaymentComponent implements OnInit {
     private basketService: BasketService,
     private checkoutService: CheckoutService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
+    const userLang = this.translate.currentLang;
+
     loadStripe(
-      'pk_test_51OCOb0Lc2MmgnlAQE7vFSnxBOdIzWlHkYyPcwhGsFbNoh08uJCnPztm03SVnPkNHP2XP5jcIQVNtYVD8jw3FuBP6000KTmk9cG'
+      'pk_test_51OCOb0Lc2MmgnlAQE7vFSnxBOdIzWlHkYyPcwhGsFbNoh08uJCnPztm03SVnPkNHP2XP5jcIQVNtYVD8jw3FuBP6000KTmk9cG',
+      { locale: userLang as 'en' | 'fr' }
     ).then((stripe) => {
       this.stripe = stripe;
       const elements = stripe?.elements();
@@ -88,7 +93,9 @@ export class CheckoutPaymentComponent implements OnInit {
 
   async submitOrder() {
     this.loading = true;
+
     const basket = this.basketService.getCurrentBasketValue();
+
     if (!basket) throw new Error('Cannot get basket');
     try {
       const createdOrder = await this.createOrder(basket);

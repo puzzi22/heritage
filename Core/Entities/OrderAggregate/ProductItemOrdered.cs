@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace Core.Entities.OrderAggregate
 {
     public class ProductItemOrdered
@@ -6,15 +11,15 @@ namespace Core.Entities.OrderAggregate
         {
         }
 
-        public ProductItemOrdered(int productItemId, string productTitle, string pictureUrl1)
+        public ProductItemOrdered(int productItemId, string productName, string pictureUrl)
         {
             ProductItemId = productItemId;
-            ProductTitle = productTitle;
-            PictureUrl1 = pictureUrl1;
+            ProductName = productName;
+            PictureUrl = pictureUrl;
         }
 
         public int ProductItemId { get; set; }
-        public string ProductTitle { get; set; }
-        public string PictureUrl1 { get; set; }
+        public string ProductName { get; set; }
+        public string PictureUrl { get; set; }
     }
 }

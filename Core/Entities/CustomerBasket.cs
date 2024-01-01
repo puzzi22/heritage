@@ -21,5 +21,7 @@ namespace Core.Entities
         public string ClientSecret { get; set; }
         public string PaymentIntentId { get; set; }
         public decimal ShippingPrice { get; set; }
+        // A list to keep track of applied discount codes
+        public string DiscountCode { get; set; } // Store a single discount code
     }
 }

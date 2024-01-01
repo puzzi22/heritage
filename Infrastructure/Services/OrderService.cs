@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Entities.OrderAggregate;
@@ -12,8 +11,8 @@ namespace Infrastructure.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly IBasketRepository _basketRepo;
-        private readonly IUnitOfWork _unitOfWork;
+        public readonly IBasketRepository _basketRepo;
+        public readonly IUnitOfWork _unitOfWork;
         public OrderService(IBasketRepository basketRepo, IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -31,15 +30,24 @@ namespace Infrastructure.Services
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
                 var itemOrdered = new ProductItemOrdered(productItem.Id, productItem.Title, productItem.PictureUrl1);
-                var orderItem = new OrderItem(itemOrdered, productItem.Price, item.Quantity);
+
+                // Use discounted price if available
+                var price = item.DiscountedPrice ?? productItem.Price;
+                var orderItem = new OrderItem(itemOrdered, price, item.Quantity);
+
                 items.Add(orderItem);
             }
 
-            // Get delivery method from repo
+            // get delivery method
             var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync(deliveryMethodId);
 
-            // Calc subtotal
-            var subtotal = items.Sum(item => item.Price * item.Quantity);
+            // calc subtotal
+            // var subtotal = items.Sum(item => item.Price * item.Quantity);
+            var subtotal = items.Sum(item => 
+            {
+                var basketItem = basket.Items.FirstOrDefault(bi => bi.Id == item.ItemOrdered.ProductItemId);
+                return (basketItem?.DiscountedPrice ?? item.Price) * item.Quantity;
+            });
 
             // Check to see if order exists
             var spec = new OrderByPaymentIntentIdSpecification(basket.PaymentIntentId);
@@ -53,18 +61,17 @@ namespace Infrastructure.Services
                 _unitOfWork.Repository<Order>().Update(order);
             }
             else {
-            // Create order
-            order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, 
-                subtotal, basket.PaymentIntentId);
-            _unitOfWork.Repository<Order>().Add(order); 
+                // Create new order with items including discounted prices
+                order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal, basket.PaymentIntentId);
+                _unitOfWork.Repository<Order>().Add(order);
             }
 
-            // Save to DB
+            // TODO: save to db
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
 
-            // Return order
+            // return order
             return order;
         }
 

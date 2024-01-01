@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from 'src/app/account/account.service';
 
@@ -13,7 +14,8 @@ export class CheckoutAddressComponent {
 
   constructor(
     private accountService: AccountService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService // Inject TranslateService
   ) {}
 
   saveUserAddress() {
@@ -21,7 +23,12 @@ export class CheckoutAddressComponent {
       .updateUserAddress(this.checkoutForm?.get('addressForm')?.value)
       .subscribe({
         next: () => {
-          this.toastr.success('Address saved');
+          // Use TranslateService to get the translated message
+          this.translate
+            .get('shippingAddress.saveSuccess')
+            .subscribe((translatedMessage: string) => {
+              this.toastr.success(translatedMessage);
+            });
           this.checkoutForm
             ?.get('addressForm')
             ?.reset(this.checkoutForm?.get('addressForm')?.value);

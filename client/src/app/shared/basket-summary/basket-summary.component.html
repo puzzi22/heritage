@@ -5,32 +5,43 @@
   <table class="table">
     <thead class="text-uppercase" [class.bg-light]="isBasket">
       <tr>
-        <th><div class="py-2">Product</div></th>
-        <th><div class="py-2">Price</div></th>
-        <th [class.text-center]="!isBasket">
-          <div class="py-2">Quantity</div>
+        <th>
+          <div class="py-2" style="min-width: 200px">
+            {{ "basketSummary.product" | translate }}
+          </div>
         </th>
-        <th><div class="py-2">Total</div></th>
-        <th *ngIf="isBasket"><div class="py-2">Remove</div></th>
+        <th class="text-center">
+          <div class="py-2">{{ "basketSummary.price" | translate }}</div>
+        </th>
+        <th class="text-center">
+          <div class="py-2">{{ "basketSummary.quantity" | translate }}</div>
+        </th>
+        <th class="text-center">
+          <div class="py-2">{{ "basketSummary.subtotal" | translate }}</div>
+        </th>
+        <th *ngIf="isBasket" class="text-center">
+          <div class="py-2">{{ "basketSummary.remove" | translate }}</div>
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of basket.items">
-        <th>
+        <!-- Product Column -->
+        <th style="padding: 0">
+          <img
+            src="{{ item.pictureUrl }}"
+            alt="{{ item.productName }}"
+            class="img-fluid d-none d-md-inline-block"
+            style="height: 120px"
+          />
           <div class="p-2 d-inline-block">
-            <img
-              src="{{ item.pictureUrl1 }}"
-              alt="{{ item.productTitle }}"
-              class="img-fluid"
-              style="max-height: 50px"
-            />
-            <div class="ms-3 d-inline-block align-middle">
+            <div class="ms-md-3 d-inline-block align-middle">
               <h5 class="mb-0">
                 <a
                   routerLink="/shop/{{ item.id }}"
                   class="text-dark text-decoration-none"
                 >
-                  {{ item.productTitle }}
+                  {{ item.productName }}
                 </a>
               </h5>
               <span class="text-muted fst-italic">
@@ -39,33 +50,62 @@
             </div>
           </div>
         </th>
-        <td class="align-middle">
-          <strong>{{ item.price | currency : "EUR" }}</strong>
-        </td>
-        <td class="align-middle">
+        <!-- Price Column -->
+        <td class="align-middle text-center">
           <div
-            class="d-flex align-items-center"
-            [class.justify-content-center]="!isBasket"
+            *ngIf="
+              item.discountedPrice && item.discountedPrice !== item.price;
+              else originalPrice
+            "
           >
+            <span class="text-decoration-line-through">{{
+              item.price | currency : "EUR"
+            }}</span
+            ><br />
+            <strong class="text-success">{{
+              item.discountedPrice | currency : "EUR"
+            }}</strong>
+          </div>
+          <ng-template #originalPrice>
+            <strong>{{ item.price | currency : "EUR" }}</strong>
+          </ng-template>
+        </td>
+        <!-- <td class="align-middle">
+          <strong>{{
+            (item.discountedPrice && item.discountedPrice !== item.price
+              ? item.discountedPrice
+              : item.price) * item.quantity | currency : "EUR"
+          }}</strong>
+        </td> -->
+        <!-- Quantity Column -->
+        <td class="align-middle text-center">
+          <div class="d-flex align-items-center justify-content-center">
             <i
               *ngIf="isBasket"
               class="fa fa-minus-circle text-warning me-2"
               style="cursor: pointer; font-size: 2em"
               (click)="removeBasketItem(item.id, 1)"
-            ></i>
+            >
+            </i>
             <strong>{{ item.quantity }}</strong>
             <i
               *ngIf="isBasket"
-              class="fa fa-plus-circle text-warning mx-2"
+              class="fa fa-plus-circle text-warning ms-2"
               style="cursor: pointer; font-size: 2em"
               (click)="addBasketItem(item)"
-            ></i>
+            >
+            </i>
           </div>
         </td>
-        <td class="align-middle">
-          <strong>{{ item.price * item.quantity | currency : "EUR" }}</strong>
+        <!-- Subtotal Column -->
+        <td class="align-middle text-center">
+          <strong>{{
+            (item.discountedPrice != null ? item.discountedPrice : item.price) *
+              item.quantity | currency : "EUR"
+          }}</strong>
         </td>
-        <td class="align-middle" *ngIf="isBasket">
+        <!-- Remove Item Column -->
+        <td *ngIf="isBasket" class="align-middle text-center">
           <a class="text-danger">
             <i
               class="fa fa-trash"

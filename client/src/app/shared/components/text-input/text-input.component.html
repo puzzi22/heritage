@@ -15,16 +15,15 @@
   ></div>
   <label for="floatingInput">{{ label }}</label>
   <div *ngIf="control.errors?.['required']" class="invalid-feedback">
-    Please enter your {{ label }}
+    {{ "validation.required" | translate : { label: label } }}
   </div>
   <div *ngIf="control.errors?.['email']" class="invalid-feedback">
-    Invalid email address
+    {{ "validation.invalidEmail" | translate }}
   </div>
   <div *ngIf="control.errors?.['pattern']" class="invalid-feedback">
-    Password should have at least 1 small-case letter, 1 capital letter, 1
-    digit, 1 special character and the length should be between 6-10 characters
+    {{ "validation.passwordPattern" | translate }}
   </div>
   <div *ngIf="control.errors?.['emailExists']" class="invalid-feedback">
-    Email address is taken
+    {{ "validation.emailExists" | translate }}
   </div>
 </div>

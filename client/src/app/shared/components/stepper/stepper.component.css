@@ -1,0 +1,10 @@
+button.nav-link {
+  background: rgb(248, 249, 250);
+  border-radius: 0;
+  border: none;
+  color: #333;
+}
+button.nav-link:disabled:not(.active) {
+  color: #333;
+  background: #e9ecef;
+}/*# sourceMappingURL=stepper.component.css.map */

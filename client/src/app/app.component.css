@@ -1,1 +1,15 @@
-/*# sourceMappingURL=app.component.css.map */
+body,
+html {
+  height: 100%; /* Full height */
+  margin: 0; /* Reset default margin */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh; /* Full viewport height */
+}
+
+app-footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+}/*# sourceMappingURL=app.component.css.map */

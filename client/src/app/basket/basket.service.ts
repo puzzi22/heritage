@@ -1,6 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, forkJoin, map } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import {
+  BehaviorSubject,
+  Observable,
+  catchError,
+  forkJoin,
+  map,
+  switchMap,
+  throwError,
+} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ProductComposerDto } from '../interfaces/ProductComposerDto';
 import { ProductTypeDto } from '../interfaces/ProductTypeDto';
@@ -22,17 +31,19 @@ export class BasketService {
   private composers: ProductComposerDto[] = [];
   private productTypes: ProductTypeDto[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private translate: TranslateService) {}
 
   createPaymentIntent() {
-    return this.http.post<Basket>(
-      this.baseUrl + 'payments/' + this.getCurrentBasketValue()?.id,
-      {}
-    ).pipe(
-      map(basket => {
-        this.basketSource.next(basket);
-      })
-    )
+    return this.http
+      .post<Basket>(
+        this.baseUrl + 'payments/' + this.getCurrentBasketValue()?.id,
+        {}
+      )
+      .pipe(
+        map((basket) => {
+          this.basketSource.next(basket);
+        })
+      );
   }
 
   setShippingPrice(deliveryMethod: DeliveryMethod) {
@@ -42,6 +53,50 @@ export class BasketService {
       basket.deliveryMethodId = deliveryMethod.id;
       this.setBasket(basket);
     }
+  }
+
+  applyDiscountCode(discountCode: string): Observable<Basket> {
+    // console.log('Applying discount code:', discountCode);
+    // console.log('applyDiscountCode called with:', discountCode); // Log when the method is called
+
+    const basketId = this.getCurrentBasketValue()?.id;
+    if (!basketId) {
+      // console.error('Basket ID is null or undefined.');
+      return throwError(() => new Error('Basket ID is null or undefined.'));
+    }
+
+    // console.log('Sending request to apply discount code. Basket ID:', basketId); // Log the basket ID being used
+
+    return this.http
+      .post<Basket>(this.baseUrl + 'basket/apply-discount', {
+        Code: discountCode,
+        basketId,
+      })
+      .pipe(
+        map((basket: Basket) => {
+          // console.log('Discount code applied. Updated basket:', basket);
+          // console.log('Discount code applied. Updated basket received:', basket); // Log the received updated basket
+          this.basketSource.next(basket);
+          this.calculateTotals();
+          return basket;
+        }),
+        catchError((error) => {
+          // console.error('Error applying discount code:', error);
+
+          let errorKey = 'defaultErrorMessageKey'; // Default error key
+          if (error.error && error.error.messageKey) {
+            errorKey = error.error.messageKey;
+          }
+
+          return this.translate
+            .get(errorKey)
+            .pipe(
+              switchMap((translatedErrorMessage) =>
+                throwError(() => new Error(translatedErrorMessage))
+              )
+            );
+        })
+      );
   }
 
   getProductComposers() {
@@ -64,8 +119,12 @@ export class BasketService {
   }
 
   setBasket(basket: Basket) {
+    // console.log('Setting basket:', basket);
+
     return this.http.post<Basket>(this.baseUrl + 'basket', basket).subscribe({
       next: (basket) => {
+        // console.log('Basket updated:', basket);
+
         this.basketSource.next(basket);
         this.calculateTotals();
       },
@@ -76,8 +135,22 @@ export class BasketService {
     return this.basketSource.value;
   }
 
+  initializeOrGetBasket(): Basket {
+    let basket = this.getCurrentBasketValue();
+    if (!basket) {
+      basket = this.createBasket();
+      this.basketSource.next(basket);
+    }
+    return basket;
+  }
+
   addItemToBasket(item: Product | BasketItem, quantity = 1) {
-    const basket = this.getCurrentBasketValue() ?? this.createBasket();
+    const basket = this.getCurrentBasketValue();
+    if (!basket) {
+      // console.error('No basket found when trying to add item.');
+      return;
+    }
+
     if (this.isProduct(item)) {
       this.mapProductItemToBasketItem(item).subscribe(
         (itemToAdd: BasketItem) => {
@@ -170,12 +243,13 @@ export class BasketService {
         // Return a new BasketItem with all necessary transformations
         return {
           id: item.id,
-          productTitle: item.title, // Adjusted to match the BasketItem interface.
+          productName: item.title,
           price: item.price,
+          discountedPrice: item.price, // Initially set to the same as the price
           quantity: 0,
-          pictureUrl1: item.pictureUrl1, // Adjusted to match the BasketItem interface.
-          composerNames, // This is already filtered to be string[]
-          typeNames, // This is already filtered to be string[]
+          pictureUrl: item.pictureUrl1,
+          composerNames,
+          typeNames,
         };
       })
     );
@@ -184,9 +258,20 @@ export class BasketService {
   private calculateTotals() {
     const basket = this.getCurrentBasketValue();
     if (!basket) return;
-    const subtotal = basket.items.reduce((a, b) => b.price * b.quantity + a, 0);
+
+    // console.log('Calculating totals for basket:', basket);
+    const subtotal = basket.items.reduce(
+      (a, b) => (b.discountedPrice ?? b.price) * b.quantity + a,
+      0
+    );
     const total = subtotal + basket.shippingPrice;
-    this.basketTotalSource.next({ shipping: basket.shippingPrice, total, subtotal });
+
+    // console.log(`Subtotal: ${subtotal}, Total: ${total}`);
+    this.basketTotalSource.next({
+      shipping: basket.shippingPrice,
+      total,
+      subtotal,
+    });
   }
 
   private isProduct(item: Product | BasketItem): item is Product {

@@ -11,6 +11,7 @@ namespace Infrastructure.Data.Config
             builder.Property(p => p.Id).IsRequired();
             builder.Property(p => p.Title).IsRequired().HasMaxLength(100);
             builder.Property(p => p.LongTitle).IsRequired().HasMaxLength(180);
+            builder.Property(p => p.Editor).IsRequired().HasMaxLength(180);
             builder.Property(p => p.Instrumentation).IsRequired();
             builder.Property(p => p.Price).IsRequired().HasColumnType("decimal(18,2)");
 

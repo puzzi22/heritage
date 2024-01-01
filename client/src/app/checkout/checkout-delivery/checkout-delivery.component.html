@@ -1,21 +1,31 @@
 <div class="mt-4" *ngIf="checkoutForm" [formGroup]="checkoutForm">
   <div class="row" formGroupName="deliveryForm">
-    <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
+    <div
+      class="col-md-6 col-12 form-group mb-3 m"
+      *ngFor="let method of deliveryMethods; let i = index"
+    >
       <input
         type="radio"
-        class="form-check-input"
-        value="{{ method.id }}"
         id="{{ method.id }}"
+        value="{{ method.id }}"
         formControlName="deliveryMethod"
+        class="form-check-input"
+        [class.grey-out]="i < 3"
         (click)="setShippingPrice(method)"
       />
-      <label for="{{ method.id }}" class="form-check-label ms-2 mb-3">
+      <label
+        for="{{ method.id }}"
+        class="form-check-label ms-2 mb-3 d-inline"
+        [class.grey-out]="i < 3"
+      >
         <strong
           >{{ method.shortName }} -
           {{ method.price | currency : "EUR" }}</strong
         >
         <br />
-        <span class="label-description">{{ method.description }}</span>
+        <span class="label-description d-block ms-4">{{
+          "deliveryMethods." + method.shortName + ".description" | translate
+        }}</span>
       </label>
     </div>
   </div>
@@ -23,13 +33,15 @@
 
 <div class="d-flex justify-content-between flex-row mb-5">
   <button class="btn btn-outline-primary" cdkStepperPrevious>
-    <i class="fa fa-angle-left"></i> Back to Address
+    <i class="fa fa-angle-left"></i>
+    {{ "deliveryOptions.backToAddress" | translate }}
   </button>
   <button
     [disabled]="checkoutForm?.get('deliveryForm')?.invalid"
     class="btn btn-primary"
     cdkStepperNext
   >
-    Go to Review <i class="fa fa-angle-right"></i>
+    {{ "deliveryOptions.goToReview" | translate }}
+    <i class="fa fa-angle-right"></i>
   </button>
 </div>

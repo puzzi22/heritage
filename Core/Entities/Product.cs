@@ -6,6 +6,7 @@ namespace Core.Entities
         public string LongTitle { get; set; }
         public string Instrumentation { get; set; }
         public decimal Price { get; set; }
+        public string Editor { get; set; }
         public string PictureUrl1 { get; set; }
         public string PictureUrl2 { get; set; }
         public string PictureUrl3 { get; set; }

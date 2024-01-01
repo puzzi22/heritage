@@ -11,7 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations.AppIdentityDb
 {
     [DbContext(typeof(AppIdentityDbContext))]
+<<<<<<<< HEAD:Infrastructure/Migrations/AppIdentityDb/20231113203826_InitialCreate.Designer.cs
     [Migration("20231113203826_InitialCreate")]
+========
+    [Migration("20231219203800_InitialCreate")]
+>>>>>>>> branch2:Infrastructure/Migrations/AppIdentityDb/20231219203800_InitialCreate.Designer.cs
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -32,13 +36,13 @@ namespace Infrastructure.Migrations.AppIdentityDb
                     b.Property<string>("City")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Country")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("State")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Street")

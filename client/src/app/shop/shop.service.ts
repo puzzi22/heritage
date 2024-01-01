@@ -82,19 +82,53 @@ export class ShopService {
     return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
 
-  getComposers() {
-    if (this.composers.length > 0) return of(this.composers);
+  getComposers(): Observable<Composer[]> {
+    if (this.composers.length > 0) {
+      // If composers array is already populated, return it in alphabetical order.
+      return of(this.sortComposers());
+    }
 
-    return this.http
-      .get<Composer[]>(this.baseUrl + 'products/composers')
-      .pipe(map((composers) => (this.composers = composers)));
+    return this.http.get<Composer[]>(this.baseUrl + 'products/composers').pipe(
+      map((composers) => {
+        this.composers = composers;
+        return this.sortComposers();
+      })
+    );
   }
 
-  getTypes() {
-    if (this.types.length > 0) return of(this.types);
+  private sortComposers(): Composer[] {
+    return this.composers.slice().sort((a, b) => {
+      const lastNameA = a.lastName.toLowerCase();
+      const lastNameB = b.lastName.toLowerCase();
 
-    return this.http
-      .get<Type[]>(this.baseUrl + 'products/types')
-      .pipe(map((types) => (this.types = types)));
+      if (lastNameA < lastNameB) return -1;
+      if (lastNameA > lastNameB) return 1;
+      return 0;
+    });
+  }
+
+  getTypes(): Observable<Type[]> {
+    if (this.types.length > 0) {
+      // If types array is already populated, return it in alphabetical order.
+      return of(this.sortTypes());
+    }
+
+    return this.http.get<Type[]>(this.baseUrl + 'products/types').pipe(
+      map((types) => {
+        this.types = types;
+        return this.sortTypes();
+      })
+    );
+  }
+
+  private sortTypes(): Type[] {
+    return this.types.slice().sort((a, b) => {
+      const nameA = a.name.toLowerCase();
+      const nameB = b.name.toLowerCase();
+
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      return 0;
+    });
   }
 }

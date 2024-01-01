@@ -1,19 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
+import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { HomeComponent } from './home.component';
 
 @NgModule({
-  declarations: [
-    HomeComponent
-  ],
-  imports: [
-    CommonModule, SharedModule
-  ],
-  exports: [
-    HomeComponent
-  ]
+  declarations: [HomeComponent],
+  imports: [CommonModule, SharedModule, TranslateModule],
+  exports: [HomeComponent],
 })
-export class HomeModule { }
+export class HomeModule {}

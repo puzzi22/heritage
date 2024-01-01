@@ -1,67 +1,170 @@
 <header
-  class="d-flex flex-row align-items-center justify-content-between p-3 px-4 mb-3 bg-white border-bottom fixed-top shadow-sm"
+  class="navbar navbar-expand-lg d-flex flex-row align-items-center justify-content-between px-md-4 mb-3 navbar-light bg-light border-bottom fixed-top shadow-sm"
+  style="height: 110px"
 >
-  <img
-    src="/assets/images/logo.png"
-    alt="logo"
-    class="logo"
-    style="max-height: 70px"
-    routerLink="/"
-  />
-  <nav class="my-2 text-uppercase fs-4">
-    <a
-      class="p-2"
+  <div class="container-fluid p-0">
+    <!-- Logo -->
+    <div
+      class="logo navbar-brand text-uppercase fs-2 flex-grow-3 px-2"
       routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
     >
-    <a class="p-2" routerLink="/shop" routerLinkActive="active">Shop</a>
-    <a class="p-2" routerLink="/test-error" routerLinkActive="active">Errors</a>
-  </nav>
-  <div class="d-flex align-items-center">
-    <a routerLink="/basket" class="position-relative">
-      <i class="fa fa-shopping-cart fa-2x me-5 text-dark"></i>
-      <div
-        *ngIf="basketService.basketSource$ | async as basket"
-        class="cart-no"
-      >
-        {{ getCount(basket.items) }}
-      </div>
-    </a>
-    <ng-container *ngIf="(accountService.currentUser$ | async) === null">
-      <a routerLink="/account/login" class="btn btn-outline-secondary me-2"
-        >Login</a
-      >
-      <a routerLink="/account/register" class="btn btn-outline-secondary me-3"
-        >Sign up</a
-      >
-    </ng-container>
+      L'Héritage <span>du</span> Cor
+    </div>
 
-    <ng-container *ngIf="accountService.currentUser$ | async as user">
-      <div class="dropdown ms-3 me-5" style="cursor: pointer" dropdown>
-        <a dropdownToggle class="dropdown-toggle">
-          <strong>Welcome {{ user.displayName }}</strong>
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler mx-2"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav items -->
+    <nav
+      class="collapse navbar-collapse my-2 fs-4 flex-grow-4"
+      id="navbarSupportedContent"
+    >
+      <ul
+        class="navbar-nav mx-auto mb-2 mb-lg-0 text-uppercase align-items-center"
+      >
+        <li class="nav-item flex-grow-1">
+          <a
+            class="nav-link px-1 py-4 main-links"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeNavbar()"
+            >{{ "navbar.home" | translate }}</a
+          >
+        </li>
+        <li class="nav-item flex-grow-1">
+          <a
+            class="nav-link px-1 py-4 main-links"
+            routerLink="/shop"
+            routerLinkActive="active"
+            (click)="closeNavbar()"
+            >{{ "navbar.shop" | translate }}</a
+          >
+        </li>
+        <li class="nav-item flex-grow-1">
+          <a
+            class="nav-link px-1 py-4 main-links"
+            routerLink="/about-us"
+            routerLinkActive="active"
+            (click)="closeNavbar()"
+            >{{ "navbar.about-us" | translate }}</a
+          >
+        </li>
+        <li class="nav-item flex-grow-1">
+          <a
+            class="nav-link px-1 py-4 main-links"
+            routerLink="/contact"
+            routerLinkActive="active"
+            (click)="closeNavbar()"
+            >{{ "navbar.contact" | translate }}</a
+          >
+        </li>
+      </ul>
+
+      <div
+        class="d-flex flex-row justify-content-md-end align-items-center justify-content-between flex-grow-3 fs-6 my-3 py-4"
+      >
+        <ng-container *ngIf="(accountService.currentUser$ | async) === null">
+          <a
+            routerLink="/account/login"
+            class="btn btn-outline-secondary me-2"
+            (click)="closeNavbar()"
+          >
+            {{ "login.login" | translate }}
+          </a>
+          <a
+            routerLink="/account/register"
+            class="btn btn-outline-secondary me-3"
+          >
+            {{ "login.register" | translate }}
+          </a>
+        </ng-container>
+
+        <ng-container *ngIf="accountService.currentUser$ | async as user">
+          <div class="ms-3 me-4 dropdown" style="cursor: pointer" dropdown>
+            <a dropdownToggle class="dropdown-toggle">
+              <strong
+                >{{ "navbar.welcome" | translate
+                }}{{ user.displayName }}</strong
+              >
+            </a>
+            <ul *dropdownMenu class="dropdown-menu dropdown-menu-left">
+              <li class="py-1">
+                <a
+                  routerLink="/basket"
+                  class="dropdown-item"
+                  (click)="closeNavbar()"
+                >
+                  <i class="fa fa-shopping-cart me-3"></i
+                  >{{ "navbar.viewBasket" | translate }}
+                </a>
+              </li>
+              <li class="py-1">
+                <a
+                  routerLink="/orders"
+                  class="dropdown-item"
+                  (click)="closeNavbar()"
+                >
+                  <i class="fa fa-history me-3"></i
+                  >{{ "navbar.viewOrders" | translate }}
+                </a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li class="py-1">
+                <a
+                  (click)="accountService.logout()"
+                  class="dropdown-item"
+                  (click)="closeNavbar()"
+                >
+                  <i class="fa fa-sign-out me-3"></i
+                  >{{ "navbar.logOut" | translate }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+
+        <a routerLink="/basket" class="position-relative">
+          <i class="fa fa-shopping-cart fa-2x me-3 text-dark"></i>
+          <div
+            *ngIf="basketService.basketSource$ | async as basket"
+            class="cart-no"
+          >
+            {{ getCount(basket.items) }}
+          </div>
         </a>
-        <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
-          <li class="py-1">
-            <a routerLink="/basket" class="dropdown-item">
-              <i class="fa fa-shopping-cart me-3"></i>View basket
-            </a>
-          </li>
-          <li class="py-1">
-            <a routerLink="/orders" class="dropdown-item">
-              <i class="fa fa-history me-3"></i>View orders
-            </a>
-          </li>
-          <div class="dropdown-divider"></div>
-          <li class="py-1">
-            <a (click)="accountService.logout()" class="dropdown-item">
-              <i class="fa fa-sign-out me-3"></i>Logout
-            </a>
-          </li>
-        </ul>
+
+        <div class="language-switcher mx-3 justify-content-end">
+          <button
+            type="button"
+            class="btn"
+            [class.btn-primary]="currentLang === 'en'"
+            (click)="changeLanguage('en')"
+            (click)="closeNavbar()"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            class="btn"
+            [class.btn-primary]="currentLang === 'fr'"
+            (click)="changeLanguage('fr')"
+            (click)="closeNavbar()"
+          >
+            FR
+          </button>
+        </div>
       </div>
-    </ng-container>
+    </nav>
   </div>
 </header>

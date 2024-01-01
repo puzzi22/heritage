@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@angular/animations": "^15.2.10",
+    "@coreui/angular": "4.4",
+    "@coreui/icons-angular": "^4.4.7"
+  }
+}

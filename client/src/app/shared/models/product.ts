@@ -6,6 +6,7 @@ export interface Product {
     price: number
     productTypeIds: number[]
     productComposerIds: number[]
+    editor: string
     pictureUrl1: string
     pictureUrl2: string
     pictureUrl3: string

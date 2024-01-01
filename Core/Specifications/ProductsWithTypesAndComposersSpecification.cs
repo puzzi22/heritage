@@ -9,14 +9,21 @@ using Core.Entities;
 namespace Core.Specifications
 {
     public class ProductsWithTypesAndComposersSpecification : BaseSpecification<Product>
-        {
-            public ProductsWithTypesAndComposersSpecification(ProductSpecParams productParams)
-                : base(x => 
-                    (string.IsNullOrEmpty(productParams.Search) || x.Title.ToLower().Contains(productParams.Search) || 
-                        x.LongTitle.ToLower().Contains(productParams.Search)) &&
-                    (!productParams.ComposerId.HasValue || x.ProductComposers.Any(pc => pc.Id == productParams.ComposerId)) &&
-                    (!productParams.TypeId.HasValue || x.ProductTypes.Any(pt => pt.Id == productParams.TypeId))
-                )
+    {
+        public ProductsWithTypesAndComposersSpecification(ProductSpecParams productParams)
+            : base(x => 
+                (string.IsNullOrEmpty(productParams.Search) || 
+                 x.Title.ToLower().Contains(productParams.Search.ToLower()) || 
+                 x.LongTitle.ToLower().Contains(productParams.Search.ToLower()) || 
+                 x.Instrumentation.ToLower().Contains(productParams.Search.ToLower()) ||
+                 x.ProductComposers.Any(pc => 
+                     pc.FirstName.ToLower().Contains(productParams.Search.ToLower()) ||
+                     pc.LastName.ToLower().Contains(productParams.Search.ToLower()))) &&
+                (!productParams.ComposerId.HasValue || 
+                 x.ProductComposers.Any(pc => pc.Id == productParams.ComposerId)) &&
+                (!productParams.TypeId.HasValue || 
+                 x.ProductTypes.Any(pt => pt.Id == productParams.TypeId))
+            )
             {
                 AddInclude(x => x.ProductTypes);
                 AddInclude(x => x.ProductComposers);

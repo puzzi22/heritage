@@ -21,9 +21,9 @@ namespace API.Controllers
         {
             _logger = logger;
             _paymentService = paymentService;
-            
+
         }
-        
+
         [Authorize]
         [HttpPost("{basketId}")]
         public async Task<ActionResult<CustomerBasket>> CreateOrUpdatePaymentIntent(string basketId)

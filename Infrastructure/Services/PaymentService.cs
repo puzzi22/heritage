@@ -24,56 +24,44 @@ namespace Infrastructure.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<CustomerBasket> CreateOrUpdatePaymentIntent(string basketId)
+    public async Task<CustomerBasket> CreateOrUpdatePaymentIntent(string basketId)
         {
             StripeConfiguration.ApiKey = _config["StripeSettings:SecretKey"];
 
             var basket = await _basketRepository.GetBasketAsync(basketId);
-
             if (basket == null) return null;
 
             var shippingPrice = 0m;
-
             if (basket.DeliveryMethodId.HasValue)
             {
                 var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync((int)basket.DeliveryMethodId);
                 shippingPrice = deliveryMethod.Price;
             }
 
-            foreach (var item in basket.Items)
-            {
-                var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
-                if (item.Price != productItem.Price)
-                {
-                    item.Price = productItem.Price;
-                }
-            }
-
             var service = new PaymentIntentService();
-
             PaymentIntent intent;
+
+            var basketAmount = basket.Items.Sum(i => i.Quantity * (i.DiscountedPrice ?? i.Price) * 100);
 
             if (string.IsNullOrEmpty(basket.PaymentIntentId))
             {
-                var options = new PaymentIntentCreateOptions
+                var createOptions = new PaymentIntentCreateOptions
                 {
-                    Amount = (long) basket.Items.Sum(i => i.Quantity * (i.Price * 100)) + (long) 
-                    shippingPrice * 100,
+                    Amount = (long)basketAmount + (long)(shippingPrice * 100),
                     Currency = "eur",
-                    PaymentMethodTypes = new List<string> {"card"}
+                    PaymentMethodTypes = new List<string> { "card" }
                 };
-                intent = await service.CreateAsync(options);
+                intent = await service.CreateAsync(createOptions);
                 basket.PaymentIntentId = intent.Id;
                 basket.ClientSecret = intent.ClientSecret;
             }
             else
             {
-                var options = new PaymentIntentUpdateOptions
+                var updateOptions = new PaymentIntentUpdateOptions
                 {
-                    Amount = (long) basket.Items.Sum(i => i.Quantity * (i.Price * 100)) + (long)
-                    shippingPrice * 100
+                    Amount = (long)basketAmount + (long)(shippingPrice * 100)
                 };
-                await service.UpdateAsync(basket.PaymentIntentId, options);
+                await service.UpdateAsync(basket.PaymentIntentId, updateOptions);
             }
 
             await _basketRepository.UpdateBasketAsync(basket);

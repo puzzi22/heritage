@@ -100,6 +100,11 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Editor")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Instrumentation")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -216,19 +221,19 @@ namespace Infrastructure.Migrations
                             b1.Property<string>("City")
                                 .HasColumnType("TEXT");
 
+                            b1.Property<string>("Country")
+                                .HasColumnType("TEXT");
+
                             b1.Property<string>("FirstName")
                                 .HasColumnType("TEXT");
 
                             b1.Property<string>("LastName")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("State")
-                                .HasColumnType("TEXT");
-
                             b1.Property<string>("Street")
                                 .HasColumnType("TEXT");
 
-                            b1.Property<string>("ZipCode")
+                            b1.Property<string>("Zipcode")
                                 .HasColumnType("TEXT");
 
                             b1.HasKey("OrderId");
@@ -257,13 +262,13 @@ namespace Infrastructure.Migrations
                             b1.Property<int>("OrderItemId")
                                 .HasColumnType("INTEGER");
 
-                            b1.Property<string>("PictureUrl1")
+                            b1.Property<string>("PictureUrl")
                                 .HasColumnType("TEXT");
 
                             b1.Property<int>("ProductItemId")
                                 .HasColumnType("INTEGER");
 
-                            b1.Property<string>("ProductTitle")
+                            b1.Property<string>("ProductName")
                                 .HasColumnType("TEXT");
 
                             b1.HasKey("OrderItemId");

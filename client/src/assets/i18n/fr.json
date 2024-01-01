@@ -1,0 +1,318 @@
+{
+  "loading": "Chargement...",
+  "orderDetails": "Commande #{{id}} ({{status}})",
+
+  "home": {
+    "welcome": "Bienvenue !"
+  },
+
+  "shop": {
+    "sort": "Trier",
+    "composers": "Compositeurs",
+    "types": "Types",
+    "search": "Recherche",
+    "reset": "Réinitialiser"
+  },
+
+  "contact": {
+    "writeUs": "Écrivez-nous",
+    "yourEmail": "Email",
+    "yourName": "Nom",
+    "writeYourMessageHere": "Écrivez votre message ou votre question ici",
+    "submit": "Soumettre"
+  },
+
+  "navbar": {
+    "home": "Accueil",
+    "shop": "Catalogue",
+    "contact": "Contact",
+    "about-us": "À propos",
+    "errors": "Erreurs",
+    "welcome": "Bienvenue ",
+    "viewBasket": "Voir le panier",
+    "viewOrders": "Voir les commandes",
+    "logOut": "Se déconnecter"
+  },
+
+  "footer": {
+    "aboutUs": "À propos de nous",
+    "newCriticalEditions": "Nouvelles éditions critiques du répertoire pour cor",
+    "quickLinks": "Liens rapides",
+    "madeBy": "Fait par",
+    "inBarcelona": "à Barcelone",
+    "updatedOn": "Mis à jour le "
+  },
+
+  "login": {
+    "login": "Se connecter",
+    "emailAddress": "Adresse courriel",
+    "signIn": "S'enregistrer",
+    "register": "S'inscrire",
+    "password": "Mot de passe"
+  },
+
+  "error": {
+    "test500Error": "Test Erreur de type 500",
+    "test404Error": "Test Erreur de type 404",
+    "test400Error": "Test Erreur de type 400",
+    "test400ValidationError": "Test Erreur de validation de type 400",
+    "notFound": "Introuvable",
+    "badRequest": "Vous avez fait une mauvaise demande",
+    "unauthorized": "Vous n'êtes pas autorisé",
+    "ResourceNotFound": "Ressource non trouvée",
+    "serverError": "Erreur interne du serveur",
+    "basketIdNullOrEmpty": "Le ID du panier est nul ou vide",
+    "invalidDiscount": "Code de réduction invalide",
+    "basketNotFound": "Panier introuvable",
+    "alreadyApplied": "Un code de réduction a déjà été appliqué",
+    "defaultErrorKey": "Une erreur est survenue en applicant le code",
+    "undefined": "Le code de réduction est invalide",
+    "invalidValue": "La valeur 'hundredfortytwo' n'est pas valide"
+  },
+
+  "validation": {
+    "required": "Veuillez entrer votre {{label}}",
+    "invalidEmail": "Adresse email invalide",
+    "passwordPattern": "Le mot de passe doit contenir au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre, 1 caractère spécial et être long de 6 à 10 caractères",
+    "emailExists": "L'adresse email est déjà utilisée"
+  },
+
+  "errorPage": {
+    "internalServerError": "Erreur interne du serveur - l'actualisation fera disparaître l'erreur",
+    "error": "Erreur",
+    "errorFromServer": "Cette erreur provient du serveur - et non d'Angular",
+    "whatToDo": "Que faire ensuite ?",
+    "checkNetworkTab": "Vérifiez l'onglet réseau dans les outils de développement Chrome",
+    "reproduceInPostman": "Reproduisez la requête dans Postman - si la même erreur se produit alors ce n'est définitivement pas Angular !",
+    "stackTrace": "Stack trace"
+  },
+
+  "basket": {
+    "emptyBasketMessage": "Il n'y a pas d'articles dans votre panier",
+    "proceedToCheckout": "Procéder au paiement"
+  },
+
+  "orders": {
+    "order": "Commande",
+    "date": "Date",
+    "total": "Total",
+    "status": "Statut"
+  },
+
+  "orderStatus": {
+    "Pending": "En attente",
+    "PaymentReceived": "Paiement reçu",
+    "PaymentFailed": "Échec du paiement"
+  },
+
+  "status": {
+    "Pending": "En attente"
+  },
+
+  "checkout": {
+    "address": "Adresse",
+    "delivery": "Livraison",
+    "review": "Révision",
+    "payment": "Paiement"
+  },
+
+  "productItem": {
+    "view": "Voir"
+  },
+
+  "orderSummary": {
+    "title": "Résumé de la commande",
+    "shippingInfo": "Les frais de livraison seront calculés en fonction des choix effectués lors du paiement",
+    "orderSubtotal": "Sous-total de la commande",
+    "shippingHandling": "Expédition et manutention",
+    "discountApplied": "Réduction",
+    "total": "Total"
+  },
+
+  "basketSummary": {
+    "product": "Produit",
+    "price": "Prix",
+    "quantity": "Quantité",
+    "subtotal": "Subtotal",
+    "remove": "Supprimer"
+  },
+
+  "product": {
+    "description": "Description",
+    "instrumentation": "Instrumentation",
+    "price": "Prix",
+    "quantityInBasket": "Vous avez {{quantityInBasket}} fois cet article dans votre panier",
+    "addToBasket": "Ajouter au panier",
+    "updateBasket": "Mettre à jour le panier",
+    "composer": "Compositeur",
+    "type": "Type",
+    "editor": "Éditeur"
+  },
+
+  "placeholder": {
+    "email": "Entrez l'email",
+    "password": "Entrez le mot de passe",
+    "search": "Recherche"
+  },
+
+  "label": {
+    "displayName": "Identifiant",
+    "emailAddress": "Adresse email",
+    "password": "Mot de passe"
+  },
+
+  "checkoutReview": {
+    "backToDelivery": "Retour à la livraison",
+    "goToPayment": "Passer au paiement",
+    "discount": "Entrez votre bon de réduction",
+    "applyCode": "Enregistrer",
+    "success": "Bon de réduction entré avec succès",
+    "error": "Veuillez entrer un bon de réduction"
+  },
+
+  "shippingAddress": {
+    "title": "Adresse de livraison",
+    "saveAsDefault": "Enregistrer comme adresse par défaut",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "street": "Adresse",
+    "city": "Ville",
+    "country": "Pays",
+    "zipCode": "Code postal",
+    "goToDelivery": "Aller à la livraison",
+    "backToBasket": "Retour au panier",
+    "saveSuccess": "Adresse enregistrée"
+  },
+
+  "paymentForm": {
+    "nameOnCard": "Nom sur la carte",
+    "cardNumber": "Numéro de carte",
+    "cardExpiry": "Date d'expiration",
+    "cardCvc": "CVC de la carte",
+    "submitOrder": "Soumettre la commande",
+    "backToReview": "Retour à la révision"
+  },
+
+  "orderConfirmation": {
+    "thankYou": "Merci. Votre commande est confirmée",
+    "message": "Votre commande n'a pas encore été expédiée, mais c'était à prévoir car nous ne sommes pas un vrai commerce !",
+    "viewYourOrder": "Voir votre commande",
+    "viewYourOrders": "Voir vos commandes"
+  },
+
+  "deliveryOptions": {
+    "title": "{{name}} - {{price}}",
+    "StandardDelivery": "Livraison standard sous 5-7 jours",
+    "ExpressDelivery": "Livraison express sous 2-3 jours",
+    "backToAddress": "Retour à l'adresse",
+    "goToReview": "Aller à la révision"
+  },
+
+  "paging": {
+    "showing": "Affichage",
+    "of": "de",
+    "products": "produits",
+    "noResults": "Il n'y a pas de produit pour ce filtre"
+  },
+
+  "sortOptions": {
+    "alphabetical": "Alphabétique",
+    "priceLowToHigh": "Prix : du moins cher au plus cher",
+    "priceHighToLow": "Price : du plus cher au moins cher"
+  },
+
+  "deliveryMethods": {
+    "UPS1": {
+      "description": "Livraison la plus rapide",
+      "deliveryTime": "1-2 Jours"
+    },
+    "UPS2": {
+      "description": "Obtenez-le sous 5 jours",
+      "deliveryTime": "2-5 Jours"
+    },
+    "UPS3": {
+      "description": "Plus lent mais moins cher",
+      "deliveryTime": "5-10 Jours"
+    },
+    "FREE": {
+      "description": "Gratuit ! Nous vons enverrons les documents en format digital par email",
+      "deliveryTime": "Le même jour"
+    }
+  },
+
+  "common": {
+    "all": "Tous"
+  },
+
+  "types": {
+    "all": "Tous",
+    "Arrangement": "Arrangement",
+    "Chamber Music": "Musique de chambre",
+    "Concerto": "Concerto",
+    "Horn and Organ": "Cor et orgue",
+    "Horn and Piano": "Cor et piano",
+    "Horn Duet": "Duo de cors",
+    "Horn Quartet": "Quatuor de cors",
+    "Method": "Méthode",
+    "Other": "Autre",
+    "Sight-reading": "Lecture à vue",
+    "Sinfonia Concertante": "Symphonie concertante",
+    "Solo Horn": "Cor solo",
+    "Sonata": "Sonate",
+    "Study": "Étude",
+    "Trio": "Trio"
+  },
+
+  "breadcrumb": {
+    "home": "Accueil",
+    "products": "Produits",
+    "shop": "Catalogue",
+    "about-us": "À propos",
+    "contact": "Contact",
+    "test-error": "Erreurs",
+    "server-error": "Erreur du serveur",
+    "not-found": "Introuvable",
+    "basket": "Panier",
+    "orders": "Commandes",
+    "login": "Connection",
+    "register": "Inscription",
+    "checkout": "Paiement",
+    "success": "Confirmation",
+    "account": "Compte"
+  },
+  "instrumentation": {
+    "Oboe, Horn (or English Horn), Piano": "Hautbois, Cor (ou Cor Anglais), Piano",
+    "Horn (or Violin, or Viola, or Cello), Piano": "Cor (ou Violon, ou Alto, ou Violoncelle), Piano",
+    "Horn (or Violin), Piano": "Cor (ou Violon), Piano",
+    "2 Horns (or Trumpets, or Flutes, or Oboes, or Recorders, or Violins, or Tambourins)": "2 Cors (ou Trompettes, ou Flûtes, ou Hautbois, ou Flûtes à bec, ou Violons, ou Tambourins)",
+    "Horn, String Quartet": "Cor, Quatuor à cordes",
+    "Horn, Piano": "Cor, Piano",
+    "Horn": "Cor",
+    "Piston Horn, Piano": "Cor à pistons, Piano",
+    "4 Horns": "4 Cors",
+    "Horn, Musette, Flute, Violin, Bass": "Cor, Musette, Flûte, Violon, Basse",
+    "Piston Horn": "Cor à pistons",
+    "Horn, Piano, Harp, Organ, Contralto, 4 Horns": "Cor, Piano, Harpe, Orgue, Contralto, 4 Cors",
+    "Piston Horn, Organ": "Cor à pistons, Orgue",
+    "2 Horns, Piano": "2 Cors, Piano",
+    "2 Horns, Orchestra": "2 Cors, Orchestre",
+    "5 Horns, Piano": "5 Cors, Piano"
+  },
+  "about-us": {
+    "discover": "Découvrez nos nouvelles éditions",
+    "reviving": "Dépoussiérer le patrimoine musical",
+    "blend": "Un mélange d'histoire et de recherche",
+    "clarity": "Des partitions claires pour les besoins du XXIe siècle",
+    "embracing": "Un projet en harmonie avec l'environnement",
+    "maury": "Claude Maury : Éditeur en chef",
+    "join": "Joignez-vous à nous !",
+    "empowering": "Des éditions pour la nouvelle génération : 'STUDENT50'",
+    "at-l'héritage": "Nous sommes passionnés par la redécouverte et la transmission du répertoire pour cor qui a été oublié. Nous tâchons d'exhumer des œuvres inédites du XVIIIe et XIVe siècles, pour le bénéfice des cornistes modernes, des étudiants et du public en général. Mais notre travail ne s'arrête pas qu'aux raretés : nous proposons également de nouvelles éditions critiques d'œuvres bien connues du répertoire pour cor.",
+    "every-piece": "Chaque édition de notre collection est bien plus qu'une partition : il s'agit d'un lien avec le passé. Chaque oeuvre est accompagnée d'une introduction minutieusement recherchée, explorant le contexte musical et historique du compositeur et de la composition. Cette approche offre aux musiciens et aux amateurs une compréhension plus profonde de l'œuvre, enrichissant leur expérience et leur compréhension du texte musical.",
+    "we-believe": "Nous croyons à la transparence et à l'authenticité. C'est pourquoi nous indiquons clairement les sources de nos éditions, assurant ainsi l'exactitude historique et à l'intégrité de nos éditions. Cet engagement envers l'authenticité ne consiste pas seulement à respecter le passé : il s'agit de ramener à la vie la musique ancienne de la manière la plus authentique et vivante possible.",
+    "in-today's": "Dans le monde rapide d'aujourd'hui, l'accès à la musique devrait être instantané et pour toutes et tous. Pour répondre à ce besoin bien actuel, nous proposons actuellement nos éditions dans un format numérique, les livrant directement par email après acquisition. Cette approche garantit que notre précieux patrimoine musical n'est qu'à portée de quelques clics, prêt à être exploré et apprécié à sa juste valeur. C'est aussi un petit geste pour reconnaître le besoin pour des solutions durables et respectueuses de l'environnement.",
+    "our-journey": "Notre voyage de redécouverte musicale est mené par Claude Maury, ancien professeur de cor ancien au Conservatoire National Supérieur de Musique et de Danse de Paris (2006-2020). Lauréat du concours Gallay à Perpignan, France (1981), et de celui de Bad Harzburg, Allemagne (1984), il se lance dans une carrière freelance au cor naturel dès 1985. Il a collaboré avec certains des orchestres et ensembles les plus respectés spécialisés dans la pratique des instruments anciens, notamment La Petite Bande, l'Orchestre du XVIIIe siècle et Les Musiciens du Louvre, pour n'en nommer que quelques-uns. Sa discographie comprend de nombreux enregistrements en solo et en musique de chambre. Claude est reconnu également pour son apport pédagogique. Il enseigne depuis de nombreuses années au Conservatoire de Versailles et au Conservatoire National Supérieur de Paris (CNSMDP).",
+    "we-invite": "Nous vous invitons à explorer notre collection et à profiter de la riche histoire de notre instrument par le biais de nos éditions. Que vous soyez un musicien professionnel, un étudiant ou un passionné du cor naturel, nos offres sont sûres d'enrichir et d'inspirer votre parcours musical.",
+    "in-our-commitment": "Nous sommes fiers de nous engager envers les jeunes musiciens en offrant le code de réduction 'STUDENT50', qui permet une remise de 50% sur toutes les commandes. Cette initiative reflète notre dévouement à rendre nos éditions accessibles aux jeunes cornistes, favorisant ainsi leur développement et leur intérêt pour notre patrimoine musical."
+  }
+}

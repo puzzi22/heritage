@@ -54,8 +54,10 @@ namespace Infrastructure.Data
 
             modelBuilder.Entity<Product>()
                 .Property(p => p.PictureUrl5);
-            
-            // modelBuilder.Entity<Address>().HasNoKey();
+
+            // Ignore the DiscountedPrice property in the OrderItem entity
+            modelBuilder.Entity<OrderItem>()
+                .Ignore(o => o.DiscountedPrice);
         }
     }
 }

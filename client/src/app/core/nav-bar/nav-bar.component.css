@@ -3,11 +3,11 @@
   min-height: 25px;
   min-width: 25px;
   border-radius: 50%;
-  background: blue;
+  background: rgb(0, 0, 255);
   color: white;
   text-align: center;
   top: -12px;
-  right: 32px;
+  right: 3px;
 }
 
 a {
@@ -18,6 +18,41 @@ a.active {
   color: orange;
 }
 
+.main-links:hover {
+  color: rgba(52, 58, 64, 0.675);
+}
+
 .logo {
   cursor: pointer;
+  margin-bottom: 0;
+}
+
+.logo:hover {
+  color: rgb(0, 0, 255);
+}
+
+.logo span {
+  font-size: 16px;
+}
+
+.language-switcher button {
+  border-radius: 0; /* Remove border radius */
+  padding: 0.4rem 0.4rem; /* Adjust padding as needed */
+  font-size: 0.875rem; /* Adjust font size as needed */
+  margin-left: 0rem; /* Spacing between buttons */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+
+/* Optional: Reduce the focus outline size for a cleaner look */
+.language-switcher button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+  background-color: #f8f9fa; /* This is the light-grey color used by Bootstrap */
+}
+
+.navbar-collapse {
+  width: 100%;
 }/*# sourceMappingURL=nav-bar.component.css.map */

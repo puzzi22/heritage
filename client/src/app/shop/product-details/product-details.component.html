@@ -1,45 +1,110 @@
 <div class="container">
   <div class="row" *ngIf="product">
-    <div class="col-6">
-      <img
-        src="{{ product.pictureUrl1 }}"
-        alt="{{ product.title }}"
-        class="w-100"
-      />
+    <div class="col-md-6 col-12">
+      <div class="row">
+        <div class="col-md-10 col-12">
+          <owl-carousel-o
+            [options]="{
+              items: 1,
+              dots: false,
+              mouseDrag: false,
+              touchDrag: false
+            }"
+            #mainCarousel
+          >
+            <ng-template carouselSlide>
+              <img
+                [src]="selectedImage"
+                [alt]="product.title"
+                class="img-fluid"
+                (click)="openModal(selectedImage)"
+                style="cursor: pointer"
+              />
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+
+      <!-- Thumbnails Carousel -->
+      <div class="col-12">
+        <owl-carousel-o [options]="{ items: 5, dots: false, margin: 10 }">
+          <ng-container *ngFor="let url of imageUrls; let i = index">
+            <ng-template carouselSlide>
+              <img
+                [src]="url"
+                class="img-thumbnail"
+                [ngClass]="{ active: i === selectedImageIndex }"
+                (click)="mainCarousel.to(i.toString()); changeImage(i)"
+              />
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
     </div>
-    <div class="col-6 mt-5">
+    <div class="col-md-6 col-12 mt-5">
       <h2>{{ product.title }}</h2>
-      <p>{{ product.price | currency : "EUR" }}</p>
-      <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
-        You have {{ quantityInBasket }} of this item in your basket
+      <br />
+      <div class="row mt-4">
+        <h5>{{ "product.composer" | translate }}</h5>
+        <p>{{ composerNames.join(", ") }}</p>
+
+        <h5>{{ "product.description" | translate }}</h5>
+        <p>{{ product.longTitle }}</p>
+
+        <h5>{{ "product.instrumentation" | translate }}</h5>
+        <p>{{ "instrumentation." + product.instrumentation | translate }}</p>
+
+        <h5>{{ "product.type" | translate }}</h5>
+        <p>{{ typeNames.join(", ") }}</p>
+
+        <h5>{{ "product.editor" | translate }}</h5>
+        <p>{{ product.editor }}</p>
+
+        <h5>{{ "product.price" | translate }}</h5>
+        <p>{{ product.price | currency : "EUR" }}</p>
+      </div>
+      <br />
+      <h5
+        class="text-primary mb-3 text-center text-md-start"
+        *ngIf="quantityInBasket > 0"
+      >
+        {{
+          "product.quantityInBasket"
+            | translate : { quantityInBasket: quantityInBasket }
+        }}
       </h5>
-      <div class="d-flex justify-content-start align-items-center">
-        <i
-          (click)="decrementQuantity()"
-          class="fa fa-minus-circle text-warning me-2"
-          style="cursor: pointer; font-size: 2em"
-        ></i>
-        <span class="font-weight-bold" style="font-size: 1.5em">{{
-          quantity
-        }}</span>
-        <i
-          (click)="incrementQuantity()"
-          class="fa fa-plus-circle text-warning ms-2"
-          style="cursor: pointer; font-size: 2em"
-          st
-        ></i>
+      <div
+        class="d-flex flex-column flex-md-row justify-content-center justify-content-md-start align-items-center"
+      >
+        <div class="d-flex align-items-center">
+          <i
+            (click)="decrementQuantity()"
+            class="fa fa-minus-circle text-warning me-2"
+            style="cursor: pointer; font-size: 2em"
+          ></i>
+          <span class="font-weight-bold" style="font-size: 1.5em">{{
+            quantity
+          }}</span>
+          <i
+            (click)="incrementQuantity()"
+            class="fa fa-plus-circle text-warning ms-2"
+            style="cursor: pointer; font-size: 2em"
+          ></i>
+        </div>
         <button
-          class="btn btn-outline-primary ms-4"
+          class="btn btn-outline-primary mt-2 mt-md-0 ms-md-4"
           (click)="updateBasket()"
-          (disabled)="(quantity === quantityInBasket)"
+          [disabled]="quantity === quantityInBasket"
         >
           {{ buttonText }}
         </button>
       </div>
-      <div class="row mt-4">
-        <h4>Description</h4>
-        <p>{{ product.longTitle }}</p>
-      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="isImageZoomed" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img [src]="zoomedImage" class="zoomed-image" />
     </div>
   </div>
 </div>
