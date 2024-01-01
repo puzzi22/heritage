@@ -40,6 +40,7 @@ namespace Infrastructure.Data
                         LongTitle = productSeedDto.LongTitle,
                         Instrumentation = productSeedDto.Instrumentation,
                         Price = productSeedDto.Price,
+                        Editor = productSeedDto.Editor,
                         PictureUrl1 = productSeedDto.PictureUrl1,
                         PictureUrl2 = productSeedDto.PictureUrl2,
                         PictureUrl3 = productSeedDto.PictureUrl3,

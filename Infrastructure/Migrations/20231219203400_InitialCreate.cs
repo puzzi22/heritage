@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Infrastructure.Migrations.Store
+namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -52,6 +52,7 @@ namespace Infrastructure.Migrations.Store
                     LongTitle = table.Column<string>(type: "TEXT", maxLength: 180, nullable: false),
                     Instrumentation = table.Column<string>(type: "TEXT", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Editor = table.Column<string>(type: "TEXT", maxLength: 180, nullable: false),
                     PictureUrl1 = table.Column<string>(type: "TEXT", nullable: false),
                     PictureUrl2 = table.Column<string>(type: "TEXT", nullable: true),
                     PictureUrl3 = table.Column<string>(type: "TEXT", nullable: true),

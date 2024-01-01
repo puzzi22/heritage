@@ -9,6 +9,7 @@ namespace API.Dtos
         public decimal Price { get; set; }
         public List<int> ProductTypeIds { get; set; } = new List<int>();
         public List<int> ProductComposerIds { get; set; } = new List<int>();
+        public string Editor { get; set; }
         public string PictureUrl1 { get; set; }
         public string PictureUrl2 { get; set; }
         public string PictureUrl3 { get; set; }

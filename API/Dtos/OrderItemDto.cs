@@ -12,5 +12,7 @@ namespace API.Dtos
         public string PictureUrl1 { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+        public decimal? DiscountedPrice { get; set; } // Add discounted price
+
     }
 }

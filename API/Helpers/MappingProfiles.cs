@@ -25,17 +25,28 @@ namespace API.Helpers
 
             CreateMap<Core.Entities.Identity.Address, AddressDto>().ReverseMap();
             CreateMap<CustomerBasketDto, CustomerBasket>();
-            CreateMap<BasketItemDto, BasketItem>();
+            CreateMap<BasketItemDto, BasketItem>()
+                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                .ForMember(d => d.ProductName, o => o.MapFrom(s => s.ProductName))
+                .ForMember(d => d.Price, o => o.MapFrom(s => s.Price))
+                .ForMember(d => d.DiscountedPrice, o => o.MapFrom(s => s.DiscountedPrice)) // Map DiscountedPrice
+                .ForMember(d => d.Quantity, o => o.MapFrom(s => s.Quantity))
+                .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.PictureUrl))
+                .ForMember(d => d.ComposerNames, o => o.MapFrom(s => s.ComposerNames))
+                .ForMember(d => d.TypeNames, o => o.MapFrom(s => s.TypeNames));
+
             CreateMap<AddressDto, Core.Entities.OrderAggregate.Address>();
             CreateMap<Order, OrderToReturnDto>()
                 .ForMember(d => d.DeliveryMethod, o => o.MapFrom(s => s.DeliveryMethod.ShortName))
-                .ForMember(d => d.ShippingPrice, o => o.MapFrom(s => s.DeliveryMethod.Price));
+                    .ForMember(d => d.ShippingPrice, o => o.MapFrom(s => s.DeliveryMethod.Price));
             CreateMap<OrderItem, OrderItemDto>()
                 .ForMember(d => d.ProductId, o => o.MapFrom(s => s.ItemOrdered.ProductItemId))
                 .ForMember(d => d.ProductTitle, o => o.MapFrom(s => s.ItemOrdered.ProductName))
                 .ForMember(d => d.PictureUrl1, o => o.MapFrom(s => s.ItemOrdered.PictureUrl))
+                .ForMember(d => d.Price, o => o.MapFrom(s => s.Price))
+                .ForMember(d => d.DiscountedPrice, o => o.MapFrom(s => s.DiscountedPrice)) // Map DiscountedPrice
+                .ForMember(d => d.Quantity, o => o.MapFrom(s => s.Quantity))
                 .ForMember(d => d.PictureUrl1, o => o.MapFrom<OrderItemUrlResolver>());
-            ;
         }
     }
 }

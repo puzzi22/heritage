@@ -10,6 +10,7 @@ namespace API.Dtos
         public decimal Price { get; set; }
         public List<int> ProductTypeIds { get; set; } // Updated to represent multiple product type IDs
         public List<int> ProductComposerIds { get; set; } // Updated to represent multiple product composer IDs
+        public string Editor { get; set; }
         public string PictureUrl1 { get; set; }
         public string PictureUrl2 { get; set; }
         public string PictureUrl3 { get; set; }

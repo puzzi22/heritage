@@ -25,12 +25,16 @@ namespace Infrastructure.Services
             var basket = await _basketRepo.GetBasketAsync(basketId);
 
             // get items from the product repo
-            var items= new List<OrderItem>();
+            var items = new List<OrderItem>();
             foreach (var item in basket.Items)
             {
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
                 var itemOrdered = new ProductItemOrdered(productItem.Id, productItem.Title, productItem.PictureUrl1);
-                var orderItem = new OrderItem(itemOrdered, productItem.Price, item.Quantity);
+
+                // Use discounted price if available
+                var price = item.DiscountedPrice ?? productItem.Price;
+                var orderItem = new OrderItem(itemOrdered, price, item.Quantity);
+
                 items.Add(orderItem);
             }
 
@@ -38,7 +42,12 @@ namespace Infrastructure.Services
             var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod>().GetByIdAsync(deliveryMethodId);
 
             // calc subtotal
-            var subtotal = items.Sum(item => item.Price * item.Quantity);
+            // var subtotal = items.Sum(item => item.Price * item.Quantity);
+            var subtotal = items.Sum(item => 
+            {
+                var basketItem = basket.Items.FirstOrDefault(bi => bi.Id == item.ItemOrdered.ProductItemId);
+                return (basketItem?.DiscountedPrice ?? item.Price) * item.Quantity;
+            });
 
             // Check to see if order exists
             var spec = new OrderByPaymentIntentIdSpecification(basket.PaymentIntentId);
@@ -52,11 +61,9 @@ namespace Infrastructure.Services
                 _unitOfWork.Repository<Order>().Update(order);
             }
             else {
-
-            // create order
-             order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, 
-                subtotal, basket.PaymentIntentId);
-            _unitOfWork.Repository<Order>().Add(order); 
+                // Create new order with items including discounted prices
+                order = new Order(items, buyerEmail, shippingAddress, deliveryMethod, subtotal, basket.PaymentIntentId);
+                _unitOfWork.Repository<Order>().Add(order);
             }
 
             // TODO: save to db
