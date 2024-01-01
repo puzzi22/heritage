@@ -66,7 +66,8 @@
     "basketNotFound": "Panier introuvable",
     "alreadyApplied": "Un code de réduction a déjà été appliqué",
     "defaultErrorKey": "Une erreur est survenue en applicant le code",
-    "undefined": "Le code de réduction est invalide"
+    "undefined": "Le code de réduction est invalide",
+    "invalidValue": "La valeur 'hundredfortytwo' n'est pas valide"
   },
 
   "validation": {

@@ -144,17 +144,17 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   updateBasket() {
-    if (this.product) {
-      if (this.quantity > this.quantityInBasket) {
-        const itemsToAdd = this.quantity - this.quantityInBasket;
-        this.quantityInBasket += itemsToAdd;
-        this.basketService.addItemToBasket(this.product, itemsToAdd);
-      } else {
-        const itemsToRemove = this.quantityInBasket - this.quantity;
-        this.quantityInBasket -= itemsToRemove;
-        this.basketService.removeItemFromBasket(this.product.id, itemsToRemove);
-      }
+    if (!this.product) return;
+
+    const basket = this.basketService.getCurrentBasketValue();
+    if (!basket) {
+      // Create a new basket if it doesn't exist
+      const newBasket = this.basketService.initializeOrGetBasket();
+      this.basketService.setBasket(newBasket);
     }
+
+    // Add the item to the basket
+    this.basketService.addItemToBasket(this.product, this.quantity);
   }
 
   get buttonText() {

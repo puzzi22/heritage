@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-test-error',
@@ -11,7 +12,7 @@ export class TestErrorComponent {
   baseUrl = environment.apiUrl;
   validationErrors: string[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private translate: TranslateService) {}
 
   get404Error() {
     this.http.get(this.baseUrl + 'products/142').subscribe({
@@ -39,8 +40,17 @@ export class TestErrorComponent {
       next: (response) => console.log(response),
       error: (error) => {
         console.log(error);
-        this.validationErrors = error.errors;
+        this.validationErrors = this.translateValidationErrors(error.errors);
       },
+    });
+  }
+  
+  translateValidationErrors(errors: string[]): string[] {
+    return errors.map(error => {
+      if (error === "The value 'hundredfortytwo' is not valid.") {
+        return this.translate.instant('error.invalidValue'); // 'error.invalidValue' should be the key in your translation files
+      }
+      return error;
     });
   }
 }
