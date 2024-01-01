@@ -70,7 +70,7 @@
   },
 
   "validation": {
-    "required": "Please enter your {{field}}",
+    "required": "Please enter your {{label}}",
     "invalidEmail": "Invalid email address",
     "passwordPattern": "Password should have at least 1 small-case letter, 1 capital letter, 1 digit, 1 special character and the length should be between 6-10 characters",
     "emailExists": "Email address is taken"
