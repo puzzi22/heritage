@@ -32,9 +32,10 @@ export class ProductItemComponent implements OnInit {
   }
 
   viewProductDetails(productId: number) {
-    this.router.navigate(['/shop', productId]).then(() => {
-      window.scrollTo(0, 0); // Scroll to the top of the page
-    });
+    this.router.navigate(['/shop', productId])
+    // .then(() => {
+    //   window.scrollTo(0, 0); // Scroll to the top of the page
+    // });
   }
 
   setComposerNames() {

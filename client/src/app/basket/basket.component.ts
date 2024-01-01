@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { BasketItem } from '../shared/models/basket';
 import { BasketService } from './basket.service';
-import { ViewportScroller } from '@angular/common';
 
 
 @Component({
@@ -10,8 +9,7 @@ import { ViewportScroller } from '@angular/common';
   styleUrls: ['./basket.component.scss'],
 })
 export class BasketComponent {
-  constructor(public basketService: BasketService,
-    private viewportScroller: ViewportScroller
+  constructor(public basketService: BasketService
     ) {}
   incrementQuantity(item: BasketItem) {
     this.basketService.addItemToBasket(item);

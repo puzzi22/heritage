@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../account/account.service';
 import { BasketService } from '../basket/basket.service';
+import { ScrollService } from '../core/services/scroll.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +13,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private accountService: AccountService,
-    private basketService: BasketService
+    private basketService: BasketService,
+    private scrollService: ScrollService
   ) {}
 
   ngOnInit(): void {
@@ -44,12 +46,18 @@ export class CheckoutComponent implements OnInit {
       },
     });
   }
-  
+
   getDeliveryMethodValue() {
     const basket = this.basketService.getCurrentBasketValue();
     if (basket && basket.deliveryMethodId) {
-      this.checkoutForm.get('deliveryForm')?.get('deliveryMethod')
+      this.checkoutForm
+        .get('deliveryForm')
+        ?.get('deliveryMethod')
         ?.patchValue(basket.deliveryMethodId.toString());
     }
+  }
+
+  onStepChanged(index: number) {
+    this.scrollService.scrollToTop();
   }
 }

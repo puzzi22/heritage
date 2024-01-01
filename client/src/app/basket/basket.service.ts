@@ -56,7 +56,7 @@ export class BasketService {
   }
 
   applyDiscountCode(discountCode: string): Observable<Basket> {
-    console.log('Applying discount code:', discountCode);
+    // console.log('Applying discount code:', discountCode);
     // console.log('applyDiscountCode called with:', discountCode); // Log when the method is called
 
     const basketId = this.getCurrentBasketValue()?.id;
@@ -74,7 +74,7 @@ export class BasketService {
       })
       .pipe(
         map((basket: Basket) => {
-          console.log('Discount code applied. Updated basket:', basket);
+          // console.log('Discount code applied. Updated basket:', basket);
           // console.log('Discount code applied. Updated basket received:', basket); // Log the received updated basket
           this.basketSource.next(basket);
           this.calculateTotals();
@@ -119,11 +119,11 @@ export class BasketService {
   }
 
   setBasket(basket: Basket) {
-    console.log('Setting basket:', basket);
+    // console.log('Setting basket:', basket);
 
     return this.http.post<Basket>(this.baseUrl + 'basket', basket).subscribe({
       next: (basket) => {
-        console.log('Basket updated:', basket);
+        // console.log('Basket updated:', basket);
 
         this.basketSource.next(basket);
         this.calculateTotals();
@@ -259,14 +259,14 @@ export class BasketService {
     const basket = this.getCurrentBasketValue();
     if (!basket) return;
 
-    console.log('Calculating totals for basket:', basket);
+    // console.log('Calculating totals for basket:', basket);
     const subtotal = basket.items.reduce(
       (a, b) => (b.discountedPrice ?? b.price) * b.quantity + a,
       0
     );
     const total = subtotal + basket.shippingPrice;
 
-    console.log(`Subtotal: ${subtotal}, Total: ${total}`);
+    // console.log(`Subtotal: ${subtotal}, Total: ${total}`);
     this.basketTotalSource.next({
       shipping: basket.shippingPrice,
       total,

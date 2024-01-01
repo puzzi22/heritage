@@ -1,8 +1,8 @@
-import { ViewportScroller } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { ScrollService } from '../core/services/scroll.service';
 import { Composer } from '../shared/models/composer';
 import { Product } from '../shared/models/product';
 import { ShopParams } from '../shared/models/shopParams';
@@ -31,8 +31,8 @@ export class ShopComponent implements OnInit {
 
   constructor(
     private shopService: ShopService,
-    private viewportScroller: ViewportScroller,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private scrollService: ScrollService
   ) {
     this.shopParams = shopService.getShopParams();
     this.langChangeSubscription = new Subscription();
@@ -41,6 +41,7 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
     this.setAllLabels();
+
     this.langChangeSubscription = this.translateService.onLangChange.subscribe(
       () => {
         this.setAllLabels();
@@ -105,6 +106,7 @@ export class ShopComponent implements OnInit {
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.shopParams = params;
+    this.scrollService.scrollToTop();
     this.getProducts();
   }
 
@@ -114,6 +116,7 @@ export class ShopComponent implements OnInit {
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.shopParams = params;
+    this.scrollService.scrollToTop();
     this.getProducts();
   }
 
@@ -127,9 +130,10 @@ export class ShopComponent implements OnInit {
       params.sort = value;
     }
 
-    console.log(`Sort selected: ${params.sort}`);
+    // console.log(`Sort selected: ${params.sort}`);
     this.shopService.setShopParams(params);
     this.shopParams = params;
+    this.scrollService.scrollToTop();
     this.getProducts();
   }
 
@@ -139,6 +143,7 @@ export class ShopComponent implements OnInit {
       params.pageNumber = event;
       this.shopService.setShopParams(params);
       this.shopParams = params;
+      this.scrollService.scrollToTop();
       this.getProducts();
     }
   }
@@ -149,6 +154,7 @@ export class ShopComponent implements OnInit {
     params.pageNumber = 1;
     this.shopService.setShopParams(params);
     this.shopParams = params;
+    this.scrollService.scrollToTop();
     this.getProducts();
   }
 
@@ -168,6 +174,7 @@ export class ShopComponent implements OnInit {
     // Reset the filters using a new instance of ShopParams
     const params = new ShopParams();
     this.shopService.setShopParams(params);
+    this.scrollService.scrollToTop();
     this.shopParams = params;
 
     // Reset any UI elements if necessary
