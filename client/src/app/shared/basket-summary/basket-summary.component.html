@@ -28,25 +28,31 @@
       <tr *ngFor="let item of basket.items">
         <!-- Product Column -->
         <th style="padding: 0">
-          <img
-            src="{{ item.pictureUrl }}"
-            alt="{{ item.productName }}"
-            class="img-fluid d-none d-md-inline-block"
-            style="height: 120px"
-          />
-          <div class="p-2 d-inline-block">
-            <div class="ms-md-3 d-inline-block align-middle">
-              <h5 class="mb-0">
-                <a
-                  routerLink="/shop/{{ item.id }}"
-                  class="text-dark text-decoration-none"
-                >
-                  {{ item.productName }}
-                </a>
-              </h5>
-              <span class="text-muted fst-italic">
-                {{ item.composerNames.join(", ") }}
-              </span>
+          <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-3 d-none d-lg-inline-block">
+              <img
+                src="{{ item.pictureUrl }}"
+                alt="{{ item.productName }}"
+                class="img-fluid"
+                style="height: 120px"
+              />
+            </div>
+            <!-- Details Column -->
+            <div class="col-12 col-lg-9">
+              <div class="p-2">
+                <h5 class="mb-0">
+                  <a
+                    routerLink="/shop/{{ item.id }}"
+                    class="text-dark text-decoration-none"
+                  >
+                    {{ item.productName }}
+                  </a>
+                </h5>
+                <span class="text-muted fst-italic">
+                  {{ item.composerNames.join(", ") }}
+                </span>
+              </div>
             </div>
           </div>
         </th>

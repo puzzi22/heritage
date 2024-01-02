@@ -153,8 +153,17 @@ export class ProductDetailsComponent implements OnInit {
       this.basketService.setBasket(newBasket);
     }
 
-    // Add the item to the basket
-    this.basketService.addItemToBasket(this.product, this.quantity);
+    if (this.quantity > this.quantityInBasket) {
+      // Increment the quantity
+      const additionalItems = this.quantity - this.quantityInBasket;
+      this.basketService.addItemToBasket(this.product, additionalItems);
+    } else if (this.quantity < this.quantityInBasket) {
+      // Decrement the quantity
+      const itemsToRemove = this.quantityInBasket - this.quantity;
+      this.basketService.removeItemFromBasket(this.product.id, itemsToRemove);
+    }
+    // Update the quantity in basket to match the current quantity
+    this.quantityInBasket = this.quantity;
   }
 
   get buttonText() {
@@ -163,5 +172,9 @@ export class ProductDetailsComponent implements OnInit {
         ? 'product.addToBasket'
         : 'product.updateBasket';
     return this.translate.instant(key);
+  }
+
+  isButtonDisabled(): boolean {
+    return this.quantity === this.quantityInBasket;
   }
 }

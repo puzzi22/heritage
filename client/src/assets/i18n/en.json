@@ -101,8 +101,8 @@
 
   "orderStatus": {
     "Pending": "Pending",
-    "PaymentReceived": "Payment Received",
-    "PaymentFailed": "Payment Failed"
+    "Payment Received": "Payment Received",
+    "Payment Failed": "Payment Failed"
   },
 
   "status": {

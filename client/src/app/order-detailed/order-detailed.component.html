@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <div class="row flex-column flex-md-row" *ngIf="order">
-    <div class="col-md-8 col-12">
+    <div class="col-lg-8 col-12 mb-5">
       <div>
         <div class="table-responsive">
           <table class="table">
@@ -31,18 +31,33 @@
             <tbody>
               <tr *ngFor="let item of order.orderItems">
                 <!-- Product details -->
-                <th style="padding: 0">
-                  <img
-                    src="{{ item.pictureUrl1 }}"
-                    alt="{{ item.productTitle }}"
-                    class="img-fluid d-none d-md-inline-block"
-                    style="height: 120px"
-                  />
-                  <div class="p-2 d-inline-block">
-                    <div class="ms-md-3 d-inline-block align-middle">
-                      <h5 class="mb-md-0">
-                        {{ item.productTitle }}
-                      </h5>
+                <th style="padding: 0" class="align-middle">
+                  <div class="row align-items-center">
+                    <!-- Image Column - Conditional Rendering -->
+                    <ng-container *ngIf="item.pictureUrl1; else noImage">
+                      <div class="col-3 d-none d-lg-inline-block">
+                        <img
+                          src="{{ item.pictureUrl1 }}"
+                          alt="{{ item.productTitle }}"
+                          class="img-fluid"
+                          style="width: auto"
+                        />
+                      </div>
+                    </ng-container>
+                    <ng-template #noImage>
+                      <div class="col-12">
+                        <!-- Placeholder for when image is not available -->
+                      </div>
+                    </ng-template>
+
+                    <!-- Details Column -->
+                    <div class="col-12 col-lg-9">
+                      <div class="p-2">
+                        <h5 class="mb-0">
+                          {{ item.productTitle }}
+                        </h5>
+                        <!-- Include additional details if needed -->
+                      </div>
                     </div>
                   </div>
                 </th>
@@ -82,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 col-12 mt-5 mt-md-0">
+    <div class="col-lg-4 col-12 mt-5 mt-md-0">
       <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
         {{ "orderSummary.title" | translate }}
       </div>

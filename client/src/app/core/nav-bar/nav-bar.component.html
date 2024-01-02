@@ -1,5 +1,5 @@
 <header
-  class="navbar navbar-expand-lg d-flex flex-row align-items-center justify-content-between px-md-4 mb-3 navbar-light bg-light border-bottom fixed-top shadow-sm"
+  class="navbar navbar-expand-lg d-flex flex-row align-items-center justify-content-between px-lg-4 px-4 mb-3 navbar-light bg-light border-bottom fixed-top shadow-sm"
   style="height: 110px"
 >
   <div class="container-fluid p-0">
@@ -26,7 +26,7 @@
 
     <!-- Nav items -->
     <nav
-      class="collapse navbar-collapse my-2 fs-4 flex-grow-4"
+      class="collapse navbar-collapse my-2 fs-5 flex-grow-4"
       id="navbarSupportedContent"
     >
       <ul
@@ -72,23 +72,25 @@
       </ul>
 
       <div
-        class="d-flex flex-row justify-content-md-end align-items-center justify-content-between flex-grow-3 fs-6 my-3 py-4"
+        class="d-flex flex-row align-items-center justify-content-around flex-grow-3 fs-6 my-3 py-4 py-lg-0"
       >
-        <ng-container *ngIf="(accountService.currentUser$ | async) === null">
-          <a
-            routerLink="/account/login"
-            class="btn btn-outline-secondary me-2"
-            (click)="closeNavbar()"
-          >
-            {{ "login.login" | translate }}
-          </a>
-          <a
-            routerLink="/account/register"
-            class="btn btn-outline-secondary me-3"
-          >
-            {{ "login.register" | translate }}
-          </a>
-        </ng-container>
+        <div>
+          <ng-container *ngIf="(accountService.currentUser$ | async) === null">
+            <a
+              routerLink="/account/login"
+              class="btn btn-outline-secondary me-2"
+              (click)="closeNavbar()"
+            >
+              {{ "login.login" | translate }}
+            </a>
+            <a
+              routerLink="/account/register"
+              class="btn btn-outline-secondary me-3"
+            >
+              {{ "login.register" | translate }}
+            </a>
+          </ng-container>
+        </div>
 
         <ng-container *ngIf="accountService.currentUser$ | async as user">
           <div class="ms-3 me-4 dropdown" style="cursor: pointer" dropdown>
@@ -134,7 +136,11 @@
           </div>
         </ng-container>
 
-        <a routerLink="/basket" class="position-relative">
+        <a
+          routerLink="/basket"
+          class="position-relative"
+          (click)="closeNavbar()"
+        >
           <i class="fa fa-shopping-cart fa-2x me-3 text-dark"></i>
           <div
             *ngIf="basketService.basketSource$ | async as basket"
