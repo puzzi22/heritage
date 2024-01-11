@@ -13,7 +13,7 @@ import { ShopService } from '../shop.service';
 export class ProductItemComponent implements OnInit {
   @Input() product?: Product;
   composers: Composer[] = [];
-  composerNames: string[] = []; // Array to store composer names
+  composerNames: string[] = [];
 
   constructor(
     private basketService: BasketService,
@@ -33,9 +33,6 @@ export class ProductItemComponent implements OnInit {
 
   viewProductDetails(productId: number) {
     this.router.navigate(['/shop', productId])
-    // .then(() => {
-    //   window.scrollTo(0, 0); // Scroll to the top of the page
-    // });
   }
 
   setComposerNames() {
@@ -43,7 +40,6 @@ export class ProductItemComponent implements OnInit {
       this.composerNames = this.product.productComposerIds
         .map((id) => {
           const composer = this.composers.find((c) => c.id === id);
-          // return composer ? `${composer.firstName} ${composer.lastName}` : '';
           return composer ? `${composer.lastName}` : '';
         })
         .filter((name) => name);

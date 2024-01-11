@@ -21,7 +21,7 @@ namespace Core.Entities.OrderAggregate
 
         public ProductItemOrdered ItemOrdered { get; set; }
         public decimal Price { get; set; }
-        public decimal? DiscountedPrice { get; set; } // Added discounted price
+        public decimal? DiscountedPrice { get; set; }
         public int Quantity { get; set; }
     }
 }

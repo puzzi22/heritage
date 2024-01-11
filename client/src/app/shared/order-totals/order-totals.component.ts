@@ -13,7 +13,6 @@ export class OrderTotalsComponent {
     const basket = this.basketService.getCurrentBasketValue();
   
     if (basket && basket.items) {
-      // Check if any item has a discounted price that is not null
       return basket.items.some(
         (item) =>
           item.discountedPrice !== undefined &&

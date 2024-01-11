@@ -27,7 +27,7 @@ a.main-links:hover {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  background-color: transparent; /* or use your page's background color */
+  background-color: transparent;
 }
 
 .logo {
@@ -44,14 +44,13 @@ a.main-links:hover {
 }
 
 .language-switcher button {
-  border-radius: 0; /* Remove border radius */
-  padding: 0.4rem 0.4rem; /* Adjust padding as needed */
-  font-size: 0.875rem; /* Adjust font size as needed */
-  margin-left: 0rem; /* Spacing between buttons */
-  line-height: 1.5; /* Adjust line height as needed */
+  border-radius: 0;
+  padding: 0.4rem 0.4rem;
+  font-size: 0.875rem;
+  margin-left: 0rem;
+  line-height: 1.5;
 }
 
-/* Optional: Reduce the focus outline size for a cleaner look */
 .language-switcher button:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }

@@ -41,22 +41,6 @@ namespace API.Controllers
             };
         }
 
-        // [Authorize]
-        // [HttpPut("address")]
-        // public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto addressDto)
-        // {
-        //     var user = await _userManager.FindUserByClaimsPrincipleWithAddress(User);
-
-        //     // user.Address = _mapper.Map<AddressDto, Address>(address);
-        //     _mapper.Map(addressDto, user.Address);
-
-        //     var result = await _userManager.UpdateAsync(user);
-
-        //     if (result.Succeeded) return Ok(_mapper.Map<AddressDto>(user.Address));
-
-        //     return BadRequest("Problem updating the user");
-        // }
-
         [Authorize]
         [HttpPut("address")]
         public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto addressDto)

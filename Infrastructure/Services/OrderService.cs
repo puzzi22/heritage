@@ -66,7 +66,6 @@ namespace Infrastructure.Services
                 _unitOfWork.Repository<Order>().Add(order);
             }
 
-            // TODO: save to db
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;

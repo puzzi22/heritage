@@ -29,7 +29,7 @@ namespace API.Helpers
                 .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
                 .ForMember(d => d.ProductName, o => o.MapFrom(s => s.ProductName))
                 .ForMember(d => d.Price, o => o.MapFrom(s => s.Price))
-                .ForMember(d => d.DiscountedPrice, o => o.MapFrom(s => s.DiscountedPrice)) // Map DiscountedPrice
+                .ForMember(d => d.DiscountedPrice, o => o.MapFrom(s => s.DiscountedPrice))
                 .ForMember(d => d.Quantity, o => o.MapFrom(s => s.Quantity))
                 .ForMember(d => d.PictureUrl, o => o.MapFrom(s => s.PictureUrl))
                 .ForMember(d => d.ComposerNames, o => o.MapFrom(s => s.ComposerNames))
@@ -44,7 +44,7 @@ namespace API.Helpers
                 .ForMember(d => d.ProductTitle, o => o.MapFrom(s => s.ItemOrdered.ProductName))
                 .ForMember(d => d.PictureUrl1, o => o.MapFrom(s => s.ItemOrdered.PictureUrl))
                 .ForMember(d => d.Price, o => o.MapFrom(s => s.Price))
-                .ForMember(d => d.DiscountedPrice, o => o.MapFrom(s => s.DiscountedPrice)) // Map DiscountedPrice
+                .ForMember(d => d.DiscountedPrice, o => o.MapFrom(s => s.DiscountedPrice))
                 .ForMember(d => d.Quantity, o => o.MapFrom(s => s.Quantity))
                 .ForMember(d => d.PictureUrl1, o => o.MapFrom<OrderItemUrlResolver>());
         }

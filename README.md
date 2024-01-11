@@ -94,6 +94,10 @@ To test the discount functionality, use the code `STUDENT50` at checkout to appl
 - [Stripe](https://stripe.com) - Payment processing platform used
 - [Visual Studio Code] (https://code.visualstudio.com) - The source code editor used
 
+
+## Live Version
+Visit the live version of our e-commerce app at [https://www.heritageducor.com](https://www.heritageducor.com)
+
 ## Author
 
 - **Pierre-Antoine Tremblay** - *Héritage du Cor* - [Puzzi22](https://github.com/puzzi22)

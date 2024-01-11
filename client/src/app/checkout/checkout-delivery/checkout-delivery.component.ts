@@ -34,9 +34,6 @@ export class CheckoutDeliveryComponent implements OnInit {
   }
 
   translateMethods() {
-    // Update this method to utilize your language service
-    // This will ensure that the descriptions are translated based on the current language
     const lang = this.languageService.getLanguage();
-    // ... logic to translate methods based on the `lang`
   }
 }

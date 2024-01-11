@@ -21,19 +21,18 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly ProductUrlResolver _urlResolver;
 
-        // Constructor has been updated to include IConfiguration and instantiate ProductUrlResolver
         public ProductsController(
             IGenericRepository<Product> productsRepo, 
             IGenericRepository<ProductComposer> productComposerRepo, 
             IGenericRepository<ProductType> productTypeRepo, 
             IMapper mapper,
-            IConfiguration config) // Add IConfiguration parameter
+            IConfiguration config)
         {
             _mapper = mapper;
             _productTypeRepo = productTypeRepo;
             _productComposerRepo = productComposerRepo;
             _productsRepo = productsRepo;
-            _urlResolver = new ProductUrlResolver(config); // Instantiate ProductUrlResolver with the config
+            _urlResolver = new ProductUrlResolver(config);
         }
 
         [Cached(600)]
@@ -48,10 +47,9 @@ namespace API.Controllers
 
             var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
 
-            // Loop through each DTO and resolve URLs
             foreach (var productDto in data)
             {
-                _urlResolver.ResolveUrls(productDto); // Call ResolveUrls on each ProductToReturnDto
+                _urlResolver.ResolveUrls(productDto);
             }
 
             return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
@@ -68,10 +66,8 @@ namespace API.Controllers
 
             if (product == null) return NotFound(new ApiResponse(404));
 
-            // Map the product to the DTO
             var productDto = _mapper.Map<Product, ProductToReturnDto>(product);
 
-            // Resolve the URLs before returning
             _urlResolver.ResolveUrls(productDto);
 
             return productDto;

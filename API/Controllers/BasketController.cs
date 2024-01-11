@@ -17,14 +17,14 @@ namespace API.Controllers
         private readonly IBasketRepository _basketRepository;
         private readonly IMapper _mapper;
 
-        private readonly DiscountService _discountService; // Injected service
+        private readonly DiscountService _discountService;
         
 
         public BasketController(IBasketRepository basketRepository, IMapper mapper, DiscountService discountService)
         {
             _basketRepository = basketRepository;
             _mapper = mapper;
-            _discountService = discountService; // Initialize the injected service
+            _discountService = discountService;
         }
 
     [HttpGet]
@@ -85,7 +85,7 @@ namespace API.Controllers
             item.DiscountedPrice = discountedPrice;
         }
 
-        basket.DiscountCode = request.Code; // Set the discount code
+        basket.DiscountCode = request.Code;
 
         var updatedBasket = await _basketRepository.UpdateBasketAsync(basket);
         return Ok(updatedBasket);

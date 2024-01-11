@@ -34,7 +34,7 @@ namespace API.Helpers
                 return;
             }
 
-            var executedContext = await next(); // move to controller
+            var executedContext = await next();
 
             if (executedContext.Result is OkObjectResult okObjectResult)
             {

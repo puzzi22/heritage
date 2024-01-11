@@ -1,15 +1,15 @@
 body,
 html {
-  height: 100%; /* Full height */
-  margin: 0; /* Reset default margin */
+  height: 100%;
+  margin: 0;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
-  min-height: 80vh; /* Full viewport height */
+  min-height: 80vh;
 }
 
 app-footer {
-  margin-top: auto; /* Pushes the footer to the bottom */
+  margin-top: auto;
 }

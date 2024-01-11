@@ -15,7 +15,7 @@ export class CheckoutAddressComponent {
   constructor(
     private accountService: AccountService,
     private toastr: ToastrService,
-    private translate: TranslateService // Inject TranslateService
+    private translate: TranslateService
   ) {}
 
   saveUserAddress() {
@@ -23,7 +23,6 @@ export class CheckoutAddressComponent {
       .updateUserAddress(this.checkoutForm?.get('addressForm')?.value)
       .subscribe({
         next: () => {
-          // Use TranslateService to get the translated message
           this.translate
             .get('shippingAddress.saveSuccess')
             .subscribe((translatedMessage: string) => {

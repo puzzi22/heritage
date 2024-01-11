@@ -72,7 +72,6 @@ export class SectionHeaderComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe to avoid memory leaks
     this.routerEventsSubscription?.unsubscribe();
     this.langChangeSubscription?.unsubscribe();
   }

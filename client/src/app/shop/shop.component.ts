@@ -48,9 +48,6 @@ export class ShopComponent implements OnInit {
       }
     );
 
-    // this.getComposers();
-    // this.getTypes();
-
     this.searchUpdated
       .pipe(
         debounceTime(500) // 300 ms debounce time
@@ -123,14 +120,12 @@ export class ShopComponent implements OnInit {
   onSortSelected(value: any) {
     const params = this.shopService.getShopParams();
 
-    // Check if the value is an event object or directly the value
     if (value.target && value.target.value) {
       params.sort = value.target.value;
     } else {
       params.sort = value;
     }
 
-    // console.log(`Sort selected: ${params.sort}`);
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.scrollService.scrollToTop();
@@ -187,7 +182,6 @@ export class ShopComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe to avoid memory leaks
     if (this.langChangeSubscription) {
       this.langChangeSubscription.unsubscribe();
     }

@@ -3,8 +3,8 @@ import * as cuid from 'cuid';
 export interface BasketItem {
   id: number;
   productName: string;
-  price: number; // Original price of the item
-  discountedPrice?: number | null; // Discounted price of the item
+  price: number;
+  discountedPrice?: number | null;
   quantity: number;
   pictureUrl: string;
   composerNames: string[];
@@ -18,8 +18,8 @@ export interface Basket {
   paymentIntentId?: string;
   deliveryMethodId?: number;
   shippingPrice: number;
-  totalDiscount: number; // Total discount applied to the basket
-  finalAmount: number; // Final total amount after discount
+  totalDiscount: number;
+  finalAmount: number;
 }
 
 export class Basket implements Basket {
@@ -50,5 +50,4 @@ export interface BasketTotals {
   shipping: number;
   subtotal: number;
   total: number;
-  // totalDiscount: number; // Include this property
 }

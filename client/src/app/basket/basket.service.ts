@@ -27,7 +27,6 @@ export class BasketService {
   private basketTotalSource = new BehaviorSubject<BasketTotals | null>(null);
   basketTotalSource$ = this.basketTotalSource.asObservable();
 
-  // Add new properties for composers and types
   private composers: ProductComposerDto[] = [];
   private productTypes: ProductTypeDto[] = [];
 
@@ -56,16 +55,11 @@ export class BasketService {
   }
 
   applyDiscountCode(discountCode: string): Observable<Basket> {
-    // console.log('Applying discount code:', discountCode);
-    // console.log('applyDiscountCode called with:', discountCode); // Log when the method is called
 
     const basketId = this.getCurrentBasketValue()?.id;
     if (!basketId) {
-      // console.error('Basket ID is null or undefined.');
       return throwError(() => new Error('Basket ID is null or undefined.'));
     }
-
-    // console.log('Sending request to apply discount code. Basket ID:', basketId); // Log the basket ID being used
 
     return this.http
       .post<Basket>(this.baseUrl + 'basket/apply-discount', {
@@ -74,16 +68,13 @@ export class BasketService {
       })
       .pipe(
         map((basket: Basket) => {
-          // console.log('Discount code applied. Updated basket:', basket);
-          // console.log('Discount code applied. Updated basket received:', basket); // Log the received updated basket
           this.basketSource.next(basket);
           this.calculateTotals();
           return basket;
         }),
         catchError((error) => {
-          // console.error('Error applying discount code:', error);
 
-          let errorKey = 'defaultErrorMessageKey'; // Default error key
+          let errorKey = 'defaultErrorMessageKey';
           if (error.error && error.error.messageKey) {
             errorKey = error.error.messageKey;
           }
@@ -119,11 +110,9 @@ export class BasketService {
   }
 
   setBasket(basket: Basket) {
-    // console.log('Setting basket:', basket);
 
     return this.http.post<Basket>(this.baseUrl + 'basket', basket).subscribe({
       next: (basket) => {
-        // console.log('Basket updated:', basket);
 
         this.basketSource.next(basket);
         this.calculateTotals();
@@ -147,7 +136,6 @@ export class BasketService {
   addItemToBasket(item: Product | BasketItem, quantity = 1) {
     const basket = this.getCurrentBasketValue();
     if (!basket) {
-      // console.error('No basket found when trying to add item.');
       return;
     }
 
@@ -259,14 +247,12 @@ export class BasketService {
     const basket = this.getCurrentBasketValue();
     if (!basket) return;
 
-    // console.log('Calculating totals for basket:', basket);
     const subtotal = basket.items.reduce(
       (a, b) => (b.discountedPrice ?? b.price) * b.quantity + a,
       0
     );
     const total = subtotal + basket.shippingPrice;
 
-    // console.log(`Subtotal: ${subtotal}, Total: ${total}`);
     this.basketTotalSource.next({
       shipping: basket.shippingPrice,
       total,

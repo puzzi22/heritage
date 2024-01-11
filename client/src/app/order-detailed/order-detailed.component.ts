@@ -16,10 +16,9 @@ export class OrderDetailedComponent implements OnInit {
     private orderService: OrdersService,
     private route: ActivatedRoute,
     private bcService: BreadcrumbService,
-    private changeDetectorRef: ChangeDetectorRef, // Inject ChangeDetectorRef
-    private translate: TranslateService // Inject TranslateService
+    private changeDetectorRef: ChangeDetectorRef,
+    private translate: TranslateService
   ) {
-    // this.bcService.set('@orderDetailed', '');
   }
 
   ngOnInit(): void {
@@ -36,13 +35,11 @@ export class OrderDetailedComponent implements OnInit {
                 status: translatedStatus,
               });
               this.bcService.set('@orderDetailed', breadcrumbLabel);
-              this.changeDetectorRef.detectChanges(); // Trigger change detection
+              this.changeDetectorRef.detectChanges();
             });
         },
-        // ... error handling
       });
     } else {
-      // ... handle missing id
     }
   }
 }

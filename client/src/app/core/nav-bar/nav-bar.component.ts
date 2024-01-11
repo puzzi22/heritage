@@ -12,16 +12,16 @@ import { LanguageService } from '../services/language.service';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-  currentLang: string; // Default language
+  currentLang: string;
 
   constructor(
     public basketService: BasketService,
     public accountService: AccountService,
-    private translate: TranslateService, // Inject TranslateService
+    private translate: TranslateService,
     private languageService: LanguageService
   ) {
     this.currentLang = this.languageService.getLanguage();
-    this.translate.use(this.currentLang); // Apply the language
+    this.translate.use(this.currentLang);
   }
 
   getCount(items: BasketItem[]) {
@@ -30,7 +30,7 @@ export class NavBarComponent {
 
   changeLanguage(lang: string): void {
     this.currentLang = lang;
-    this.languageService.setLanguage(lang); // This will also update the language in local storage
+    this.languageService.setLanguage(lang); // This will update the language in local storage
   }
 
   closeNavbar() {

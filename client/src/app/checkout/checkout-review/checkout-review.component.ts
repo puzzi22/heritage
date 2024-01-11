@@ -30,26 +30,22 @@ export class CheckoutReviewComponent {
               .subscribe((translatedText) => {
                   this.toastr.success(translatedText);
               });
-          this.isDiscountApplied = true; // Set the flag to true after successful application
+          this.isDiscountApplied = true;
       },
         error: (error) => {
-          let errorKey = 'error.defaultErrorKey'; // A default error key
+          let errorKey = 'error.defaultErrorKey';
           if (error.error && error.error.messageKey) {
-            // If the backend provides a specific error key
             errorKey = error.error.messageKey;
           }
 
           this.translate.get(errorKey).subscribe((translatedErrorMessage) => {
             let errorMessage = translatedErrorMessage;
 
-            // If there's no translation found for the key, use a default message
             if (errorKey === translatedErrorMessage) {
               errorMessage = 'error.defaultErrorKey';
             }
 
-            // Display the error message
             console.error(errorMessage);
-            // Optionally, use a toastr or other notification service to show the error
             this.toastr.error(errorMessage);
           });
         },

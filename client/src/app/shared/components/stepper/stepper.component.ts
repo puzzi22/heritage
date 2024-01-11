@@ -27,6 +27,6 @@ export class StepperComponent extends CdkStepper implements OnInit, DoCheck {
   
   onClick(index: number): void {
     this.selectedIndex = index;
-    this.stepChanged.emit(index); // Emit the event
+    this.stepChanged.emit(index);
   }
 }

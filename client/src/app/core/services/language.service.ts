@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root',
 })
 export class LanguageService {
-  private currentLang: string = 'fr'; // default language
+  private currentLang: string = 'fr';
 
   constructor(private translate: TranslateService) {
     // Load the initial language from storage or browser settings
@@ -16,10 +16,10 @@ export class LanguageService {
   setLanguage(lang: string): void {
     this.currentLang = lang;
     localStorage.setItem('language', lang); // Save language preference in local storage
-    this.translate.use(lang); // Update ngx-translate with the new language
+    this.translate.use(lang);
   }
 
   getLanguage(): string {
-    return localStorage.getItem('language') || this.currentLang; // Return stored language or default
+    return localStorage.getItem('language') || this.currentLang;
   }
 }

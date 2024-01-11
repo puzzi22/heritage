@@ -16,7 +16,6 @@ namespace API.Dtos
         [Range(0.1, double.MaxValue, ErrorMessage = "Price must be greater than zero")]
         public decimal Price { get; set; }
 
-        // Optional property for discounted price
         public decimal? DiscountedPrice { get; set; }
 
         [Required]

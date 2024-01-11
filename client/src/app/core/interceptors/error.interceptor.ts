@@ -25,10 +25,10 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        let translatedErrorMessage = ''; // Initialize variable
+        let translatedErrorMessage = '';
 
         if (error) {
-          const errorKey = `error.${error.error.message}`; // Assuming error.error.message contains the key
+          const errorKey = `error.${error.error.message}`;
           translatedErrorMessage = this.translate.instant(errorKey);
 
           if (error.status === 400) {

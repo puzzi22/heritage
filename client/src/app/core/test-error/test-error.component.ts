@@ -48,7 +48,7 @@ export class TestErrorComponent {
   translateValidationErrors(errors: string[]): string[] {
     return errors.map(error => {
       if (error === "The value 'hundredfortytwo' is not valid.") {
-        return this.translate.instant('error.invalidValue'); // 'error.invalidValue' should be the key in your translation files
+        return this.translate.instant('error.invalidValue');
       }
       return error;
     });

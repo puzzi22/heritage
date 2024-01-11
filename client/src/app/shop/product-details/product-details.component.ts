@@ -26,11 +26,11 @@ export class ProductDetailsComponent implements OnInit {
   zoomedImage = '';
 
   composers: Composer[] = [];
-  composerNames: string[] = []; // Array to store composer names
+  composerNames: string[] = [];
   types: Type[] = [];
-  typeNames: string[] = []; // Array to store type names
+  typeNames: string[] = [];
 
-  @ViewChild('mainCarousel') mainCarousel: any; // or OwlCarouselOComponent if appropriate
+  @ViewChild('mainCarousel') mainCarousel: any;
 
   constructor(
     private shopService: ShopService,
@@ -67,7 +67,6 @@ export class ProductDetailsComponent implements OnInit {
         .map((id) => {
           const composer = this.composers.find((c) => c.id === id);
           return composer ? `${composer.firstName} ${composer.lastName}` : '';
-          // return composer ? `${composer.lastName}` : '';
         })
         .filter((name) => name);
     }
@@ -78,7 +77,6 @@ export class ProductDetailsComponent implements OnInit {
       this.typeNames = this.product.productTypeIds
         .map((id) => {
           const type = this.types.find((c) => c.id === id);
-          // return type ? `${t.firstName} ${composer.lastName}` : '';
           return type ? `${type.name}` : '';
         })
         .filter((name) => name);
@@ -97,9 +95,9 @@ export class ProductDetailsComponent implements OnInit {
             product.pictureUrl3,
             product.pictureUrl4,
             product.pictureUrl5,
-          ].filter((url) => url); // Filter inside the callback
+          ].filter((url) => url);
           if (this.imageUrls.length > 0) {
-            this.selectedImage = this.imageUrls[0]; // Set the first image as selected by default
+            this.selectedImage = this.imageUrls[0];
           }
           if (this.imageUrls.length > 0) {
             this.selectedImageIndex = 0;
@@ -122,13 +120,12 @@ export class ProductDetailsComponent implements OnInit {
   changeImage(index: number) {
     this.selectedImageIndex = index;
     this.selectedImage = this.imageUrls[index];
-    this.cdr.detectChanges(); // Manually trigger change detection
+    this.cdr.detectChanges();
   }
 
   openModal(imageSrc: string) {
     this.zoomedImage = imageSrc;
     this.isImageZoomed = true;
-    // this.cdr.detectChanges(); // Manually trigger change detection
   }
 
   closeModal() {
