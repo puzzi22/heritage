@@ -22,8 +22,8 @@
 	},
 	{
 		"Id": 4,
-		"ShortName": "Digital",
-		"Description": "Free! We will send you the documents digitally by email",
+		"ShortName": "FREE",
+		"Description": "We will send you the documents digitally by email",
 		"DeliveryTime": "Same Day",
 		"Price": 0
 	}

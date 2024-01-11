@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Text.Json;
 using Core.Entities;
 using Core.Entities.OrderAggregate;
@@ -11,9 +12,11 @@ namespace Infrastructure.Data
     {
         public static async Task SeedAsync(StoreContext context)
         {
+            var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
             if (!context.ProductComposers.Any())
             {
-                var composersData = File.ReadAllText("../Infrastructure/Data/SeedData/composers.json");
+                var composersData = File.ReadAllText(path + @"/Data/SeedData/composers.json");
                 var composers = JsonSerializer.Deserialize<List<ProductComposer>>(composersData);
                 context.ProductComposers.AddRange(composers);
                 await context.SaveChangesAsync();
@@ -21,7 +24,7 @@ namespace Infrastructure.Data
 
             if (!context.ProductTypes.Any())
             {
-                var typesData = File.ReadAllText("../Infrastructure/Data/SeedData/types.json");
+                var typesData = File.ReadAllText(path + @"/Data/SeedData/types.json");
                 var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
                 context.ProductTypes.AddRange(types);
                 await context.SaveChangesAsync();
@@ -29,7 +32,7 @@ namespace Infrastructure.Data
 
             if (!context.Products.Any())
             {
-                var productsData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
+                var productsData = File.ReadAllText(path + @"/Data/SeedData/products.json");
                 var productSeedDtos = JsonSerializer.Deserialize<List<ProductSeedDto>>(productsData);
 
                 foreach (var productSeedDto in productSeedDtos)
@@ -56,7 +59,7 @@ namespace Infrastructure.Data
 
             if (!context.DeliveryMethods.Any())
             {
-                var deliveryData = File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
+                var deliveryData = File.ReadAllText(path + @"/Data/SeedData/delivery.json");
                 var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
                 context.DeliveryMethods.AddRange(methods);
                 await context.SaveChangesAsync();
