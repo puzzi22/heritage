@@ -21,7 +21,11 @@
       {{ composerNames.join(", ") }}
       <!-- Join composer names with a comma -->
     </span>
-    <a href="" class="text-decoration-none">
+    <a
+      href=""
+      (click)="viewProductDetails(product.id); $event.preventDefault()"
+      class="text-decoration-none"
+    >
       <h6 class="text-uppercase">
         {{ product.title }}
       </h6>
